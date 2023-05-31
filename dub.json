@@ -1,0 +1,9 @@
+{
+	"authors": [
+		"rillki"
+	],
+	"copyright": "Copyright © 2023, rillki",
+	"description": "Tiny SVG library for drawing and quick experiments",
+	"license": "BSL",
+	"name": "tiny-svg"
+}
