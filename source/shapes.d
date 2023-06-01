@@ -2,7 +2,7 @@ module shapes;
 
 import std.string: format;
 
-interface Shape 
+interface Shape
 {   
     void render(ref string content);
 }
