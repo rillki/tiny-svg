@@ -33,7 +33,8 @@ struct SVGCanvas
         );
     }
 
-    void save(in string name) {
+    void save(in string name) 
+    {
         import std.stdio: File;
         File(name, "w").write(content ~ "</svg>");
     }
