@@ -3,7 +3,7 @@ module shapes;
 import std.string: format;
 
 interface Shape 
-{
+{   
     void render(ref string content);
 }
 
@@ -14,7 +14,7 @@ struct Point
 }
 
 /// RGB
-struct Color
+struct ColorRGB
 {
     ubyte r, g, b;
     immutable toStringRGB()
@@ -24,34 +24,38 @@ struct Color
 }
 
 /// encoded color codes
-enum Colors : Color
+enum Colors : ColorRGB
 {
-    black = Color(0, 0, 0),
-    white = Color(255, 255, 255),
-    red = Color(255, 0, 0),
-    lime = Color(0, 255, 0),
-    blue = Color(0, 0, 255),
-    yellow = Color(255, 255, 0),
-    cyan = Color(0, 255, 255),
-    magenta = Color(255, 0, 255),
-    silver = Color(192, 192, 192),
-    gray = Color(128, 128, 128),
-    maroon = Color(128, 0, 0),
-    olive = Color(128, 128, 0),
-    green = Color(0, 128, 0),
-    purple = Color(128, 0, 128),
-    teal = Color(0, 128, 128),
-    navy = Color(0, 0, 128)
+    black   = ColorRGB(  0,   0,   0),
+    white   = ColorRGB(255, 255, 255),
+    red     = ColorRGB(255,   0,   0),
+    lime    = ColorRGB(  0, 255,   0),
+    blue    = ColorRGB(  0,   0, 255),
+    gold    = ColorRGB(255, 215,   0),
+    yellow  = ColorRGB(255, 255,   0),
+    orange  = ColorRGB(255, 165,   0),
+    coral   = ColorRGB(255, 127,  80),
+    tomato  = ColorRGB(255,  99,  71),
+    cyan    = ColorRGB(  0, 255, 255),
+    magenta = ColorRGB(255,   0, 255),
+    silver  = ColorRGB(192, 192, 192),
+    gray    = ColorRGB(128, 128, 128),
+    maroon  = ColorRGB(128,   0,   0),
+    olive   = ColorRGB(128, 128,   0),
+    green   = ColorRGB(  0, 128,   0),
+    purple  = ColorRGB(128,   0, 128),
+    teal    = ColorRGB(  0, 128, 128),
+    navy    = ColorRGB(  0,   0, 128)
 }
 
 // TODO: add opacity, stroke-opacity to every shape
 class Line : Shape
 {
     private immutable Point p1, p2;
-    private immutable Color strokeColor;
+    private immutable ColorRGB strokeColor;
     private immutable uint strokeWidth;
 
-    this(in Point p1, in Point p2, in Color strokeColor, in uint strokeWidth) 
+    this(in Point p1, in Point p2, in ColorRGB strokeColor = Colors.black, in uint strokeWidth = 1) 
     {
         this.p1 = p1;
         this.p2 = p2;
@@ -70,11 +74,11 @@ class Circle : Shape
 {
     private immutable Point origin;
     private immutable uint radius;
-    private immutable Color fillColor;
-    private immutable Color strokeColor;
+    private immutable ColorRGB fillColor;
+    private immutable ColorRGB strokeColor;
     private immutable uint strokeWidth;
 
-    this(in Point origin, in uint radius, in Color fillColor, in Color strokeColor, in uint strokewidth) 
+    this(in Point origin, in uint radius, in ColorRGB fillColor, in ColorRGB strokeColor = Colors.black, in uint strokeWidth = 1) 
     {
         this.origin = origin;
         this.radius = radius;
@@ -94,11 +98,11 @@ class Ellipse : Shape
 {
     private immutable Point origin;
     private immutable Point radius;
-    private immutable Color fillColor;
-    private immutable Color strokeColor;
+    private immutable ColorRGB fillColor;
+    private immutable ColorRGB strokeColor;
     private immutable uint strokeWidth;
 
-    this(in Point origin, in Point radius, in Color fillColor, in Color strokeColor, in uint strokewidth) 
+    this(in Point origin, in Point radius, in ColorRGB fillColor, in ColorRGB strokeColor = Colors.black, in uint strokeWidth = 1) 
     {
         this.origin = origin;
         this.radius = radius;
@@ -109,7 +113,7 @@ class Ellipse : Shape
 
     void render(ref string content) 
     {
-        enum fmt = "<circle cx='%s' cy='%s' rx='%s' rx='%s' stroke='%s' stroke-width='%s' fill='%s'/>\n";
+        enum fmt = "<ellipse cx='%s' cy='%s' rx='%s' ry='%s' stroke='%s' stroke-width='%s' fill='%s'/>\n";
         content ~= fmt.format(origin.x, origin.y, radius.x, radius.y, strokeColor.toStringRGB, strokeWidth, fillColor.toStringRGB);
     }
 }
@@ -119,11 +123,11 @@ class Rectangle : Shape
     private immutable Point xy;
     private immutable Point size;
     private immutable uint radius;
-    private immutable Color fillColor;
-    private immutable Color strokeColor;
+    private immutable ColorRGB fillColor;
+    private immutable ColorRGB strokeColor;
     private immutable uint strokeWidth;
 
-    this(in Point xy, in Point size, in uint radius, in Color fillColor, in Color strokeColor, in uint strokewidth) 
+    this(in Point xy, in Point size, in uint radius, in ColorRGB fillColor, in ColorRGB strokeColor = Colors.black, in uint strokeWidth = 1) 
     {
         this.xy = xy;
         this.size = size;
@@ -135,7 +139,7 @@ class Rectangle : Shape
 
     void render(ref string content) 
     {
-        enum fmt = "<rect x='%s' y='%s' width='%s' height='%s' rx='%s' ry='%s' style='fill:%s;stroke-width:%s;stroke:%s'/>\n";
+        enum fmt = "<rect x='%s' y='%s' width='%s' height='%s' rx='%s' ry='%s' fill='%s' stroke-width='%s' stroke='%s'/>\n";
         content ~= fmt.format(xy.x, xy.y, size.x, size.y, radius, radius, fillColor.toStringRGB, strokeWidth, strokeColor.toStringRGB);
     }
 }
@@ -147,10 +151,10 @@ class Text : Shape
     private immutable string fontFamily;
     private immutable uint fontSize;
     private immutable uint rotate;
-    private immutable Color fillColor;
-    private immutable Color strokeColor;
+    private immutable ColorRGB fillColor;
+    private immutable ColorRGB strokeColor;
 
-    this(in Point xy, in string text, in string fontFamily, in uint fontSize, in uint rotate, in Color fillColor, in Color strokeColor) 
+    this(in Point xy, in string text, in string fontFamily, in uint fontSize, in uint rotate = 0, in ColorRGB fillColor = Colors.black, in ColorRGB strokeColor = Colors.black) 
     {
         this.xy = xy;
         this.text = text;
