@@ -44,6 +44,7 @@ enum Colors : Color
     navy = Color(0, 0, 128)
 }
 
+// TODO: add opacity, stroke-opacity to every shape
 class Line : Shape
 {
     private immutable Point p1, p2;
@@ -60,7 +61,7 @@ class Line : Shape
 
     void render(ref string content)
     {
-        enum fmt = "<line x1='%s' y1='%s' x2='%s' y2='%s' style='stroke:%s;stroke-width:%s'/>";
+        enum fmt = "<line x1='%s' y1='%s' x2='%s' y2='%s' style='stroke:%s;stroke-width:%s'/>\n";
         content ~= fmt.format(p1.x, p1.y, p2.x, p2.y, strokeColor.toStringRGB, strokeWidth);
     }
 }
@@ -84,8 +85,8 @@ class Circle : Shape
 
     void render(ref string content) 
     {
-        enum fmt = "<circle cx='%s' cy='%s' r='%s' stroke='%s' stroke-width='%s' fill='%s'/>";
-        content ~= fmt.format(origin.x, origin.y, radius, strokeColor.toStringRGB, strokeWidth, fillColor);
+        enum fmt = "<circle cx='%s' cy='%s' r='%s' stroke='%s' stroke-width='%s' fill='%s'/>\n";
+        content ~= fmt.format(origin.x, origin.y, radius, strokeColor.toStringRGB, strokeWidth, fillColor.toStringRGB);
     }
 }
 
@@ -108,8 +109,8 @@ class Ellipse : Shape
 
     void render(ref string content) 
     {
-        enum fmt = "<circle cx='%s' cy='%s' rx='%s' rx='%s' stroke='%s' stroke-width='%s' fill='%s'/>";
-        content ~= fmt.format(origin.x, origin.y, radius.x, radius.y, strokeColor.toStringRGB, strokeWidth, fillColor);
+        enum fmt = "<circle cx='%s' cy='%s' rx='%s' rx='%s' stroke='%s' stroke-width='%s' fill='%s'/>\n";
+        content ~= fmt.format(origin.x, origin.y, radius.x, radius.y, strokeColor.toStringRGB, strokeWidth, fillColor.toStringRGB);
     }
 }
 
@@ -117,12 +118,12 @@ class Rectangle : Shape
 {
     private immutable Point xy;
     private immutable Point size;
-    private immutable Point radius;
+    private immutable uint radius;
     private immutable Color fillColor;
     private immutable Color strokeColor;
     private immutable uint strokeWidth;
 
-    this(in Point xy, in Point size, in Point radius, in Color fillColor, in Color strokeColor, in uint strokewidth) 
+    this(in Point xy, in Point size, in uint radius, in Color fillColor, in Color strokeColor, in uint strokewidth) 
     {
         this.xy = xy;
         this.size = size;
@@ -134,7 +135,8 @@ class Rectangle : Shape
 
     void render(ref string content) 
     {
-        // TODO
+        enum fmt = "<rect x='%s' y='%s' width='%s' height='%s' rx='%s' ry='%s' style='fill:%s;stroke-width:%s;stroke:%s'/>\n";
+        content ~= fmt.format(xy.x, xy.y, size.x, size.y, radius, radius, fillColor.toStringRGB, strokeWidth, strokeColor.toStringRGB);
     }
 }
 
@@ -144,19 +146,25 @@ class Text : Shape
     private immutable string text;
     private immutable string fontFamily;
     private immutable uint fontSize;
+    private immutable uint rotate;
     private immutable Color fillColor;
     private immutable Color strokeColor;
 
-    this(in Point xy, in string text, in string fontFamily, in uint fontSize, in Color fillColor, in Color strokeColor) 
+    this(in Point xy, in string text, in string fontFamily, in uint fontSize, in uint rotate, in Color fillColor, in Color strokeColor) 
     {
         this.xy = xy;
         this.text = text;
         this.fontFamily = fontFamily;
         this.fontSize = fontSize;
+        this.rotate = rotate;
         this.fillColor = fillColor;
         this.strokeColor = strokeColor;
     }
 
-    void render(ref string content) {}
+    void render(ref string content) 
+    {
+        enum fmt = "<text x='%s' y='%s' font-family='%s' font-size='%s' stroke='%s' fill='%s' transform='rotate(%s)'>%s</text>\n";
+        content ~= fmt.format(xy.x, xy.y, fontFamily, fontSize, strokeColor.toStringRGB, fillColor.toStringRGB, rotate, text);
+    }
 }
 

@@ -24,11 +24,13 @@ struct SVGCanvas
         import std.string : format;
 
         // add header
-        content = "<svg width='%s px' height='%s px' xmlns='%s' version='%s' xmlns:xlink='%s'>\n"
-            .format(width, height, "http://www.w3.org/2000/svg", "1.1", "http://www.w3.org/1999/xlink");
+        enum fmt = "<svg width='%s px' height='%s px' xmlns='%s' version='%s' xmlns:xlink='%s'>\n";
+        content = fmt.format(width, height, "http://www.w3.org/2000/svg", "1.1", "http://www.w3.org/1999/xlink");
         
         // render all shapes
-        // ...
+        foreach(shape; shapes) {
+            shape.render(content);
+        }
 
         // save file
         File(name, "w").write(content ~ "</svg>");
