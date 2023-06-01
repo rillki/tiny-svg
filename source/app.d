@@ -1,6 +1,7 @@
 module app;
 
-void main() {
+void main() 
+{
 	import tiny_svg;
 
     SVGCanvas canvas = SVGCanvas(512, 512);

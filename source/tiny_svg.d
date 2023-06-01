@@ -2,19 +2,18 @@ module tiny_svg;
 
 import std.string: format;
 
-struct SVGCanvas {
+struct SVGCanvas 
+{
     private uint width, height;
     private string content;
 
-    this(in uint width, in uint height) {
+    this(in uint width, in uint height) 
+    {
         this.width = width;
         this.height = height;
 
-        content = (
-            "<svg width='%s px' height='%s px' xmlns='%s' version='%s' xmlns:xlink='%s'>\n"
-        ).format(
-            width, height, "http://www.w3.org/2000/svg", "1.1", "http://www.w3.org/1999/xlink"
-        );
+        content = "<svg width='%s px' height='%s px' xmlns='%s' version='%s' xmlns:xlink='%s'>\n"
+            .format(width, height, "http://www.w3.org/2000/svg", "1.1", "http://www.w3.org/1999/xlink");
     }
 
     void drawRectangle(
