@@ -174,13 +174,15 @@ class Polygon : Shape
         this.fillRule = fillRule;
     }
 
-    void render(ref string surface) {
+    void render(ref string surface) 
+    {
         enum fmt = "<polygon points='%s' style='fill:%s;stroke:%s;stroke-width:%s;fill-rule:%s;'/>";
         surface ~= fmt.format(points.pointsToString, fillColor.toStringRGB, strokeColor.toStringRGB, strokeWidth, fillRule);
     }
 }
 
-class Polyline : Shape {
+class Polyline : Shape 
+{
     private const Point[] points; 
     private immutable ColorRGBA fillColor;
     private immutable ColorRGBA strokeColor;
@@ -194,7 +196,8 @@ class Polyline : Shape {
         this.strokeWidth = strokeWidth;
     }
 
-    void render(ref string surface) {
+    void render(ref string surface) 
+    {
         enum fmt = "<polyline points='%s' style='fill:%s;stroke:%s;stroke-width:%s'/>";
         surface ~= fmt.format(points.pointsToString, fillColor.toStringRGB, strokeColor.toStringRGB, strokeWidth);
     }
