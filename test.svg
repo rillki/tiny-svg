@@ -8,4 +8,4 @@
 <ellipse cx='150' cy='350' rx='81' ry='64' stroke='rgb(255, 165, 0)' stroke-width='2' fill='rgb(255, 127, 80)'/>
 <text x='150' y='450' font-family='arial' font-size='30' stroke='rgb(0, 0, 0)' fill='rgb(0, 0, 0)' transform='rotate(0)'>Hello, world!</text>
 <text x='150' y='550' font-family='arial' font-size='30' stroke='rgb(255, 165, 0)' fill='rgb(255, 255, 0)' transform='rotate(7)'>This is Tiny SVG.</text>
-</svg>
+<polygon points='250,30 250,60 300,100 320,50 320,30 ' style='fill:rgb(0, 255, 0);stroke:rgb(255, 0, 255);stroke-width:2;fill-rule:evenodd;'/></svg>

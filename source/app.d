@@ -16,6 +16,9 @@ void main()
     canvas.add(new Ellipse(Point(150, 350), Point(81, 64), Colors.coral, Colors.orange, 2));
     canvas.add(new Text(Point(150, 450), "Hello, world!", "arial", 30));
     canvas.add(new Text(Point(150, 550), "This is Tiny SVG.", "arial", 30, 7, Colors.yellow, Colors.orange));
+    canvas.add(new Polygon([
+        Point(250, 30), Point(250, 60), Point(300, 100), Point(320, 50), Point(320, 30)
+    ], Colors.lime, Colors.magenta, 2, FillRule.evenodd));
 
     canvas.save("test.svg");
 }

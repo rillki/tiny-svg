@@ -2,6 +2,7 @@ module tiny_svg;
 
 public import shapes;
 
+/// SVG canvas object
 struct SVGCanvas 
 {
     private uint w, h;

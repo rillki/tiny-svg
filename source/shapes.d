@@ -7,13 +7,20 @@ interface Shape
     void render(ref string content);
 }
 
-/// ditto
-struct Point 
+struct Point
 {
     int x, y;
 }
 
-/// RGB
+/// Converts array of coordinates to SVG points string
+auto pointsToString(in Point[] points) {
+    string pts;
+    foreach(point; points) {
+        pts ~= "%s,%s ".format(point.x, point.y);
+    }
+    return pts;
+}
+
 struct ColorRGB
 {
     ubyte r, g, b;
@@ -46,6 +53,11 @@ enum Colors : ColorRGB
     purple  = ColorRGB(128,   0, 128),
     teal    = ColorRGB(  0, 128, 128),
     navy    = ColorRGB(  0,   0, 128)
+}
+
+enum FillRule : string {
+    nonzero = "nonzero",
+    evenodd = "evenodd"
 }
 
 // TODO: add opacity, stroke-opacity to every shape
@@ -141,6 +153,29 @@ class Rectangle : Shape
     {
         enum fmt = "<rect x='%s' y='%s' width='%s' height='%s' rx='%s' ry='%s' fill='%s' stroke-width='%s' stroke='%s'/>\n";
         content ~= fmt.format(xy.x, xy.y, size.x, size.y, radius, radius, fillColor.toStringRGB, strokeWidth, strokeColor.toStringRGB);
+    }
+}
+
+class Polygon : Shape 
+{
+    private const Point[] points; 
+    private immutable ColorRGB fillColor;
+    private immutable ColorRGB strokeColor;
+    private immutable uint strokeWidth;
+    private immutable string fillRule;
+
+    this(in Point[] points, in ColorRGB fillColor, in ColorRGB strokeColor = Colors.black, in uint strokeWidth = 1, in string fillRule = FillRule.nonzero)
+    {
+        this.points = points;
+        this.fillColor = fillColor;
+        this.strokeColor = strokeColor;
+        this.strokeWidth = strokeWidth;
+        this.fillRule = fillRule;
+    }
+
+    void render(ref string content) {
+        enum fmt = "<polygon points='%s' style='fill:%s;stroke:%s;stroke-width:%s;fill-rule:%s;'/>";
+        content ~= fmt.format(points.pointsToString, fillColor.toStringRGB, strokeColor.toStringRGB, strokeWidth, fillRule);
     }
 }
 
