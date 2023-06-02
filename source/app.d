@@ -4,6 +4,11 @@ void main()
 {
 	import tiny_svg;
 
+    /** TODO:
+        - lineTo
+        - lineMove
+     */
+
     SVGCanvas canvas = SVGCanvas(640, 640);
     
     // draw
