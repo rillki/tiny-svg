@@ -31,6 +31,12 @@ void main()
         Point(350, 150), Point(360, 190), Point(400, 210), Point(420, 160), Point(400, 180)
     ], Colors.none, Colors.tomato, 2));
 
+    auto path = new Path(Point(500, 500))
+        .lineTo(Point(550, 500))
+        .moveTo(Point(0, 50))
+        .moveTo(Point(50, 0));
+    canvas.add(path);
+
     canvas.save("test.svg");
 }
 

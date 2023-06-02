@@ -10,6 +10,12 @@ interface Shape
 struct Point
 {
     int x, y;
+    auto opBinary(string op)(in Point p)
+    {
+        static if(op == "+") return Point(x + p.x, y + p.y);
+        else static if(op == "-") return Point(x - p.x, y - p.y);
+        else static assert(0, "Operator "~op~" not supported!");
+    }
 }
 
 /// Converts array of coordinates to SVG points string
@@ -197,6 +203,42 @@ class Polyline : Shape
     }
 
     void render(ref string surface) 
+    {
+        enum fmt = "<polyline points='%s' style='fill:%s;stroke:%s;stroke-width:%s'/>";
+        surface ~= fmt.format(points.pointsToString, fillColor.toStringRGB, strokeColor.toStringRGB, strokeWidth);
+    }
+}
+
+class Path : Shape 
+{   
+    private Point[] points; 
+    private immutable ColorRGBA fillColor;
+    private immutable ColorRGBA strokeColor;
+    private immutable uint strokeWidth;
+
+    this(in Point startFrom, in ColorRGBA fillColor = Colors.none, in ColorRGBA strokeColor = Colors.black, in uint strokeWidth = 1)
+    {
+        this.points ~= startFrom;
+        this.fillColor = fillColor;
+        this.strokeColor = strokeColor;
+        this.strokeWidth = strokeWidth;
+    }
+    
+    /// Draw line to coordinate
+    auto lineTo(in Point point)
+    {
+        points ~= point;
+        return this;
+    }
+
+    /// Move by amount pixels
+    auto moveTo(in Point point)
+    {
+        points ~= points[$-1] + point;
+        return this;
+    }
+
+    void render(ref string surface)
     {
         enum fmt = "<polyline points='%s' style='fill:%s;stroke:%s;stroke-width:%s'/>";
         surface ~= fmt.format(points.pointsToString, fillColor.toStringRGB, strokeColor.toStringRGB, strokeWidth);
