@@ -19,6 +19,12 @@ void main()
     canvas.add(new Polygon([
         Point(250, 30), Point(250, 60), Point(300, 100), Point(320, 50), Point(320, 30)
     ], Colors.lime, Colors.magenta, 2, FillRule.evenodd));
+    canvas.add(new Polyline([
+        Point(350, 50), Point(360, 90), Point(400, 70), Point(420, 120), Point(400, 30)
+    ], Colors.lime, Colors.magenta, 2));
+    canvas.add(new Polyline([
+        Point(350, 150), Point(360, 190), Point(400, 210), Point(420, 160), Point(400, 180)
+    ], Colors.none, Colors.tomato, 2));
 
     canvas.save("test.svg");
 }

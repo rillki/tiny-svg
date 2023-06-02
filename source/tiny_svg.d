@@ -6,7 +6,7 @@ public import shapes;
 struct SVGCanvas 
 {
     private uint w, h;
-    private string content;
+    private string surface;
     private Shape[] shapes;
 
     this(in uint width, in uint height) 
@@ -43,15 +43,15 @@ struct SVGCanvas
 
         // add header
         enum fmt = "<svg width='%s px' height='%s px' xmlns='%s' version='%s' xmlns:xlink='%s'>\n";
-        content = fmt.format(w, h, "http://www.w3.org/2000/svg", "1.1", "http://www.w3.org/1999/xlink");
+        surface = fmt.format(w, h, "http://www.w3.org/2000/svg", "1.1", "http://www.w3.org/1999/xlink");
         
         // render all shapes
         foreach(shape; shapes) {
-            shape.render(content);
+            shape.render(surface);
         }
 
         // save file
-        File(name, "w").write(content ~ "</svg>");
+        File(name, "w").write(surface ~ "</svg>");
     }
 }
 
