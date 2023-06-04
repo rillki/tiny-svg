@@ -55,4 +55,8 @@ struct SVGCanvas
     }
 }
 
+void addToCanvas(Shape shape, ref SVGCanvas canvas) {
+    canvas.add(shape);
+}
+
 

@@ -94,22 +94,26 @@ class Circle : Shape
     private immutable Point origin;
     private immutable uint radius;
     private immutable ColorRGBA fillColor;
+    private immutable float fillOpacity;
     private immutable ColorRGBA strokeColor;
     private immutable uint strokeWidth;
+    private immutable float strokeOpacity;
 
-    this(in Point origin, in uint radius, in ColorRGBA fillColor = Colors.none, in ColorRGBA strokeColor = Colors.black, in uint strokeWidth = 1) 
+    this(in Point origin, in uint radius, in ColorRGBA fillColor = Colors.none, in float fillOpacity = 1, in ColorRGBA strokeColor = Colors.black, in uint strokeWidth = 1, in float strokeOpacity) 
     {
         this.origin = origin;
         this.radius = radius;
         this.fillColor = fillColor;
+        this.fillOpacity = fillOpacity;
         this.strokeColor = strokeColor;
         this.strokeWidth = strokeWidth;
+        this.strokeOpacity = strokeOpacity;
     }
 
     void render(ref string surface) 
     {
-        enum fmt = "<circle cx='%s' cy='%s' r='%s' stroke='%s' stroke-width='%s' fill='%s'/>\n";
-        surface ~= fmt.format(origin.x, origin.y, radius, strokeColor.toStringRGB, strokeWidth, fillColor.toStringRGB);
+        enum fmt = "<circle cx='%s' cy='%s' r='%s' stroke='%s' stroke-width='%s' fill='%s' fill-opacity='%s' stroke-opacity='%s'/>\n";
+        surface ~= fmt.format(origin.x, origin.y, radius, strokeColor.toStringRGB, strokeWidth, fillColor.toStringRGB, fillOpacity, strokeOpacity);
     }
 }
 

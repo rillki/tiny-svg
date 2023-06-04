@@ -5,8 +5,11 @@ void main()
 	import tiny_svg;
 
     /** TODO:
-        - lineTo
-        - lineMove
+        - setFillColor
+        - setStrokeColor
+        - setFillOpacity
+        - setStrokeWidth
+        - setStrokeOpacity
      */
 
     SVGCanvas canvas = SVGCanvas(640, 640);
@@ -17,7 +20,7 @@ void main()
     canvas.add(new Rectangle(Point(150, 10), Point(64, 64), 0, Colors.teal));
     canvas.add(new Rectangle(Point(150, 100), Point(100, 64), 0, Colors.green, Colors.yellow, 3));
     canvas.add(new Rectangle(Point(150, 200), Point(81, 64), 1, Colors.cyan, Colors.maroon, 7));
-    canvas.add(new Circle(Point(canvas.width/2, canvas.height/2), 81, Colors.gray, Colors.black, 3));
+    canvas.add(new Circle(Point(canvas.width/2, canvas.height/2), 81, Colors.gray, 1, Colors.black, 3, 1));
     canvas.add(new Ellipse(Point(150, 350), Point(81, 64), Colors.coral, Colors.orange, 2));
     canvas.add(new Text(Point(150, 450), "Hello, world!", "arial", 30));
     canvas.add(new Text(Point(150, 550), "This is Tiny SVG.", "arial", 30, 7, Colors.yellow, Colors.orange));
@@ -35,7 +38,7 @@ void main()
         .lineTo(Point(550, 500))
         .moveTo(Point(0, 50))
         .moveTo(Point(50, 0));
-    canvas.add(path);
+    path.addToCanvas(canvas);  // or canvas.add(path);
 
     canvas.save("test.svg");
 }
