@@ -30,7 +30,7 @@ auto pointsToString(in Point[] points) {
 struct ColorRGBA
 {
     ubyte r, g, b, a;
-    immutable toStringRGB()
+    const toStringRGB()
     {
         return "rgba(%s, %s, %s, %s)".format(r, g, b, a);
     }
@@ -71,16 +71,18 @@ enum FillRule : string {
 class Line : Shape
 {
     private immutable Point p1, p2;
-    private immutable ColorRGBA strokeColor;
-    private immutable uint strokeWidth;
+    private ColorRGBA strokeColor;
+    private uint strokeWidth;
 
-    this(in Point p1, in Point p2, in ColorRGBA strokeColor = Colors.black, in uint strokeWidth = 1) 
+    this(in Point p1, in Point p2) 
     {
         this.p1 = p1;
         this.p2 = p2;
-        this.strokeColor = strokeColor;
-        this.strokeWidth = strokeWidth;
+        this.strokeColor = Colors.black;
+        this.strokeWidth = 1;
     }
+
+    mixin GenerateSetters;
 
     void render(ref string surface)
     {
@@ -93,22 +95,24 @@ class Circle : Shape
 {
     private immutable Point origin;
     private immutable uint radius;
-    private immutable ColorRGBA fillColor;
-    private immutable float fillOpacity;
-    private immutable ColorRGBA strokeColor;
-    private immutable uint strokeWidth;
-    private immutable float strokeOpacity;
+    private ColorRGBA fillColor;
+    private float fillOpacity;
+    private ColorRGBA strokeColor;
+    private uint strokeWidth;
+    private float strokeOpacity;
 
-    this(in Point origin, in uint radius, in ColorRGBA fillColor = Colors.none, in float fillOpacity = 1, in ColorRGBA strokeColor = Colors.black, in uint strokeWidth = 1, in float strokeOpacity) 
+    this(in Point origin, in uint radius) 
     {
         this.origin = origin;
         this.radius = radius;
-        this.fillColor = fillColor;
-        this.fillOpacity = fillOpacity;
-        this.strokeColor = strokeColor;
-        this.strokeWidth = strokeWidth;
-        this.strokeOpacity = strokeOpacity;
+        this.fillColor = Colors.none;
+        this.fillOpacity = 1;
+        this.strokeColor = Colors.black;
+        this.strokeWidth = 1;
+        this.strokeOpacity = 1;
     }
+
+    mixin GenerateSetters;
 
     void render(ref string surface) 
     {
@@ -121,18 +125,20 @@ class Ellipse : Shape
 {
     private immutable Point origin;
     private immutable Point radius;
-    private immutable ColorRGBA fillColor;
-    private immutable ColorRGBA strokeColor;
-    private immutable uint strokeWidth;
+    private ColorRGBA fillColor;
+    private ColorRGBA strokeColor;
+    private uint strokeWidth;
 
-    this(in Point origin, in Point radius, in ColorRGBA fillColor = Colors.none, in ColorRGBA strokeColor = Colors.black, in uint strokeWidth = 1) 
+    this(in Point origin, in Point radius) 
     {
         this.origin = origin;
         this.radius = radius;
-        this.fillColor = fillColor;
-        this.strokeColor = strokeColor;
-        this.strokeWidth = strokeWidth;
+        this.fillColor = Colors.none;
+        this.strokeColor = Colors.black;
+        this.strokeWidth = 1;
     }
+
+    mixin GenerateSetters;
 
     void render(ref string surface) 
     {
@@ -145,20 +151,22 @@ class Rectangle : Shape
 {
     private immutable Point xy;
     private immutable Point size;
-    private immutable uint radius;
-    private immutable ColorRGBA fillColor;
-    private immutable ColorRGBA strokeColor;
-    private immutable uint strokeWidth;
+    private uint radius;
+    private ColorRGBA fillColor;
+    private ColorRGBA strokeColor;
+    private uint strokeWidth;
 
-    this(in Point xy, in Point size, in uint radius, in ColorRGBA fillColor = Colors.none, in ColorRGBA strokeColor = Colors.black, in uint strokeWidth = 1) 
+    this(in Point xy, in Point size) 
     {
         this.xy = xy;
         this.size = size;
-        this.radius = radius;
-        this.fillColor = fillColor;
-        this.strokeColor = strokeColor;
-        this.strokeWidth = strokeWidth;
+        this.radius = 0;
+        this.fillColor = Colors.none;
+        this.strokeColor = Colors.black;
+        this.strokeWidth = 1;
     }
+
+    mixin GenerateSetters;
 
     void render(ref string surface) 
     {
@@ -170,19 +178,21 @@ class Rectangle : Shape
 class Polygon : Shape 
 {
     private const Point[] points; 
-    private immutable ColorRGBA fillColor;
-    private immutable ColorRGBA strokeColor;
-    private immutable uint strokeWidth;
-    private immutable string fillRule;
+    private ColorRGBA fillColor;
+    private ColorRGBA strokeColor;
+    private uint strokeWidth;
+    private string fillRule;
 
-    this(in Point[] points, in ColorRGBA fillColor = Colors.none, in ColorRGBA strokeColor = Colors.black, in uint strokeWidth = 1, in string fillRule = FillRule.nonzero)
+    this(in Point[] points)
     {
         this.points = points;
-        this.fillColor = fillColor;
-        this.strokeColor = strokeColor;
-        this.strokeWidth = strokeWidth;
-        this.fillRule = fillRule;
+        this.fillColor = Colors.none;
+        this.strokeColor = Colors.black;
+        this.strokeWidth = 1;
+        this.fillRule = FillRule.nonzero;
     }
+
+    mixin GenerateSetters;
 
     void render(ref string surface) 
     {
@@ -194,17 +204,19 @@ class Polygon : Shape
 class Polyline : Shape 
 {
     private const Point[] points; 
-    private immutable ColorRGBA fillColor;
-    private immutable ColorRGBA strokeColor;
-    private immutable uint strokeWidth;
+    private ColorRGBA fillColor;
+    private ColorRGBA strokeColor;
+    private uint strokeWidth;
 
-    this(in Point[] points, in ColorRGBA fillColor = Colors.none, in ColorRGBA strokeColor = Colors.black, in uint strokeWidth = 1)
+    this(in Point[] points)
     {
         this.points = points;
-        this.fillColor = fillColor;
-        this.strokeColor = strokeColor;
-        this.strokeWidth = strokeWidth;
+        this.fillColor = Colors.none;
+        this.strokeColor = Colors.black;
+        this.strokeWidth = 1;
     }
+
+    mixin GenerateSetters;
 
     void render(ref string surface) 
     {
@@ -216,19 +228,21 @@ class Polyline : Shape
 class Path : Shape 
 {   
     private Point[] points; 
-    private immutable ColorRGBA fillColor;
-    private immutable ColorRGBA strokeColor;
-    private immutable uint strokeWidth;
+    private ColorRGBA fillColor;
+    private ColorRGBA strokeColor;
+    private uint strokeWidth;
 
-    this(in Point startFrom, in ColorRGBA fillColor = Colors.none, in ColorRGBA strokeColor = Colors.black, in uint strokeWidth = 1)
+    this(in Point startFrom)
     {
         this.points ~= startFrom;
-        this.fillColor = fillColor;
-        this.strokeColor = strokeColor;
-        this.strokeWidth = strokeWidth;
+        this.fillColor = Colors.none;
+        this.strokeColor = Colors.black;
+        this.strokeWidth = 1;
     }
+
+    mixin GenerateSetters;
     
-    /// Draw line to coordinate
+    /// Draw path by setting coordinates
     auto lineTo(in Point point)
     {
         points ~= point;
@@ -253,27 +267,49 @@ class Text : Shape
 {
     private immutable Point xy;
     private immutable string text;
-    private immutable string fontFamily;
-    private immutable uint fontSize;
-    private immutable uint rotate;
-    private immutable ColorRGBA fillColor;
-    private immutable ColorRGBA strokeColor;
+    private string fontFamily;
+    private uint fontSize;
+    private uint rotation;
+    private ColorRGBA fillColor;
+    private ColorRGBA strokeColor;
+    private uint strokeWidth;
 
-    this(in Point xy, in string text, in string fontFamily, in uint fontSize, in uint rotate = 0, in ColorRGBA fillColor = Colors.black, in ColorRGBA strokeColor = Colors.black) 
+    this(in Point xy, in string text)
     {
         this.xy = xy;
         this.text = text;
-        this.fontFamily = fontFamily;
-        this.fontSize = fontSize;
-        this.rotate = rotate;
-        this.fillColor = fillColor;
-        this.strokeColor = strokeColor;
+        this.fontFamily = "arial";
+        this.fontSize = 10;
+        this.rotation = 0;
+        this.fillColor = Colors.none;
+        this.strokeColor = Colors.black;
+        this.strokeWidth = 1;
     }
 
-    void render(ref string surface) 
+    mixin GenerateSetters;
+
+    void render(ref string surface)
     {
-        enum fmt = "<text x='%s' y='%s' font-family='%s' font-size='%s' stroke='%s' fill='%s' transform='rotate(%s)'>%s</text>\n";
-        surface ~= fmt.format(xy.x, xy.y, fontFamily, fontSize, strokeColor.toStringRGB, fillColor.toStringRGB, rotate, text);
+        enum fmt = "<text x='%s' y='%s' font-family='%s' font-size='%s' stroke='%s' stroke-width = '%s' fill='%s' transform='rotate(%s)'>%s</text>\n";
+        surface ~= fmt.format(xy.x, xy.y, fontFamily, fontSize, strokeColor.toStringRGB, strokeWidth, fillColor.toStringRGB, rotation, text);
+    }
+}
+
+/// generate setters for all mutable fields
+mixin template GenerateSetters() 
+{   
+    import std.string: format, toUpper;
+    import std.algorithm: canFind;
+    static foreach(idx, field; typeof(this).tupleof) {
+        static if(__traits(getVisibility, field) == "private" && !typeof(field).stringof.canFind("immutable", "const")) {
+            mixin(q{
+                auto set%s(typeof(this.tupleof[idx]) _)
+                {
+                    %s = _;
+                    return this;
+                }
+            }.format(toUpper(field.stringof[0..1]) ~ field.stringof[1..$], field.stringof));
+        }
     }
 }
 
