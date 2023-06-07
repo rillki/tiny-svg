@@ -2,14 +2,10 @@ module app;
 
 void main() 
 {
-	import tiny_svg;
+    import tiny_svg;
 
     /** TODO:
-        - setFillColor
-        - setStrokeColor
-        - setFillOpacity
-        - setStrokeWidth
-        - setStrokeOpacity
+        - 
      */
 
     SVGCanvas canvas = SVGCanvas(640, 640);
