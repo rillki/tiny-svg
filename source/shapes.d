@@ -1,6 +1,6 @@
 module shapes;
 
-import std.string: format;
+import std.string : format;
 
 interface Shape
 {   
@@ -19,9 +19,11 @@ struct Point
 }
 
 /// Converts array of coordinates to SVG points string
-auto pointsToString(in Point[] points) {
+auto pointsToString(in Point[] points)
+{
     string pts;
-    foreach(point; points) {
+    foreach(point; points)
+    {
         pts ~= "%s,%s ".format(point.x, point.y);
     }
     return pts;
@@ -62,25 +64,34 @@ enum Colors : ColorRGBA
     none    = ColorRGBA(255, 255, 255,   0)
 }
 
-enum FillRule : string {
+enum FillRule : string
+{
     nonzero = "nonzero",
     evenodd = "evenodd"
+}
+
+struct Appearance
+{
+    // stroke
+    uint      strokeWidth = 1;
+    float     strokeOpacity = 1;
+    ColorRGBA strokeColor = Colors.black;
+
+    // fill
+    float     fillOpacity = 1;
+    FillRule  fillRule = FillRule.nonzero;
+    ColorRGBA fillColor = Colors.white;
 }
 
 class Line : Shape
 {
     private immutable Point p1, p2;
-    private ColorRGBA strokeColor;
-    private uint strokeWidth;
-    private float strokeOpacity;
+    private Appearance appearance;
 
-    this(in Point p1, in Point p2) 
+    this(in Point p1, in Point p2)
     {
         this.p1 = p1;
         this.p2 = p2;
-        this.strokeColor = Colors.black;
-        this.strokeWidth = 1;
-        this.strokeOpacity = 1;
     }
 
     mixin GenerateSetters;
@@ -88,7 +99,10 @@ class Line : Shape
     void render(ref string surface)
     {
         enum fmt = "<line x1='%s' y1='%s' x2='%s' y2='%s' style='stroke:%s;stroke-width:%s;stroke-opacity=%s'/>\n";
-        surface ~= fmt.format(p1.x, p1.y, p2.x, p2.y, strokeColor.toStringRGB, strokeWidth, strokeOpacity);
+        surface ~= fmt.format(
+            p1.x, p1.y, p2.x, p2.y, 
+            appearance.strokeColor.toStringRGB, appearance.strokeWidth, appearance.strokeOpacity
+        );
     }
 }
 
@@ -102,7 +116,7 @@ class Circle : Shape
     private uint strokeWidth;
     private float strokeOpacity;
 
-    this(in Point origin, in uint radius) 
+    this(in Point origin, in uint radius)
     {
         this.origin = origin;
         this.radius = radius;
@@ -115,7 +129,7 @@ class Circle : Shape
 
     mixin GenerateSetters;
 
-    void render(ref string surface) 
+    void render(ref string surface)
     {
         enum fmt = "<circle cx='%s' cy='%s' r='%s' stroke='%s' stroke-width='%s' fill='%s' fill-opacity='%s' stroke-opacity='%s'/>\n";
         surface ~= fmt.format(origin.x, origin.y, radius, strokeColor.toStringRGB, strokeWidth, fillColor.toStringRGB, fillOpacity, strokeOpacity);
@@ -132,7 +146,7 @@ class Ellipse : Shape
     private float strokeOpacity;
     private float fillOpacity;
 
-    this(in Point origin, in Point radius) 
+    this(in Point origin, in Point radius)
     {
         this.origin = origin;
         this.radius = radius;
@@ -145,7 +159,7 @@ class Ellipse : Shape
 
     mixin GenerateSetters;
 
-    void render(ref string surface) 
+    void render(ref string surface)
     {
         enum fmt = "<ellipse cx='%s' cy='%s' rx='%s' ry='%s' stroke='%s' stroke-width='%s' fill='%s' fill-opacity='%s' stroke-opacity='%s'/>\n";
         surface ~= fmt.format(origin.x, origin.y, radius.x, radius.y, strokeColor.toStringRGB, strokeWidth, fillColor.toStringRGB, fillOpacity, strokeOpacity);
@@ -163,7 +177,7 @@ class Rectangle : Shape
     private float strokeOpacity;
     private float fillOpacity;
 
-    this(in Point xy, in Point size) 
+    this(in Point xy, in Point size)
     {
         this.xy = xy;
         this.size = size;
@@ -177,14 +191,14 @@ class Rectangle : Shape
 
     mixin GenerateSetters;
 
-    void render(ref string surface) 
+    void render(ref string surface)
     {
         enum fmt = "<rect x='%s' y='%s' width='%s' height='%s' rx='%s' ry='%s' fill='%s' stroke-width='%s' stroke='%s' fill-opacity='%s' stroke-opacity='%s'/>\n";
         surface ~= fmt.format(xy.x, xy.y, size.x, size.y, radius, radius, fillColor.toStringRGB, strokeWidth, strokeColor.toStringRGB, fillOpacity, strokeOpacity);
     }
 }
 
-class Polygon : Shape 
+class Polygon : Shape
 {
     private const Point[] points; 
     private ColorRGBA fillColor;
@@ -207,14 +221,14 @@ class Polygon : Shape
 
     mixin GenerateSetters;
 
-    void render(ref string surface) 
+    void render(ref string surface)
     {
         enum fmt = "<polygon points='%s' style='fill:%s;stroke:%s;stroke-width:%s;fill-rule:%s;fill-opacity:%s;stroke-opacity:%s;'/>";
         surface ~= fmt.format(points.pointsToString, fillColor.toStringRGB, strokeColor.toStringRGB, strokeWidth, fillRule, fillOpacity, strokeOpacity);
     }
 }
 
-class Polyline : Shape 
+class Polyline : Shape
 {
     private const Point[] points; 
     private ColorRGBA fillColor;
@@ -235,14 +249,14 @@ class Polyline : Shape
 
     mixin GenerateSetters;
 
-    void render(ref string surface) 
+    void render(ref string surface)
     {
         enum fmt = "<polyline points='%s' style='fill:%s;stroke:%s;stroke-width:%s;fill-opacity:%s;stroke-opacity:%s;'/>";
         surface ~= fmt.format(points.pointsToString, fillColor.toStringRGB, strokeColor.toStringRGB, strokeWidth, fillOpacity, strokeOpacity);
     }
 }
 
-class Path : Shape 
+class Path : Shape
 {   
     private Point[] points; 
     private ColorRGBA fillColor;
@@ -321,15 +335,18 @@ class Text : Shape
 }
 
 /// generate setters for all mutable fields
-mixin template GenerateSetters() 
+mixin template GenerateSetters()
 {   
-    import std.string: format, toUpper;
-    import std.algorithm: canFind;
-    static foreach(idx, field; typeof(this).tupleof) {
-        static if(__traits(getVisibility, field) == "private" && !typeof(field).stringof.canFind("immutable", "const")) {
+    import std.string : format, toUpper;
+    import std.algorithm : canFind;
+    static foreach(idx, field; typeof(this).tupleof)
+    {
+        static if(__traits(getVisibility, field) == "private" && !typeof(field).stringof.canFind("immutable", "const"))
+        {
             mixin(q{
                 auto set%s(typeof(this.tupleof[idx]) _)
-                {
+              
+              {
                     %s = _;
                     return this;
                 }
