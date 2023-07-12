@@ -342,14 +342,13 @@ mixin template GenerateSetters()
 {   
     import std.string : format, toUpper;
     import std.algorithm : canFind;
-    static foreach(idx, field; typeof(this).tupleof)
+    static foreach (idx, field; typeof(this).tupleof)
     {
-        static if(__traits(getVisibility, field) == "private" && !typeof(field).stringof.canFind("immutable", "const"))
+        static if (__traits(getVisibility, field) == "private" && !typeof(field).stringof.canFind("immutable", "const"))
         {
             mixin(q{
                 auto set%s(typeof(this.tupleof[idx]) _)
-              
-              {
+                {
                     %s = _;
                     return this;
                 }

@@ -33,7 +33,7 @@ struct SVGCanvas
     void undo() 
     {
         import std.algorithm: remove;
-        if(shapes.length > 0) 
+        if (shapes.length > 0) 
         {
             shapes = shapes.remove(shapes.length - 1);
         }
@@ -49,7 +49,7 @@ struct SVGCanvas
         surface = fmt.format(w, h, "http://www.w3.org/2000/svg", "1.1", "http://www.w3.org/1999/xlink");
         surface ~= "<path d='M 200 200'/>";
         // render all shapes
-        foreach(shape; shapes) 
+        foreach (shape; shapes) 
         {
             shape.render(surface);
         }
