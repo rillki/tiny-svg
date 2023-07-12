@@ -14,7 +14,8 @@ void main()
     canvas.add(new Line(Point(10, 10), Point(100, 100)));
     canvas.add(
         new Line(Point(10, 30), Point(100, 120))
-        .setAppearance(Appearance(strokeColor: Colors.red, strokeWidth: 7))
+        .setStrokeColor(Colors.red)
+        .setStrokeWidth(7)
     );
     canvas.add(
         new Rectangle(Point(150, 10), Point(64, 64))

@@ -32,7 +32,7 @@ auto pointsToString(in Point[] points)
 struct ColorRGBA
 {
     ubyte r, g, b, a;
-    const toStringRGB()
+    const toStringRGBA()
     {
         return "rgba(%s, %s, %s, %s)".format(r, g, b, a);
     }
@@ -61,7 +61,7 @@ enum Colors : ColorRGBA
     purple  = ColorRGBA(128,   0, 128, 255),
     teal    = ColorRGBA(  0, 128, 128, 255),
     navy    = ColorRGBA(  0,   0, 128, 255),
-    none    = ColorRGBA(255, 255, 255,   0)
+    none    = ColorRGBA(  0,   0,   0,   0)
 }
 
 enum FillRule : string
@@ -86,7 +86,9 @@ struct Appearance
 class Line : Shape
 {
     private immutable Point p1, p2;
-    private Appearance appearance;
+    private uint strokeWidth = 1;
+    private float strokeOpacity = 1;
+    private ColorRGBA strokeColor = Colors.black;
 
     this(in Point p1, in Point p2)
     {
@@ -101,20 +103,21 @@ class Line : Shape
         enum fmt = "<line x1='%s' y1='%s' x2='%s' y2='%s' style='stroke:%s;stroke-width:%s;stroke-opacity=%s'/>\n";
         surface ~= fmt.format(
             p1.x, p1.y, p2.x, p2.y, 
-            appearance.strokeColor.toStringRGB, appearance.strokeWidth, appearance.strokeOpacity
+            strokeColor.toStringRGBA, strokeWidth, strokeOpacity
         );
     }
 }
 
+// todo
 class Circle : Shape
 {
     private immutable Point origin;
     private immutable uint radius;
-    private ColorRGBA fillColor;
-    private float fillOpacity;
     private ColorRGBA strokeColor;
     private uint strokeWidth;
     private float strokeOpacity;
+    private ColorRGBA fillColor;
+    private float fillOpacity;
 
     this(in Point origin, in uint radius)
     {
@@ -132,7 +135,7 @@ class Circle : Shape
     void render(ref string surface)
     {
         enum fmt = "<circle cx='%s' cy='%s' r='%s' stroke='%s' stroke-width='%s' fill='%s' fill-opacity='%s' stroke-opacity='%s'/>\n";
-        surface ~= fmt.format(origin.x, origin.y, radius, strokeColor.toStringRGB, strokeWidth, fillColor.toStringRGB, fillOpacity, strokeOpacity);
+        surface ~= fmt.format(origin.x, origin.y, radius, strokeColor.toStringRGBA, strokeWidth, fillColor.toStringRGBA, fillOpacity, strokeOpacity);
     }
 }
 
@@ -162,7 +165,7 @@ class Ellipse : Shape
     void render(ref string surface)
     {
         enum fmt = "<ellipse cx='%s' cy='%s' rx='%s' ry='%s' stroke='%s' stroke-width='%s' fill='%s' fill-opacity='%s' stroke-opacity='%s'/>\n";
-        surface ~= fmt.format(origin.x, origin.y, radius.x, radius.y, strokeColor.toStringRGB, strokeWidth, fillColor.toStringRGB, fillOpacity, strokeOpacity);
+        surface ~= fmt.format(origin.x, origin.y, radius.x, radius.y, strokeColor.toStringRGBA, strokeWidth, fillColor.toStringRGBA, fillOpacity, strokeOpacity);
     }
 }
 
@@ -194,7 +197,7 @@ class Rectangle : Shape
     void render(ref string surface)
     {
         enum fmt = "<rect x='%s' y='%s' width='%s' height='%s' rx='%s' ry='%s' fill='%s' stroke-width='%s' stroke='%s' fill-opacity='%s' stroke-opacity='%s'/>\n";
-        surface ~= fmt.format(xy.x, xy.y, size.x, size.y, radius, radius, fillColor.toStringRGB, strokeWidth, strokeColor.toStringRGB, fillOpacity, strokeOpacity);
+        surface ~= fmt.format(xy.x, xy.y, size.x, size.y, radius, radius, fillColor.toStringRGBA, strokeWidth, strokeColor.toStringRGBA, fillOpacity, strokeOpacity);
     }
 }
 
@@ -224,7 +227,7 @@ class Polygon : Shape
     void render(ref string surface)
     {
         enum fmt = "<polygon points='%s' style='fill:%s;stroke:%s;stroke-width:%s;fill-rule:%s;fill-opacity:%s;stroke-opacity:%s;'/>";
-        surface ~= fmt.format(points.pointsToString, fillColor.toStringRGB, strokeColor.toStringRGB, strokeWidth, fillRule, fillOpacity, strokeOpacity);
+        surface ~= fmt.format(points.pointsToString, fillColor.toStringRGBA, strokeColor.toStringRGBA, strokeWidth, fillRule, fillOpacity, strokeOpacity);
     }
 }
 
@@ -252,7 +255,7 @@ class Polyline : Shape
     void render(ref string surface)
     {
         enum fmt = "<polyline points='%s' style='fill:%s;stroke:%s;stroke-width:%s;fill-opacity:%s;stroke-opacity:%s;'/>";
-        surface ~= fmt.format(points.pointsToString, fillColor.toStringRGB, strokeColor.toStringRGB, strokeWidth, fillOpacity, strokeOpacity);
+        surface ~= fmt.format(points.pointsToString, fillColor.toStringRGBA, strokeColor.toStringRGBA, strokeWidth, fillOpacity, strokeOpacity);
     }
 }
 
@@ -294,7 +297,7 @@ class Path : Shape
     void render(ref string surface)
     {
         enum fmt = "<polyline points='%s' style='fill:%s;stroke:%s;stroke-width:%s;fill-opacity:%s;stroke-opacity:%s;'/>";
-        surface ~= fmt.format(points.pointsToString, fillColor.toStringRGB, strokeColor.toStringRGB, strokeWidth, fillOpacity, strokeOpacity);
+        surface ~= fmt.format(points.pointsToString, fillColor.toStringRGBA, strokeColor.toStringRGBA, strokeWidth, fillOpacity, strokeOpacity);
     }
 }
 
@@ -330,7 +333,7 @@ class Text : Shape
     void render(ref string surface)
     {
         enum fmt = "<text x='%s' y='%s' font-family='%s' font-size='%s' stroke='%s' stroke-width = '%s' fill='%s' fill-opacity='%s' stroke-opacity='%s' transform='rotate(%s)'>%s</text>\n";
-        surface ~= fmt.format(xy.x, xy.y, fontFamily, fontSize, strokeColor.toStringRGB, strokeWidth, fillColor.toStringRGB, fillOpacity, strokeOpacity, rotation, text);
+        surface ~= fmt.format(xy.x, xy.y, fontFamily, fontSize, strokeColor.toStringRGBA, strokeWidth, fillColor.toStringRGBA, fillOpacity, strokeOpacity, rotation, text);
     }
 }
 
