@@ -1,22 +1,34 @@
+// built with DMD V2.103.1
 module app;
+
+import tiny_svg.canvas;
 
 void main() 
 {
-    import tiny_svg;
+    /*
+        TODO:
+        - gradients (linear, radial)
+        - shadows
+        - blur
+        - canvas.scale <= shape.scale
+        - canvas.fill
+    */
+    test_shapes();
+}
 
-    /** TODO:
-        - 
-     */
-
+void test_shapes() 
+{
     SVGCanvas canvas = SVGCanvas(640, 640);
     
-    // draw
+    // lines
     canvas.add(new Line(Point(10, 10), Point(100, 100)));
     canvas.add(
         new Line(Point(10, 30), Point(100, 120))
         .setStrokeColor(Colors.red)
         .setStrokeWidth(7)
     );
+
+    // rectangle
     canvas.add(
         new Rectangle(Point(150, 10), Point(64, 64))
         .setFillColor(Colors.teal)
@@ -35,27 +47,31 @@ void main()
         .setStrokeWidth(7)
     );
 
+    // circle/ellipse
     new Circle(Point(canvas.width/2, canvas.height/2), 81)
         .setFillColor(Colors.gray)
         .setFillOpacity(1)
         .setStrokeColor(Colors.magenta)
         .setStrokeWidth(3)
-    .addToCanvas(canvas);
+        .addToCanvas(canvas);
     new Ellipse(Point(150, 350), Point(81, 64))
         .setFillColor(Colors.coral)
         .setStrokeColor(Colors.orange)
         .setStrokeWidth(2)
-    .addToCanvas(canvas);
+        .addToCanvas(canvas);
+
+    // text
     new Text(Point(150, 450), "Hello, world!")
         .setFontSize(30)
-    .addToCanvas(canvas);
+        .addToCanvas(canvas);
     new Text(Point(150, 550), "This is Tiny SVG.")
         .setFontSize(30)
         .setRotation(7)
         .setFillColor(Colors.yellow)
         .setStrokeColor(Colors.orange)
-    .addToCanvas(canvas);
+        .addToCanvas(canvas);
 
+    // polygon/polyline
     canvas.add(
         new Polygon([Point(250, 30), Point(250, 60), Point(300, 100), Point(320, 50), Point(320, 30)])
             .setFillColor(Colors.lime)
@@ -76,13 +92,21 @@ void main()
             .setStrokeWidth(2)
     );
 
+    // curve
+    new Curve(Point(420, 100), Point(620, 100))
+        .addToCanvas(canvas);
+    new Curve(Point(550, 300), Point(550, 400))
+        .setStrokeWidth(3)
+        .setCurveHeight(200)
+        .addToCanvas(canvas);
+
+    // path
     new Path(Point(500, 500))
         .lineTo(Point(550, 500))
         .moveTo(Point(0, 50))
         .moveTo(Point(50, 0))
-    .addToCanvas(canvas);
+        .addToCanvas(canvas);
 
     canvas.save("test.svg");
 }
-
 

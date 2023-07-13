@@ -1,11 +1,11 @@
-module tiny_svg;
+module tiny_svg.canvas;
 
-public import shapes;
+public import tiny_svg.shapes;
 
 /// SVG canvas object
 struct SVGCanvas 
 {   
-    private uint w, h;
+    private immutable uint w, h;
     private string surface;
     private Shape[] shapes;
 
