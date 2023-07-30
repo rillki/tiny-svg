@@ -66,6 +66,7 @@ void test_shapes()
     // polygon/polyline
     canvas.add(
         new Polygon([Point(250, 30), Point(250, 60), Point(300, 100), Point(320, 50), Point(320, 30)])
+        // new Polygon(250, 30, 250, 60, 300, 100, 320, 50, 320, 30)
             .setFillColor(Colors.lime)
             .setStrokeColor(Colors.magenta)
             .setStrokeWidth(2)
@@ -98,6 +99,12 @@ void test_shapes()
         .moveTo(Point(0, 50))
         .moveTo(Point(50, 0))
         .addToCanvas(canvas);
+
+    // translate
+    canvas.translate(500, 500);
+    canvas.add(new Rectangle(10, 10, 10, 10).setFillColor(Colors.gold));
+    canvas.resetTranslation();
+    canvas.add(new Rectangle(10, 10, 10, 10).setFillColor(Colors.gold));
 
     canvas.save("test.svg");
 }

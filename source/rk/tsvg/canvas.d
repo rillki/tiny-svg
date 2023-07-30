@@ -8,6 +8,7 @@ struct SVGCanvas
     private immutable uint w, h;
     private string surface;
     private Shape[] shapes;
+    private int translateX = 0, translateY = 0;
 
     this(in uint width, in uint height) 
     {
@@ -27,16 +28,29 @@ struct SVGCanvas
 
     void add(Shape shape) 
     {
+        shape.translate(translateX, translateY);
         shapes ~= shape;
     }
 
     void undo() 
     {
         import std.algorithm: remove;
-        if (shapes.length > 0) 
+        immutable len = shapes.length;
+        if (len > 0) 
         {
-            shapes = shapes.remove(shapes.length - 1);
+            shapes = shapes.remove(len - 1);
         }
+    }
+
+    void translate(in int x, in int y) 
+    {
+        translateX += x;
+        translateY += y;
+    }
+
+    void resetTranslation()
+    {
+        translateX = translateY = 0;
     }
 
     void save(in string name) 

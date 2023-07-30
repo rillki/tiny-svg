@@ -73,34 +73,39 @@ enum FillRule : string
 
 class Line : Shape
 {
-    private immutable Point p1, p2;
+    private Point startPoint, endPoint;
 
     private uint strokeWidth = 1;
     private float strokeOpacity = 1;
     private ColorRGBA strokeColor = Colors.black;
 
-    this(in Point p1, in Point p2)
+    this(in Point startPoint, in Point endPoint)
     {
-        this.p1 = p1;
-        this.p2 = p2;
+        this.startPoint = startPoint;
+        this.endPoint = endPoint;
+    }
+
+    this(in int startX, in int startY, in int endX, in int endY) 
+    {
+        this(Point(startX, startY), Point(endX, endY));
     }
 
     mixin GenerateSetters;
 
     void translate(in int x, in int y)
     {
-        p1.x += x;
-        p1.y += y;
+        startPoint.x += x;
+        startPoint.y += y;
 
-        p2.x += x;
-        p2.y += y;
+        endPoint.x += x;
+        endPoint.y += y;
     }
 
     void render(ref string surface)
     {
         enum fmt = "<line x1='%s' y1='%s' x2='%s' y2='%s' style='stroke:%s;stroke-width:%s;stroke-opacity=%s'/>\n";
         surface ~= fmt.format(
-            p1.x, p1.y, p2.x, p2.y, 
+            startPoint.x, startPoint.y, endPoint.x, endPoint.y, 
             strokeColor.toStringRGBA, strokeWidth, strokeOpacity
         );
     }
@@ -109,8 +114,8 @@ class Line : Shape
 // todo
 class Circle : Shape
 {
-    private immutable Point origin;
-    private immutable uint radius;
+    private Point origin;
+    private uint radius;
 
     private uint strokeWidth = 1;
     private float strokeOpacity = 1;
@@ -123,6 +128,11 @@ class Circle : Shape
     {
         this.origin = origin;
         this.radius = radius;
+    }
+
+    this(in int originX, in int originY, in int radius) 
+    {
+        this(Point(originX, originY), radius);
     }
 
     mixin GenerateSetters;
@@ -147,8 +157,8 @@ class Circle : Shape
 
 class Ellipse : Shape
 {
-    private immutable Point origin;
-    private immutable Point radius;
+    private Point origin;
+    private Point radius;
 
     private uint strokeWidth = 1;
     private float strokeOpacity = 1;
@@ -161,6 +171,11 @@ class Ellipse : Shape
     {
         this.origin = origin;
         this.radius = radius;
+    }
+
+    this(in int originX, in int originY, in int radiusX, in int radiusY) 
+    {
+        this(Point(originX, originY), Point(radiusX, radiusY));
     }
 
     mixin GenerateSetters;
@@ -185,8 +200,8 @@ class Ellipse : Shape
 
 class Rectangle : Shape
 {
-    private immutable Point position;
-    private immutable Point size;
+    private Point position;
+    private Point size;
     
     private uint radius = 0;
     private uint strokeWidth = 1;
@@ -200,6 +215,11 @@ class Rectangle : Shape
     {
         this.position = position;
         this.size = size;
+    }
+
+    this(in int x, in int y, in int width, in int height)
+    {
+        this(Point(x, y), Point(width, height));
     }
 
     mixin GenerateSetters;
@@ -224,7 +244,7 @@ class Rectangle : Shape
 
 class Polygon : Shape
 {
-    private const Point[] points; 
+    private Point[] points; 
 
     private uint strokeWidth = 1;
     private float strokeOpacity = 1;
@@ -234,9 +254,22 @@ class Polygon : Shape
     private string fillRule = FillRule.nonzero;
     private ColorRGBA fillColor = Colors.none;
 
-    this(in Point[] points)
+    this(Point[] points)
     {
         this.points = points;
+    }
+
+    this(in int[] coords ...) 
+    in (coords.length > 0, "At least one point must be added!")
+    in (coords.length % 2 == 0, "Incomplete number of points provided, must be even: (x, y) per point!") 
+    {   
+        import std.range: iota;
+        foreach (i; iota(0, coords.length, 2)) 
+        {
+            import std.stdio;
+            i.writeln;
+            this.points ~= Point(coords[i], coords[i+1]);
+        }
     }
 
     mixin GenerateSetters;
@@ -265,7 +298,7 @@ class Polygon : Shape
 
 class Polyline : Shape
 {
-    private const Point[] points; 
+    private Point[] points; 
 
     private uint strokeWidth = 1;
     private float strokeOpacity = 1;
@@ -274,9 +307,22 @@ class Polyline : Shape
     private float fillOpacity = 1;
     private ColorRGBA fillColor = Colors.none;
 
-    this(in Point[] points)
+    this(Point[] points)
     {
         this.points = points;
+    }
+
+    this(in int[] coords ...) 
+    in (coords.length > 0, "At least one point must be added!")
+    in (coords.length % 2 == 0, "Incomplete number of points provided, must be even: (x, y) per point!") 
+    {   
+        import std.range: iota;
+        foreach (i; iota(0, coords.length, 2)) 
+        {
+            import std.stdio;
+            i.writeln;
+            this.points ~= Point(coords[i], coords[i+1]);
+        }
     }
 
     mixin GenerateSetters;
@@ -305,7 +351,7 @@ class Polyline : Shape
 
 class Curve : Shape 
 {
-    private immutable Point start, end;
+    private Point start, end;
     private int curveHeight, curvature;
 
     private uint strokeWidth = 1;
@@ -320,6 +366,11 @@ class Curve : Shape
         this.start = start;
         this.end = Point(end.x - start.x, end.y - start.y);
         this.curveHeight = this.curvature = (this.end.x + this.end.y) / 2;
+    }
+
+    this(in int startX, in int startY, in int endX, in int endY)
+    {
+        this(Point(startX, startY), Point(endX, endY));
     }
 
     mixin GenerateSetters;
@@ -364,6 +415,19 @@ class Path : Shape
         this.points ~= startFrom;
     }
 
+    this(in int[] coords ...) 
+    in (coords.length > 0, "At least one point must be added!")
+    in (coords.length % 2 == 0, "Incomplete number of points provided, must be even: (x, y) per point!") 
+    {   
+        import std.range: iota;
+        foreach (i; iota(0, coords.length, 2)) 
+        {
+            import std.stdio;
+            i.writeln;
+            this.points ~= Point(coords[i], coords[i+1]);
+        }
+    }
+
     mixin GenerateSetters;
 
     void translate(in int x, in int y)
@@ -404,8 +468,8 @@ class Path : Shape
 
 class Text : Shape
 {
-    private immutable Point xy;
-    private immutable string text;
+    private Point xy;
+    private string text;
     
     private string fontFamily = "arial";
     private uint fontSize = 10;
@@ -422,6 +486,11 @@ class Text : Shape
     {
         this.xy = xy;
         this.text = text;
+    }
+
+    this(in int x, in int y, in string text)
+    {
+        this(Point(x, y), text);
     }
 
     mixin GenerateSetters;
@@ -451,7 +520,7 @@ mixin template GenerateSetters()
     import std.algorithm : canFind;
     static foreach (idx, field; typeof(this).tupleof)
     {
-        static if (__traits(getVisibility, field) == "private" && !typeof(field).stringof.canFind("immutable", "const"))
+        static if (__traits(getVisibility, field) == "private")
         {
             mixin(q{
                 auto set%s(typeof(this.tupleof[idx]) _)
