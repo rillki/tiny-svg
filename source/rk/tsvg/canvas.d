@@ -53,6 +53,16 @@ struct SVGCanvas
         translateX = translateY = 0;
     }
 
+    void fill(in ColorRGBA color = Colors.white)
+    {
+        immutable saveTranslateX = translateX;
+        immutable saveTranslateY = translateY;
+
+        this.resetTranslation();
+        this.add(new Rectangle(0, 0, this.width, this.height).setStrokeWidth(0).setFillColor(color));
+        this.translate(saveTranslateX, saveTranslateY);
+    }
+
     void save(in string name) 
     {   
         import std.stdio  : File;

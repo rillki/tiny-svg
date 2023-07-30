@@ -106,6 +106,11 @@ void test_shapes()
     canvas.resetTranslation();
     canvas.add(new Rectangle(10, 10, 10, 10).setFillColor(Colors.gold));
 
+    // fill
+    // canvas.fill(Colors.white);
+
+    
+
     canvas.save("test.svg");
 }
 
