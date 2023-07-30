@@ -11,7 +11,7 @@ void main()
 void test_shapes() 
 {
     SVGCanvas canvas = SVGCanvas(640, 640);
-    
+
     // lines
     canvas.add(new Line(Point(10, 10), Point(100, 100)));
     canvas.add(
@@ -109,7 +109,9 @@ void test_shapes()
     // fill
     // canvas.fill(Colors.white);
 
-    
+    // scale
+    // canvas.scale(2);
+
 
     canvas.save("test.svg");
 }

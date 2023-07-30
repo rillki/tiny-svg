@@ -5,7 +5,7 @@ public import rk.tsvg.shapes;
 /// SVG canvas object
 struct SVGCanvas 
 {   
-    private immutable uint w, h;
+    private uint w, h;
     private string surface;
     private Shape[] shapes;
     private int translateX = 0, translateY = 0;
@@ -34,7 +34,7 @@ struct SVGCanvas
 
     void undo() 
     {
-        import std.algorithm: remove;
+        import std.algorithm : remove;
         immutable len = shapes.length;
         if (len > 0) 
         {
@@ -63,15 +63,32 @@ struct SVGCanvas
         this.translate(saveTranslateX, saveTranslateY);
     }
 
+    void scale(in float factor)
+    {
+        import std.parallelism : parallel;
+        import std.stdio : writeln;
+
+        w.writeln;
+        h.writeln;
+        w.scaleBy(factor);
+        h.scaleBy(factor);
+        w.writeln;
+        h.writeln;
+        foreach (ref shape; shapes.parallel)
+        {
+            shape.scale(factor);
+        }
+    }
+
     void save(in string name) 
     {   
         import std.stdio  : File;
         import std.string : format;
 
         // add header
-        enum fmt = "<svg width='%s px' height='%s px' xmlns='%s' version='%s' xmlns:xlink='%s'>\n";
-        surface = fmt.format(w, h, "http://www.w3.org/2000/svg", "1.1", "http://www.w3.org/1999/xlink");
-        surface ~= "<path d='M 200 200'/>";
+        enum fmt = "<svg width='%s px' height='%s px' viewBox='0 0 %s %s' xmlns='%s' version='%s' xmlns:xlink='%s'>\n";
+        surface = fmt.format(w, h, w, h, "http://www.w3.org/2000/svg", "1.1", "http://www.w3.org/1999/xlink");
+
         // render all shapes
         foreach (shape; shapes) 
         {
@@ -80,6 +97,9 @@ struct SVGCanvas
 
         // save file
         File(name, "w").write(surface ~ "</svg>");
+
+        // reset
+        surface = null;
     }
 }
 

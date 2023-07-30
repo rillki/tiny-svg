@@ -1,20 +1,83 @@
 module rk.tsvg.shapes;
 
+import std.conv : to;
 import std.string : format;
 
 interface Shape
 {   
     void translate(in int x, in int y);
+    void scale(in float factor);
     void render(ref string surface);
 }
 
 struct Point
 {
     int x, y;
-    auto opBinary(string op)(in Point p)
+    auto opBinary(string op)(in Point rhs)
     {
-        static if(op == "+") return Point(x + p.x, y + p.y);
-        else static if(op == "-") return Point(x - p.x, y - p.y);
+        static if(op == "+") return Point(x + rhs.x, y + rhs.y);
+        else static if(op == "-") return Point(x - rhs.x, y - rhs.y);
+        else static if(op == "*") return Point(x * rhs.x, y * rhs.y);
+        else static if(op == "/") return Point(x / rhs.x, y / rhs.y);
+        else static assert(0, "Operator '" ~ op ~ "' not supported!");
+    }
+
+    auto opBinaryRight(string op)(in Point lhs)
+    {
+        static if(op == "+") return Point(x + lhs.x, y + lhs.y);
+        else static if(op == "-") return Point(x - lhs.x, y - lhs.y);
+        else static if(op == "*") return Point(x * lhsp.x, y * lhs.y);
+        else static if(op == "/") return Point(x / lhs.x, y / lhs.y);
+        else static assert(0, "Operator '" ~ op ~ "' not supported!");
+    }
+
+    auto opOpAssign(string op)(in Point rhs)
+    {
+        static if(op == "+")
+        {
+            x += rhs.x;
+            y += rhs.y;
+        } 
+        else static if(op == "-")
+        {
+            x -= rhs.x;
+            y -= rhs.y;
+        }
+        else static if(op == "*")
+        {
+            x *= rhs.x;
+            y *= rhs.y;
+        }
+        else static if(op == "/") 
+        {
+            x /= rhs.x;
+            y /= rhs.y;
+        }
+        else static assert(0, "Operator '" ~ op ~ "' not supported!");
+    }
+
+    auto opOpAssign(string op)(in float rhs)
+    {
+        static if(op == "+")
+        {
+            x += rhs.to!int;
+            y += rhs.to!int;
+        } 
+        else static if(op == "-")
+        {
+            x -= rhs.to!int;
+            y -= rhs.to!int;
+        }
+        else static if(op == "*")
+        {
+            x = (x * rhs).to!int;
+            y = (y * rhs).to!int;
+        }
+        else static if(op == "/") 
+        {
+            x = (x / rhs).to!int;
+            y = (y / rhs).to!int;
+        }
         else static assert(0, "Operator '" ~ op ~ "' not supported!");
     }
 }
@@ -94,11 +157,16 @@ class Line : Shape
 
     void translate(in int x, in int y)
     {
-        startPoint.x += x;
-        startPoint.y += y;
+        startPoint += Point(x, y);
+        endPoint += Point(x, y);
+    }
 
-        endPoint.x += x;
-        endPoint.y += y;
+    void scale(in float factor)
+    {
+        startPoint *= factor;
+        endPoint *= factor; 
+
+        strokeWidth.scaleBy(factor);
     }
 
     void render(ref string surface)
@@ -139,8 +207,15 @@ class Circle : Shape
 
     void translate(in int x, in int y)
     {
-        origin.x += x;
-        origin.y += y;
+        origin += Point(x, y);
+    }
+
+    void scale(in float factor)
+    {
+        origin *= factor;
+
+        radius.scaleBy(factor);
+        strokeWidth.scaleBy(factor);
     }
 
     void render(ref string surface)
@@ -182,8 +257,15 @@ class Ellipse : Shape
 
     void translate(in int x, in int y)
     {
-        origin.x += x;
-        origin.y += y;
+        origin += Point(x, y);
+    }
+
+    void scale(in float factor)
+    {
+        origin *= factor;
+        radius *= factor;
+
+        strokeWidth.scaleBy(factor);
     }
 
     void render(ref string surface)
@@ -226,8 +308,16 @@ class Rectangle : Shape
 
     void translate(in int x, in int y)
     {
-        position.x += x;
-        position.y += y;
+        position += Point(x, y);
+    }
+
+    void scale(in float factor) 
+    {
+        position *= factor;
+        size *= factor;
+
+        radius.scaleBy(factor);
+        strokeWidth.scaleBy(factor);
     }
 
     void render(ref string surface)
@@ -277,11 +367,21 @@ class Polygon : Shape
     void translate(in int x, in int y)
     {
         import std.parallelism: parallel;
-        foreach (point; points.parallel)
+        foreach (ref point; points.parallel)
         {
-            point.x += x;
-            point.y += y;
+            point += Point(x, y);
         }
+    }
+
+    void scale(in float factor) 
+    {
+        import std.parallelism: parallel;
+        foreach (ref point; points.parallel)
+        {
+            point *= factor;
+        }
+
+        strokeWidth.scaleBy(factor);
     }
 
     void render(ref string surface)
@@ -330,11 +430,21 @@ class Polyline : Shape
     void translate(in int x, in int y)
     {
         import std.parallelism: parallel;
-        foreach (point; points.parallel)
+        foreach (ref point; points.parallel)
         {
-            point.x += x;
-            point.y += y;
+            point += Point(x, y);
         }
+    }
+
+    void scale(in float factor) 
+    {
+        import std.parallelism: parallel;
+        foreach (ref point; points.parallel)
+        {
+            point *= factor;
+        }
+
+        strokeWidth.scaleBy(factor);
     }
 
     void render(ref string surface)
@@ -377,14 +487,21 @@ class Curve : Shape
 
     void translate(in int x, in int y)
     {
-        start.x += x;
-        start.y += y;
-
-        end.x += x;
-        end.y += y;
+        start += Point(x, y);
+        end += Point(x, y);
 
         curveHeight += (x + y) / 2;
         curvature += (x + y) / 2;
+    }
+
+    void scale(in float factor) 
+    {
+        start *= factor;
+        end *= factor;
+
+        curveHeight.scaleBy(factor);
+        curvature.scaleBy(factor);
+        strokeWidth.scaleBy(factor);
     }
 
     void render(ref string surface)
@@ -433,11 +550,21 @@ class Path : Shape
     void translate(in int x, in int y)
     {
         import std.parallelism: parallel;
-        foreach (point; points.parallel)
+        foreach (ref point; points.parallel)
         {
-            point.x += x;
-            point.y += y;
+            point += Point(x, y);
         }
+    }
+
+    void scale(in float factor) 
+    {
+        import std.parallelism: parallel;
+        foreach (ref point; points.parallel)
+        {
+            point *= factor;
+        }
+
+        strokeWidth.scaleBy(factor);
     }
 
     void render(ref string surface)
@@ -497,8 +624,15 @@ class Text : Shape
 
     void translate(in int x, in int y)
     {
-        xy.x += x;
-        xy.y += y;
+        xy += Point(x, y);
+    }
+
+    void scale(in float factor) 
+    {
+        xy *= factor;
+
+        fontSize.scaleBy(factor);
+        strokeWidth.scaleBy(factor);
     }
 
     void render(ref string surface)
@@ -511,6 +645,11 @@ class Text : Shape
             fillColor.toStringRGBA, fillOpacity, strokeOpacity, rotation, text
         );
     }
+}
+
+void scaleBy(T)(ref T t, in float factor)
+{
+    t = (t * factor).to!T;
 }
 
 /// generate setters for all mutable fields
