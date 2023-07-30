@@ -1,6 +1,6 @@
-module tiny_svg.canvas;
+module rk.tsvg.canvas;
 
-public import tiny_svg.shapes;
+public import rk.tsvg.shapes;
 
 /// SVG canvas object
 struct SVGCanvas 

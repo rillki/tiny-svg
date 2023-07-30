@@ -1,9 +1,10 @@
-module tiny_svg.shapes;
+module rk.tsvg.shapes;
 
 import std.string : format;
 
 interface Shape
 {   
+    void translate(in int x, in int y);
     void render(ref string surface);
 }
 
@@ -86,6 +87,15 @@ class Line : Shape
 
     mixin GenerateSetters;
 
+    void translate(in int x, in int y)
+    {
+        p1.x += x;
+        p1.y += y;
+
+        p2.x += x;
+        p2.y += y;
+    }
+
     void render(ref string surface)
     {
         enum fmt = "<line x1='%s' y1='%s' x2='%s' y2='%s' style='stroke:%s;stroke-width:%s;stroke-opacity=%s'/>\n";
@@ -116,6 +126,12 @@ class Circle : Shape
     }
 
     mixin GenerateSetters;
+
+    void translate(in int x, in int y)
+    {
+        origin.x += x;
+        origin.y += y;
+    }
 
     void render(ref string surface)
     {
@@ -148,6 +164,12 @@ class Ellipse : Shape
     }
 
     mixin GenerateSetters;
+
+    void translate(in int x, in int y)
+    {
+        origin.x += x;
+        origin.y += y;
+    }
 
     void render(ref string surface)
     {
@@ -182,6 +204,12 @@ class Rectangle : Shape
 
     mixin GenerateSetters;
 
+    void translate(in int x, in int y)
+    {
+        position.x += x;
+        position.y += y;
+    }
+
     void render(ref string surface)
     {
         enum fmt = 
@@ -213,6 +241,16 @@ class Polygon : Shape
 
     mixin GenerateSetters;
 
+    void translate(in int x, in int y)
+    {
+        import std.parallelism: parallel;
+        foreach (point; points.parallel)
+        {
+            point.x += x;
+            point.y += y;
+        }
+    }
+
     void render(ref string surface)
     {
         enum fmt = 
@@ -243,6 +281,16 @@ class Polyline : Shape
 
     mixin GenerateSetters;
 
+    void translate(in int x, in int y)
+    {
+        import std.parallelism: parallel;
+        foreach (point; points.parallel)
+        {
+            point.x += x;
+            point.y += y;
+        }
+    }
+
     void render(ref string surface)
     {
         enum fmt = 
@@ -255,7 +303,8 @@ class Polyline : Shape
     }
 }
 
-class Curve : Shape {
+class Curve : Shape 
+{
     private immutable Point start, end;
     private int curveHeight, curvature;
 
@@ -274,6 +323,18 @@ class Curve : Shape {
     }
 
     mixin GenerateSetters;
+
+    void translate(in int x, in int y)
+    {
+        start.x += x;
+        start.y += y;
+
+        end.x += x;
+        end.y += y;
+
+        curveHeight += (x + y) / 2;
+        curvature += (x + y) / 2;
+    }
 
     void render(ref string surface)
     {
@@ -304,7 +365,28 @@ class Path : Shape
     }
 
     mixin GenerateSetters;
-    
+
+    void translate(in int x, in int y)
+    {
+        import std.parallelism: parallel;
+        foreach (point; points.parallel)
+        {
+            point.x += x;
+            point.y += y;
+        }
+    }
+
+    void render(ref string surface)
+    {
+        enum fmt = 
+            "<polyline points='%s' " ~ 
+            "style='fill:%s;stroke:%s;stroke-width:%s;fill-opacity:%s;stroke-opacity:%s;'/>";
+        surface ~= fmt.format(
+            points.pointsToString, 
+            fillColor.toStringRGBA, strokeColor.toStringRGBA, strokeWidth, fillOpacity, strokeOpacity
+        );
+    }
+
     /// Draw path by setting coordinates
     auto lineTo(in Point point)
     {
@@ -317,17 +399,6 @@ class Path : Shape
     {
         points ~= points[$-1] + point;
         return this;
-    }
-
-    void render(ref string surface)
-    {
-        enum fmt = 
-            "<polyline points='%s' " ~ 
-            "style='fill:%s;stroke:%s;stroke-width:%s;fill-opacity:%s;stroke-opacity:%s;'/>";
-        surface ~= fmt.format(
-            points.pointsToString, 
-            fillColor.toStringRGBA, strokeColor.toStringRGBA, strokeWidth, fillOpacity, strokeOpacity
-        );
     }
 }
 
@@ -354,6 +425,12 @@ class Text : Shape
     }
 
     mixin GenerateSetters;
+
+    void translate(in int x, in int y)
+    {
+        xy.x += x;
+        xy.y += y;
+    }
 
     void render(ref string surface)
     {

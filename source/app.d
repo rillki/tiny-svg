@@ -1,18 +1,10 @@
 // built with DMD V2.103.1
 module app;
 
-import tiny_svg.canvas;
+import rk.tsvg.canvas;
 
 void main() 
 {
-    /*
-        TODO:
-        - gradients (linear, radial)
-        - shadows
-        - blur
-        - canvas.scale <= shape.scale
-        - canvas.fill
-    */
     test_shapes();
 }
 
