@@ -1,6 +1,8 @@
 module rk.tsvg.canvas;
 
+public import rk.tsvg.colors;
 public import rk.tsvg.shapes;
+public import rk.tsvg.filters;
 
 /// SVG canvas object
 struct SVGCanvas 
@@ -8,6 +10,7 @@ struct SVGCanvas
     private uint w, h;
     private string surface;
     private Shape[] shapes;
+    private Filter[] filters;
     private int translateX = 0, translateY = 0;
 
     this(in uint width, in uint height) 
@@ -26,13 +29,21 @@ struct SVGCanvas
         return h;
     }
 
+    /// add shape
     void add(Shape shape) 
     {
         shape.translate(translateX, translateY);
         shapes ~= shape;
     }
 
-    void undo() 
+    /// add filter
+    void add(Filter filter)
+    {
+        filters ~= filter;
+    }
+
+    /// undo shape operation, does not remove filters
+    void undo()
     {
         import std.algorithm : remove;
         immutable len = shapes.length;
@@ -89,6 +100,14 @@ struct SVGCanvas
         enum fmt = "<svg width='%s px' height='%s px' viewBox='0 0 %s %s' xmlns='%s' version='%s' xmlns:xlink='%s'>\n";
         surface = fmt.format(w, h, w, h, "http://www.w3.org/2000/svg", "1.1", "http://www.w3.org/1999/xlink");
 
+        // render all filters
+        surface ~= "<defs>";
+        foreach (filter; filters)
+        {
+            surface ~= filter.construct();
+        }
+        surface ~= "</defs>";
+
         // render all shapes
         foreach (shape; shapes) 
         {
@@ -103,9 +122,8 @@ struct SVGCanvas
     }
 }
 
-void addToCanvas(Shape shape, ref SVGCanvas canvas) 
+void addToCanvas(T)(T t, ref SVGCanvas canvas) 
 {
-    canvas.add(shape);
+    canvas.add(t);
 }
-
 
