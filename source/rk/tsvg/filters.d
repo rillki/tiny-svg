@@ -117,6 +117,32 @@ class LinearFill : Filter
     }
 }
 
+class RadialFill : Filter
+{
+    private immutable string id;
+    private ColorRGBA colorA;
+    private ColorRGBA colorB;
+    private float opacityA = 1;
+    private float opacityB = 1;
+
+    this(in string id)
+    {
+        this.id = id;
+    }
+
+    mixin GenerateSetters;
+
+    string construct()
+    {
+        enum fmt = 
+            "<radialGradient id='%s' cx='50%' cy='50%' r='50%' fx='50%' fy='50%'>" ~ 
+            "<stop offset='0%'' style='stop-color:%s;stop-opacity:%s'/>" ~ 
+            "<stop offset='100%'' style='stop-color:%s;stop-opacity:%s'/>" ~ 
+            "</radialGradient>";
+        return fmt.format(id, colorA.toStringRGBA, opacityA, colorB.toStringRGBA, opacityB);
+    }
+}
+
 /// generate setters for all mutable fields
 mixin template GenerateSetters()
 {   
