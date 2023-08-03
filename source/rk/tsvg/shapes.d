@@ -110,6 +110,8 @@ class Line : Shape
     private float strokeOpacity = 1;
     private ColorRGBA strokeColor = Colors.black;
 
+    private string filter = DefaultFilter.id;
+
     this(in Point startPoint, in Point endPoint)
     {
         this.startPoint = startPoint;
@@ -139,15 +141,16 @@ class Line : Shape
 
     void render(ref string surface)
     {
-        enum fmt = "<line x1='%s' y1='%s' x2='%s' y2='%s' style='stroke:%s;stroke-width:%s;stroke-opacity=%s'/>\n";
+        enum fmt = 
+            "<line x1='%s' y1='%s' x2='%s' y2='%s' " ~ 
+            "style='stroke:%s;stroke-width:%s;stroke-opacity:%s;filter:url(#%s)'/>\n";
         surface ~= fmt.format(
             startPoint.x, startPoint.y, endPoint.x, endPoint.y, 
-            strokeColor.toStringRGBA, strokeWidth, strokeOpacity
+            strokeColor.toStringRGBA, strokeWidth, strokeOpacity, filter
         );
     }
 }
 
-// todo
 class Circle : Shape
 {
     private Point origin;
@@ -159,6 +162,9 @@ class Circle : Shape
 
     private float fillOpacity = 1;
     private ColorRGBA fillColor = Colors.none;
+
+    private string filter = DefaultFilter.id;
+    private string gradient = null;
 
     this(in Point origin, in uint radius)
     {
@@ -190,10 +196,12 @@ class Circle : Shape
     {
         enum fmt = 
             "<circle cx='%s' cy='%s' r='%s' " ~ 
-            "stroke='%s' stroke-width='%s' fill='%s' fill-opacity='%s' stroke-opacity='%s'/>\n";
+            "stroke='%s' stroke-width='%s' fill='%s' fill-opacity='%s' stroke-opacity='%s' filter='url(#%s)'/>\n";
         surface ~= fmt.format(
             origin.x, origin.y, radius, 
-            strokeColor.toStringRGBA, strokeWidth, fillColor.toStringRGBA, fillOpacity, strokeOpacity
+            strokeColor.toStringRGBA, strokeWidth, 
+            gradient is null ? fillColor.toStringRGBA : "url(#%s)".format(gradient), 
+            fillOpacity, strokeOpacity, filter
         );
     }
 }
@@ -209,6 +217,9 @@ class Ellipse : Shape
 
     private float fillOpacity = 1;
     private ColorRGBA fillColor = Colors.none;
+
+    private string filter = DefaultFilter.id;
+    private string gradient = null;
 
     this(in Point origin, in Point radius)
     {
@@ -240,10 +251,12 @@ class Ellipse : Shape
     {
         enum fmt = 
             "<ellipse cx='%s' cy='%s' rx='%s' ry='%s' " ~
-            "stroke='%s' stroke-width='%s' fill='%s' fill-opacity='%s' stroke-opacity='%s'/>\n";
+            "stroke='%s' stroke-width='%s' fill='%s' fill-opacity='%s' stroke-opacity='%s' filter='url(#%s)'/>\n";
         surface ~= fmt.format(
             origin.x, origin.y, radius.x, radius.y, 
-            strokeColor.toStringRGBA, strokeWidth, fillColor.toStringRGBA, fillOpacity, strokeOpacity
+            strokeColor.toStringRGBA, strokeWidth, 
+            gradient is null ? fillColor.toStringRGBA : "url(#%s)".format(gradient), 
+            fillOpacity, strokeOpacity, filter
         );
     }
 }
@@ -260,6 +273,9 @@ class Rectangle : Shape
 
     private float fillOpacity = 1;
     private ColorRGBA fillColor = Colors.none;
+
+    private string filter = DefaultFilter.id;
+    private string gradient = null;
 
     this(in Point position, in Point size)
     {
@@ -292,10 +308,11 @@ class Rectangle : Shape
     {
         enum fmt = 
             "<rect x='%s' y='%s' width='%s' height='%s' rx='%s' ry='%s' " ~ 
-            "fill='%s' stroke-width='%s' stroke='%s' fill-opacity='%s' stroke-opacity='%s'/>\n";
+            "fill='%s' stroke-width='%s' stroke='%s' fill-opacity='%s' stroke-opacity='%s' filter='url(#%s)'/>\n";
         surface ~= fmt.format(
             position.x, position.y, size.x, size.y, radius, radius, 
-            fillColor.toStringRGBA, strokeWidth, strokeColor.toStringRGBA, fillOpacity, strokeOpacity
+            gradient is null ? fillColor.toStringRGBA : "url(#%s)".format(gradient), 
+            strokeWidth, strokeColor.toStringRGBA, fillOpacity, strokeOpacity, filter
         );
     }
 }
@@ -311,6 +328,9 @@ class Polygon : Shape
     private float fillOpacity = 1;
     private string fillRule = FillRule.nonzero;
     private ColorRGBA fillColor = Colors.none;
+
+    private string filter = DefaultFilter.id;
+    private string gradient = null;
 
     this(Point[] points)
     {
@@ -356,10 +376,11 @@ class Polygon : Shape
     {
         enum fmt = 
             "<polygon points='%s' " ~ 
-            "style='fill:%s;stroke:%s;stroke-width:%s;fill-rule:%s;fill-opacity:%s;stroke-opacity:%s;'/>";
+            "style='fill:%s;stroke:%s;stroke-width:%s;fill-rule:%s;fill-opacity:%s;stroke-opacity:%s;filter:url(#%s)'/>\n";
         surface ~= fmt.format(
             points.pointsToString, 
-            fillColor.toStringRGBA, strokeColor.toStringRGBA, strokeWidth, fillRule, fillOpacity, strokeOpacity
+            gradient is null ? fillColor.toStringRGBA : "url(#%s)".format(gradient), 
+            strokeColor.toStringRGBA, strokeWidth, fillRule, fillOpacity, strokeOpacity, filter
         );
     }
 }
@@ -374,6 +395,9 @@ class Polyline : Shape
 
     private float fillOpacity = 1;
     private ColorRGBA fillColor = Colors.none;
+
+    private string filter = DefaultFilter.id;
+    private string gradient = null;
 
     this(Point[] points)
     {
@@ -419,10 +443,11 @@ class Polyline : Shape
     {
         enum fmt = 
             "<polyline points='%s' " ~ 
-            "style='fill:%s;stroke:%s;stroke-width:%s;fill-opacity:%s;stroke-opacity:%s;'/>";
+            "style='fill:%s;stroke:%s;stroke-width:%s;fill-opacity:%s;stroke-opacity:%s;filter:url(#%s)'/>\n";
         surface ~= fmt.format(
             points.pointsToString, 
-            fillColor.toStringRGBA, strokeColor.toStringRGBA, strokeWidth, fillOpacity, strokeOpacity
+            gradient is null ? fillColor.toStringRGBA : "url(#%s)".format(gradient), 
+            strokeColor.toStringRGBA, strokeWidth, fillOpacity, strokeOpacity, filter
         );
     }
 }
@@ -438,6 +463,9 @@ class Curve : Shape
 
     private float fillOpacity = 1;
     private ColorRGBA fillColor = Colors.none;
+
+    private string filter = DefaultFilter.id;
+    private string gradient = null;
 
     this(in Point start, in Point end)
     {
@@ -476,10 +504,12 @@ class Curve : Shape
     {
         enum fmt = 
             "<path d='M %s %s q %s %s %s %s' " ~ 
-            "stroke='%s' stroke-width='%s' stroke-opacity='%s' fill='%s' fill-opacity='%s'/>";
+            "stroke='%s' stroke-width='%s' stroke-opacity='%s' fill='%s' fill-opacity='%s' filter='url(#%s)'/>\n";
         surface ~= fmt.format(
             start.x, start.y, curveHeight, curvature, end.x, end.y,
-            strokeColor.toStringRGBA, strokeWidth, strokeOpacity, fillColor.toStringRGBA, fillOpacity
+            strokeColor.toStringRGBA, strokeWidth, strokeOpacity,
+            gradient is null ? fillColor.toStringRGBA : "url(#%s)".format(gradient), 
+            fillOpacity, filter
         );
     }
 }
@@ -494,6 +524,9 @@ class Path : Shape
 
     private float fillOpacity = 1;
     private ColorRGBA fillColor = Colors.none;
+
+    private string filter = DefaultFilter.id;
+    private string gradient = null;
 
     this(in Point startFrom)
     {
@@ -539,10 +572,11 @@ class Path : Shape
     {
         enum fmt = 
             "<polyline points='%s' " ~ 
-            "style='fill:%s;stroke:%s;stroke-width:%s;fill-opacity:%s;stroke-opacity:%s;'/>";
+            "style='fill:%s;stroke:%s;stroke-width:%s;fill-opacity:%s;stroke-opacity:%s;filter:url(#%s)'/>\n";
         surface ~= fmt.format(
             points.pointsToString, 
-            fillColor.toStringRGBA, strokeColor.toStringRGBA, strokeWidth, fillOpacity, strokeOpacity
+            gradient is null ? fillColor.toStringRGBA : "url(#%s)".format(gradient), 
+            strokeColor.toStringRGBA, strokeWidth, fillOpacity, strokeOpacity, filter
         );
     }
 
@@ -577,6 +611,9 @@ class Text : Shape
     private float fillOpacity = 1;
     private ColorRGBA fillColor = Colors.none;
 
+    private string filter = DefaultFilter.id;
+    private string gradient = null;
+
     this(in Point xy, in string text)
     {
         this.xy = xy;
@@ -607,10 +644,11 @@ class Text : Shape
     {
         enum fmt = 
             "<text x='%s' y='%s' font-family='%s' font-size='%s' stroke='%s' stroke-width = '%s' " ~ 
-            "fill='%s' fill-opacity='%s' stroke-opacity='%s' transform='rotate(%s)'>%s</text>\n";
+            "fill='%s' fill-opacity='%s' stroke-opacity='%s' transform='rotate(%s)' filter='url(#%s)'>%s</text>\n";
         surface ~= fmt.format(
             xy.x, xy.y, fontFamily, fontSize, strokeColor.toStringRGBA, strokeWidth, 
-            fillColor.toStringRGBA, fillOpacity, strokeOpacity, rotation, text
+            gradient is null ? fillColor.toStringRGBA : "url(#%s)".format(gradient), 
+            fillOpacity, strokeOpacity, rotation, filter, text
         );
     }
 }

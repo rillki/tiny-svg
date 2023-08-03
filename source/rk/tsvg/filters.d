@@ -8,6 +8,16 @@ interface Filter
     string construct();
 }
 
+/// empty filter
+class DefaultFilter : Filter
+{
+    static immutable id = "__none__";
+    string construct() {
+        enum fmt = "<filter id='%s'><feGaussianBlur stdDeviation='0'/></filter>";
+        return fmt.format(id);
+    }
+}
+
 /// gaussian blur
 class Blur : Filter
 {
@@ -20,11 +30,17 @@ class Blur : Filter
         this.id = id;
     }
 
+    this(in string id, in uint blurness)
+    {
+        this(id);
+        this.blurnessHorizontal = this.blurnessVertical = blurness;
+    }
+
     mixin GenerateSetters;
 
     string construct()
     {
-        enum fmt = "<filter id='%s'><feGaussianBlur stdDeviation='%s %s'/></filter>";
+        enum fmt = "<filter id='%s'><feGaussianBlur stdDeviation='%s %s'/></filter>\n";
         return fmt.format(id, blurnessHorizontal, blurnessVertical);
     }
 }
@@ -41,6 +57,12 @@ class BlurHardEdge : Filter
         this.id = id;
     }
 
+    this(in string id, in uint blurness)
+    {
+        this(id);
+        this.blurnessHorizontal = this.blurnessVertical = blurness;
+    }
+
     mixin GenerateSetters;
 
     string construct()
@@ -48,7 +70,7 @@ class BlurHardEdge : Filter
         enum fmt =
             "<filter id='%s'><feGaussianBlur stdDeviation='%s %s'/>" ~ 
             "<feComponentTransfer><feFuncA type='table' tableValues='1 1'/>" ~ 
-            "</feComponentTransfer></filter>";
+            "</feComponentTransfer></filter>\n";
         return fmt.format(id, blurnessHorizontal, blurnessVertical);
     }
 }
@@ -56,6 +78,7 @@ class BlurHardEdge : Filter
 class Shadow : Filter 
 {
     private immutable string id;
+
     private int offsetX = 10;
     private int offsetY = 10;
     private uint blurness = 10;
@@ -71,29 +94,32 @@ class Shadow : Filter
     string construct()
     {
         enum fmt = 
-            "<filter id='%s' x='0' y='0' width='200%' height='200%'>" ~ 
+            "<filter id='%s' x='0' y='0' width='200%%' height='200%%'>" ~ 
             "<feOffset result='offOut' in='%s' dx='%s' dy='%s'/>" ~
             "<feGaussianBlur result='blurOut' in='offOut' stdDeviation='%s'/>" ~ 
             "<feBlend in='SourceGraphic' in2='blurOut' mode='normal'/>" ~
-            "</filter>";
+            "</filter>\n";
         return fmt.format(id, colorBlend ? "SourceGraphic" : "SourceAlpha", offsetX, offsetY, blurness);
     }
 }
 
 /// linear gradient fill 
 /// NOTE: shape 'fill=url(#id)'
-class LinearFill : Filter
+class LinearGradient : Filter
 {
     private immutable string id;
-    private int angle = 180;
     private ColorRGBA colorA;
     private ColorRGBA colorB;
+
+    private int angle = 0;
     private float opacityA = 1;
     private float opacityB = 1;
 
-    this(in string id)
+    this(in string id, in ColorRGBA colorA, in ColorRGBA colorB)
     {
         this.id = id;
+        this.colorA = colorA;
+        this.colorB = colorB;
     }
 
     mixin GenerateSetters;
@@ -109,25 +135,28 @@ class LinearFill : Filter
         immutable y2 = (sin(radians) * 100).to!int;
 
         enum fmt = 
-            "<linearGradient id='%s' x1='0%' y1='0%' x2='%s%' y2='%s%'>" ~ 
-            "<stop offset='0%' style='stop-color:%s;stop-opacity:%s'/>" ~ 
-            "<stop offset='100%' style='stop-color:%s;stop-opacity:%s'/>" ~ 
-            "</linearGradient>";
+            "<linearGradient id='%s' x1='0%%' y1='0%%' x2='%s%%' y2='%s%%'>" ~ 
+            "<stop offset='0%%' style='stop-color:%s;stop-opacity:%s'/>" ~ 
+            "<stop offset='100%%' style='stop-color:%s;stop-opacity:%s'/>" ~ 
+            "</linearGradient>\n";
         return fmt.format(id, x2, y2, colorA.toStringRGBA, opacityA, colorB.toStringRGBA, opacityB);
     }
 }
 
-class RadialFill : Filter
+class RadialGradient : Filter
 {
     private immutable string id;
     private ColorRGBA colorA;
     private ColorRGBA colorB;
+    
     private float opacityA = 1;
     private float opacityB = 1;
 
-    this(in string id)
+    this(in string id, in ColorRGBA colorA, in ColorRGBA colorB)
     {
         this.id = id;
+        this.colorA = colorA;
+        this.colorB = colorB;
     }
 
     mixin GenerateSetters;
@@ -135,10 +164,10 @@ class RadialFill : Filter
     string construct()
     {
         enum fmt = 
-            "<radialGradient id='%s' cx='50%' cy='50%' r='50%' fx='50%' fy='50%'>" ~ 
-            "<stop offset='0%'' style='stop-color:%s;stop-opacity:%s'/>" ~ 
-            "<stop offset='100%'' style='stop-color:%s;stop-opacity:%s'/>" ~ 
-            "</radialGradient>";
+            "<radialGradient id='%s' cx='50%%' cy='50%%' r='50%%' fx='50%%' fy='50%%'>" ~ 
+            "<stop offset='0%%' style='stop-color:%s;stop-opacity:%s'/>" ~ 
+            "<stop offset='100%%' style='stop-color:%s;stop-opacity:%s'/>" ~ 
+            "</radialGradient>\n";
         return fmt.format(id, colorA.toStringRGBA, opacityA, colorB.toStringRGBA, opacityB);
     }
 }

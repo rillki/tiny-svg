@@ -12,12 +12,23 @@ void test_shapes()
 {
     SVGCanvas canvas = SVGCanvas(640, 640);
 
+    // adding filters
+    canvas.add(new Blur("blur"));
+    canvas.add(new LinearGradient("red_blue_gradient", Colors.red, Colors.blue));
+    canvas.add(new RadialGradient("radial_gradient", Colors.red, Colors.blue));
+
     // lines
     canvas.add(new Line(Point(10, 10), Point(100, 100)));
     canvas.add(
         new Line(Point(10, 30), Point(100, 120))
         .setStrokeColor(Colors.red)
         .setStrokeWidth(7)
+    );
+    canvas.add(
+        new Line(Point(10, 60), Point(100, 180))
+        .setStrokeColor(Colors.red)
+        .setStrokeWidth(7)
+        .setFilter("blur")
     );
 
     // rectangle
@@ -50,6 +61,19 @@ void test_shapes()
         .setFillColor(Colors.coral)
         .setStrokeColor(Colors.orange)
         .setStrokeWidth(2)
+        .addToCanvas(canvas);
+    new Circle(Point(canvas.width/2 + 100, canvas.height/2 + 100), 32)
+        .setFillColor(Colors.gray)
+        .setFillOpacity(1)
+        .setStrokeColor(Colors.magenta)
+        .setStrokeWidth(3)
+        .setGradient("red_blue_gradient")
+        .addToCanvas(canvas);
+    new Ellipse(Point(canvas.width/2 + 110, canvas.height/2 + 180), Point(48, 32))
+        .setFillColor(Colors.coral)
+        .setStrokeColor(Colors.orange)
+        .setStrokeWidth(2)
+        .setGradient("radial_gradient")
         .addToCanvas(canvas);
 
     // text

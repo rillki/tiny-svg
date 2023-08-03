@@ -17,6 +17,8 @@ struct SVGCanvas
     {
         this.w = width;
         this.h = height;
+
+        this.filters ~= new DefaultFilter();
     }
 
     uint width() 
@@ -101,12 +103,12 @@ struct SVGCanvas
         surface = fmt.format(w, h, w, h, "http://www.w3.org/2000/svg", "1.1", "http://www.w3.org/1999/xlink");
 
         // render all filters
-        surface ~= "<defs>";
+        surface ~= "<defs>\n";
         foreach (filter; filters)
         {
             surface ~= filter.construct();
         }
-        surface ~= "</defs>";
+        surface ~= "</defs>\n";
 
         // render all shapes
         foreach (shape; shapes) 
