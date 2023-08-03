@@ -37,14 +37,11 @@ canvas.save("examples/example.svg");
 
 Output:
 
-<div align="left">
-    <img src="examples/example.svg" width="240" align="left"></img>
-</div>
+<img src="examples/example.svg" width="240">
 
 ### Example (origami bird)
 
-<div align="left">
-    <img src="examples/origami_bird.svg" width="720" align="left"></img>
-</div>
+<img src="examples/origami_bird.svg" width="720">
+
 
 Code can be found [here](source/app.d).
