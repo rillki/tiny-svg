@@ -7,9 +7,9 @@ A tiny SVG library for drawing and quick experiments. No dependencies.
 SVGCanvas canvas = SVGCanvas(240, 240);
 
 // add gradient
-new RadialGradient("rg0", Colors.teal, Colors.cyan)
-    .setOpacityA(0.9)
-    .setOpacityB(0.8)
+new RadialGradient("rg0", Colors.gold, Colors.orange)
+    .setOpacityA(0.4)
+    .setOpacityB(0.9)
     .addToCanvas(canvas);
 
 // draw
@@ -20,15 +20,15 @@ new Rectangle(0, 0, canvas.width, canvas.height)
     .addToCanvas(canvas);
 
 new Circle(canvas.width / 3, canvas.height / 3, 24)
-    .setFillColor(Colors.yellow)
+    .setFillColor(Colors.white)
     .addToCanvas(canvas);
 
 new Circle(canvas.width * 2 / 3, canvas.height / 3, 24)
-    .setFillColor(Colors.yellow)
+    .setFillColor(Colors.white)
     .addToCanvas(canvas);
 
 new Curve(canvas.width / 3, canvas.height * 2 / 3, canvas.width * 2 / 3, canvas.height * 2 / 3)
-    .setFillColor(Colors.yellow)
+    .setFillColor(Colors.white)
     .addToCanvas(canvas);
 
 // save
