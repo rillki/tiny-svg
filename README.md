@@ -2,7 +2,49 @@
 # Tiny SVG
 A tiny SVG library for drawing and quick experiments. No dependencies. 
 
+### Quick example
+```d
+SVGCanvas canvas = SVGCanvas(240, 240);
 
+// add gradient
+new RadialGradient("rg0", Colors.teal, Colors.cyan)
+    .setOpacityA(0.9)
+    .setOpacityB(0.8)
+    .addToCanvas(canvas);
 
+// draw
+new Rectangle(0, 0, canvas.width, canvas.height)
+    .setStrokeColor(Colors.blue)
+    .setStrokeWidth(0)
+    .setGradient("rg0")
+    .addToCanvas(canvas);
 
+new Circle(canvas.width / 3, canvas.height / 3, 24)
+    .setFillColor(Colors.yellow)
+    .addToCanvas(canvas);
 
+new Circle(canvas.width * 2 / 3, canvas.height / 3, 24)
+    .setFillColor(Colors.yellow)
+    .addToCanvas(canvas);
+
+new Curve(canvas.width / 3, canvas.height * 2 / 3, canvas.width * 2 / 3, canvas.height * 2 / 3)
+    .setFillColor(Colors.yellow)
+    .addToCanvas(canvas);
+
+// save
+canvas.save("examples/example.svg");
+```
+
+Output:
+
+<div align="left">
+    <img src="examples/example.svg" width="240" align="left"></img>
+</div>
+
+### Example (origami bird)
+
+<div align="left">
+    <img src="examples/origami_bird.svg" width="720" align="left"></img>
+</div>
+
+Code can be found [here](source/app.d).

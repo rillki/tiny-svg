@@ -6,6 +6,7 @@ import rk.tsvg.canvas;
 void main() 
 {
     test_shapes();
+    test_example();
     create_origami_bird();
 }
 
@@ -141,6 +142,39 @@ void test_shapes()
     canvas.save("examples/test.svg");
 }
 
+void test_example()
+{
+    SVGCanvas canvas = SVGCanvas(240, 240);
+
+    // add gradient
+    new RadialGradient("rg0", Colors.teal, Colors.cyan)
+        .setOpacityA(0.9)
+        .setOpacityB(0.8)
+        .addToCanvas(canvas);
+
+    // draw
+    new Rectangle(0, 0, canvas.width, canvas.height)
+        .setStrokeColor(Colors.blue)
+        .setStrokeWidth(0)
+        .setGradient("rg0")
+        .addToCanvas(canvas);
+    
+    new Circle(canvas.width / 3, canvas.height / 3, 24)
+        .setFillColor(Colors.yellow)
+        .addToCanvas(canvas);
+    
+    new Circle(canvas.width * 2 / 3, canvas.height / 3, 24)
+        .setFillColor(Colors.yellow)
+        .addToCanvas(canvas);
+    
+    new Curve(canvas.width / 3, canvas.height * 2 / 3, canvas.width * 2 / 3, canvas.height * 2 / 3)
+        .setFillColor(Colors.yellow)
+        .addToCanvas(canvas);
+
+    // save
+    canvas.save("examples/example.svg");
+}
+
 void create_origami_bird()
 {
     auto lightBlue = ColorRGBA(129, 214, 235, 255);
@@ -152,6 +186,18 @@ void create_origami_bird()
         .setOpacityA(0.4)
         .setOpacityB(1.0)
         .addToCanvas(canvas);
+    new RadialGradient("rg1", Colors.black, Colors.black)
+        .setOpacityA(0.3)
+        .setOpacityB(0.1)
+        .addToCanvas(canvas);
+    new LinearGradient("lg0", Colors.red, Colors.orange)
+        .setOpacityA(0.8)
+        .addToCanvas(canvas);
+    new LinearGradient("lg1", Colors.blue, Colors.cyan)
+        .setOpacityA(0.8)
+        .addToCanvas(canvas);
+    new Blur("b0")
+        .addToCanvas(canvas);
 
     // --- SHAPES
     
@@ -162,12 +208,56 @@ void create_origami_bird()
         .setGradient("rg0")
         .addToCanvas(canvas);
     
+    // bird beak
+    new Polygon([752, 341, 795, 375, 735, 375])
+        .setStrokeWidth(0)
+        .setGradient("lg0")
+        .addToCanvas(canvas);
+
+    // bird neck
+    new Polygon([752, 341, 689, 471, 657, 370])
+        .setStrokeWidth(0)
+        .setGradient("lg0")
+        .addToCanvas(canvas);
+    
     // bird body
-    new Polygon([
-        canvas.width/2 + 100, canvas.height/2 - 100,
-        canvas.width/2 + 200, canvas.height/2,
-        canvas.width/2, canvas.height/2
-    ]).addToCanvas(canvas);
+    new Polygon([689, 471, 548, 510, 548, 461, 580, 408, 657, 370])
+        .setStrokeWidth(0)
+        .setGradient("lg0")
+        .addToCanvas(canvas);
+    
+    // bird wings
+    new Polygon([657, 370, 580, 408, 632, 298])
+        .setStrokeWidth(0)
+        .setGradient("lg1")
+        .addToCanvas(canvas);
+    new Polygon([580, 408, 548, 295, 475, 294])
+        .setStrokeWidth(0)
+        .setGradient("lg1")
+        .addToCanvas(canvas);
+    new Polygon([580, 408, 632, 298, 527, 237])
+        .setStrokeWidth(0)
+        .setGradient("lg1")
+        .addToCanvas(canvas);
+
+    // bird tail
+    new Polygon([548, 461, 548, 575, 482, 587])
+        .setStrokeWidth(0)
+        .setGradient("lg1")
+        .addToCanvas(canvas);
+    
+    // shadow
+    new Ellipse(canvas.width/2, 670, 120, 5)
+        .setStrokeOpacity(0.05)
+        .setGradient("rg1")
+        .addToCanvas(canvas);
+
+    // made with Tiny SVG
+    new Text(canvas.width - 300, canvas.height - 30, "made with Tiny SVG")
+        .setFillColor(Colors.white)
+        .setStrokeColor(Colors.white)
+        .setFontSize(29)
+        .addToCanvas(canvas);
 
     canvas.save("examples/origami_bird.svg");
 }

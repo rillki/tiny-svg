@@ -22,15 +22,15 @@ class DefaultFilter : Filter
 class Blur : Filter
 {
     private immutable string id;
-    private ubyte blurnessHorizontal = 5;
-    private ubyte blurnessVertical = 5;
+    private uint blurnessHorizontal = 5;
+    private uint blurnessVertical = 5;
 
     this(in string id)
     {
         this.id = id;
     }
 
-    this(in string id, in ubyte blurness)
+    this(in string id, in uint blurness)
     {
         this(id);
         this.blurnessHorizontal = this.blurnessVertical = blurness;
@@ -49,15 +49,15 @@ class Blur : Filter
 class BlurHardEdge : Filter
 {
     private immutable string id;
-    private ubyte blurnessHorizontal = 5;
-    private ubyte blurnessVertical = 5;
+    private uint blurnessHorizontal = 5;
+    private uint blurnessVertical = 5;
 
     this(in string id)
     {
         this.id = id;
     }
 
-    this(in string id, in ubyte blurness)
+    this(in string id, in uint blurness)
     {
         this(id);
         this.blurnessHorizontal = this.blurnessVertical = blurness;
@@ -81,7 +81,7 @@ class Shadow : Filter
 
     private int offsetX = 10;
     private int offsetY = 10;
-    private ubyte blurness = 10;
+    private uint blurness = 10;
     private bool colorBlend = true;
 
     this(in string id)
@@ -112,8 +112,8 @@ class LinearGradient : Filter
     private ColorRGBA colorB;
 
     private int angle = 0;
-    private ubyte offsetA = 0;
-    private ubyte offsetB = 100;
+    private uint offsetA = 0;
+    private uint offsetB = 100;
     private float opacityA = 1;
     private float opacityB = 1;
 
@@ -151,8 +151,8 @@ class RadialGradient : Filter
     private ColorRGBA colorA;
     private ColorRGBA colorB;
     
-    private ubyte offsetA = 0;
-    private ubyte offsetB = 100;
+    private uint offsetA = 0;
+    private uint offsetB = 100;
     private float opacityA = 1;
     private float opacityB = 1;
 

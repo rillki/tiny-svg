@@ -1,7 +1,19 @@
 <svg width='1280 px' height='720 px' viewBox='0 0 1280 720' xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink'>
 <defs>
 <filter id='__none__'><feGaussianBlur stdDeviation='0'/></filter><radialGradient id='rg0' cx='50%' cy='50%' r='50%' fx='50%' fy='50%'><stop offset='0%' style='stop-color:rgba(129, 214, 235, 255);stop-opacity:0.4'/><stop offset='100%' style='stop-color:rgba(129, 214, 235, 255);stop-opacity:1'/></radialGradient>
+<radialGradient id='rg1' cx='50%' cy='50%' r='50%' fx='50%' fy='50%'><stop offset='0%' style='stop-color:rgba(0, 0, 0, 255);stop-opacity:0.3'/><stop offset='100%' style='stop-color:rgba(0, 0, 0, 255);stop-opacity:0.1'/></radialGradient>
+<linearGradient id='lg0' x1='0%' y1='0%' x2='100%' y2='0%'><stop offset='0%' style='stop-color:rgba(255, 0, 0, 255);stop-opacity:0.8'/><stop offset='100%' style='stop-color:rgba(255, 165, 0, 255);stop-opacity:1'/></linearGradient>
+<linearGradient id='lg1' x1='0%' y1='0%' x2='100%' y2='0%'><stop offset='0%' style='stop-color:rgba(0, 0, 255, 255);stop-opacity:0.8'/><stop offset='100%' style='stop-color:rgba(0, 255, 255, 255);stop-opacity:1'/></linearGradient>
+<filter id='b0'><feGaussianBlur stdDeviation='5 5'/></filter>
 </defs>
 <rect x='0' y='0' width='1280' height='720' rx='0' ry='0' fill='url(#rg0)' stroke-width='0' stroke='rgba(0, 0, 255, 255)' fill-opacity='1' stroke-opacity='1' filter='url(#__none__)'/>
-<polygon points='740,260 840,360 640,360 ' style='fill:rgba(0, 0, 0, 0);stroke:rgba(0, 0, 0, 255);stroke-width:1;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='752,341 795,375 735,375 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='752,341 689,471 657,370 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='689,471 548,510 548,461 580,408 657,370 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='657,370 580,408 632,298 ' style='fill:url(#lg1);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='580,408 548,295 475,294 ' style='fill:url(#lg1);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='580,408 632,298 527,237 ' style='fill:url(#lg1);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='548,461 548,575 482,587 ' style='fill:url(#lg1);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<ellipse cx='640' cy='670' rx='120' ry='5' stroke='rgba(0, 0, 0, 255)' stroke-width='1' fill='url(#rg1)' fill-opacity='1' stroke-opacity='0.05' filter='url(#__none__)'/>
+<text x='980' y='690' font-family='arial' font-size='29' stroke='rgba(255, 255, 255, 255)' stroke-width = '1' fill='rgba(255, 255, 255, 255)' fill-opacity='1' stroke-opacity='1' transform='rotate(0)' filter='url(#__none__)'>made with Tiny SVG</text>
 </svg>
