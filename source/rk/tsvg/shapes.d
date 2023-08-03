@@ -344,8 +344,6 @@ class Polygon : Shape
         import std.range: iota;
         foreach (i; iota(0, coords.length, 2)) 
         {
-            import std.stdio;
-            i.writeln;
             this.points ~= Point(coords[i], coords[i+1]);
         }
     }
@@ -411,8 +409,6 @@ class Polyline : Shape
         import std.range: iota;
         foreach (i; iota(0, coords.length, 2)) 
         {
-            import std.stdio;
-            i.writeln;
             this.points ~= Point(coords[i], coords[i+1]);
         }
     }
@@ -540,8 +536,6 @@ class Path : Shape
         import std.range: iota;
         foreach (i; iota(0, coords.length, 2)) 
         {
-            import std.stdio;
-            i.writeln;
             this.points ~= Point(coords[i], coords[i+1]);
         }
     }

@@ -143,17 +143,31 @@ void test_shapes()
 
 void create_origami_bird()
 {
+    auto lightBlue = ColorRGBA(129, 214, 235, 255);
+
     SVGCanvas canvas = SVGCanvas(1280, 720);
-    new RadialGradient("rg0", Colors.blue, Colors.blue)
-        .setOpacityA(0.3)
-        .setOpacityB(0.9)
+
+    // --- FILTERS, GRADIENTS
+    new RadialGradient("rg0", lightBlue, lightBlue)
+        .setOpacityA(0.4)
+        .setOpacityB(1.0)
         .addToCanvas(canvas);
 
+    // --- SHAPES
+    
+    // background
     new Rectangle(0, 0, canvas.width, canvas.height)
         .setStrokeColor(Colors.blue)
         .setStrokeWidth(0)
         .setGradient("rg0")
         .addToCanvas(canvas);
+    
+    // bird body
+    new Polygon([
+        canvas.width/2 + 100, canvas.height/2 - 100,
+        canvas.width/2 + 200, canvas.height/2,
+        canvas.width/2, canvas.height/2
+    ]).addToCanvas(canvas);
 
     canvas.save("examples/origami_bird.svg");
 }
