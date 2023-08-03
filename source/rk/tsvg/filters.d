@@ -22,15 +22,15 @@ class DefaultFilter : Filter
 class Blur : Filter
 {
     private immutable string id;
-    private uint blurnessHorizontal = 5;
-    private uint blurnessVertical = 5;
+    private ubyte blurnessHorizontal = 5;
+    private ubyte blurnessVertical = 5;
 
     this(in string id)
     {
         this.id = id;
     }
 
-    this(in string id, in uint blurness)
+    this(in string id, in ubyte blurness)
     {
         this(id);
         this.blurnessHorizontal = this.blurnessVertical = blurness;
@@ -49,15 +49,15 @@ class Blur : Filter
 class BlurHardEdge : Filter
 {
     private immutable string id;
-    private uint blurnessHorizontal = 5;
-    private uint blurnessVertical = 5;
+    private ubyte blurnessHorizontal = 5;
+    private ubyte blurnessVertical = 5;
 
     this(in string id)
     {
         this.id = id;
     }
 
-    this(in string id, in uint blurness)
+    this(in string id, in ubyte blurness)
     {
         this(id);
         this.blurnessHorizontal = this.blurnessVertical = blurness;
@@ -81,7 +81,7 @@ class Shadow : Filter
 
     private int offsetX = 10;
     private int offsetY = 10;
-    private uint blurness = 10;
+    private ubyte blurness = 10;
     private bool colorBlend = true;
 
     this(in string id)
@@ -112,6 +112,8 @@ class LinearGradient : Filter
     private ColorRGBA colorB;
 
     private int angle = 0;
+    private ubyte offsetA = 0;
+    private ubyte offsetB = 100;
     private float opacityA = 1;
     private float opacityB = 1;
 
@@ -136,10 +138,10 @@ class LinearGradient : Filter
 
         enum fmt = 
             "<linearGradient id='%s' x1='0%%' y1='0%%' x2='%s%%' y2='%s%%'>" ~ 
-            "<stop offset='0%%' style='stop-color:%s;stop-opacity:%s'/>" ~ 
-            "<stop offset='100%%' style='stop-color:%s;stop-opacity:%s'/>" ~ 
+            "<stop offset='%s%%' style='stop-color:%s;stop-opacity:%s'/>" ~ 
+            "<stop offset='%s%%' style='stop-color:%s;stop-opacity:%s'/>" ~ 
             "</linearGradient>\n";
-        return fmt.format(id, x2, y2, colorA.toStringRGBA, opacityA, colorB.toStringRGBA, opacityB);
+        return fmt.format(id, x2, y2, offsetA, colorA.toStringRGBA, opacityA, offsetB, colorB.toStringRGBA, opacityB);
     }
 }
 
@@ -149,6 +151,8 @@ class RadialGradient : Filter
     private ColorRGBA colorA;
     private ColorRGBA colorB;
     
+    private ubyte offsetA = 0;
+    private ubyte offsetB = 100;
     private float opacityA = 1;
     private float opacityB = 1;
 
@@ -165,10 +169,10 @@ class RadialGradient : Filter
     {
         enum fmt = 
             "<radialGradient id='%s' cx='50%%' cy='50%%' r='50%%' fx='50%%' fy='50%%'>" ~ 
-            "<stop offset='0%%' style='stop-color:%s;stop-opacity:%s'/>" ~ 
-            "<stop offset='100%%' style='stop-color:%s;stop-opacity:%s'/>" ~ 
+            "<stop offset='%s%%' style='stop-color:%s;stop-opacity:%s'/>" ~ 
+            "<stop offset='%s%%' style='stop-color:%s;stop-opacity:%s'/>" ~ 
             "</radialGradient>\n";
-        return fmt.format(id, colorA.toStringRGBA, opacityA, colorB.toStringRGBA, opacityB);
+        return fmt.format(id, offsetA, colorA.toStringRGBA, opacityA, offsetB, colorB.toStringRGBA, opacityB);
     }
 }
 

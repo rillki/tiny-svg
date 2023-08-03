@@ -6,6 +6,7 @@ import rk.tsvg.canvas;
 void main() 
 {
     test_shapes();
+    create_origami_bird();
 }
 
 void test_shapes() 
@@ -137,6 +138,23 @@ void test_shapes()
     // canvas.scale(2);
 
 
-    canvas.save("test.svg");
+    canvas.save("examples/test.svg");
+}
+
+void create_origami_bird()
+{
+    SVGCanvas canvas = SVGCanvas(1280, 720);
+    new RadialGradient("rg0", Colors.blue, Colors.blue)
+        .setOpacityA(0.3)
+        .setOpacityB(0.9)
+        .addToCanvas(canvas);
+
+    new Rectangle(0, 0, canvas.width, canvas.height)
+        .setStrokeColor(Colors.blue)
+        .setStrokeWidth(0)
+        .setGradient("rg0")
+        .addToCanvas(canvas);
+
+    canvas.save("examples/origami_bird.svg");
 }
 
