@@ -2,7 +2,7 @@
 # Tiny SVG
 A tiny SVG library for drawing and quick experiments. No dependencies. 
 
-### Usage
+### Library
 Add library to your project using DUB:
 ```
 dub add tiny-svg
@@ -16,7 +16,7 @@ Or copy the following to your DUB configuration file:
 dependency "tiny-svg" version="~>1.0.0"
 ``` 
 
-#### Example
+### Example
 ```d
 import rk.tsvg.canvas;
 
