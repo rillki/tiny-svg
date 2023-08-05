@@ -8,6 +8,7 @@ void main()
     test_shapes();
     test_example();
     create_origami_bird();
+    create_albatros();
 }
 
 void test_shapes() 
@@ -260,5 +261,116 @@ void create_origami_bird()
         .addToCanvas(canvas);
 
     canvas.save("examples/origami_bird.svg");
+}
+
+void create_albatros() {
+    auto canvas = SVGCanvas(1024, 720);
+
+    // GRADIENTS
+
+    new LinearGradient("lg0", Colors.tomato, Colors.coral)
+        .setOpacityA(1)
+        .setOpacityB(0.9)
+        .addToCanvas(canvas);
+    
+    new LinearGradient("lg1", Colors.orange, Colors.gold)
+        .setOpacityA(1)
+        .setOpacityB(0.5)
+        .addToCanvas(canvas);
+    
+    new LinearGradient("lg2", Colors.gray, Colors.gray)
+        .setOpacityA(0.75)
+        .setOpacityB(0.15)
+        .addToCanvas(canvas);
+    
+    // DRAW
+    
+    new Polygon([213, 262, 197, 230, 228, 230])
+        .setStrokeWidth(0)
+        .setGradient("lg0")
+        .addToCanvas(canvas);
+    
+    new Polygon([213, 262, 228, 230, 243, 247, 230, 246])
+        .setStrokeWidth(0)
+        .setGradient("lg0")
+        .addToCanvas(canvas);
+
+    new Polygon([197, 230, 228, 199, 228, 230])
+        .setStrokeWidth(0)
+        .setGradient("lg0")
+        .addToCanvas(canvas);
+    
+    new Polygon([228, 230, 228, 199, 245, 180, 261, 229])
+        .setStrokeWidth(0)
+        .setGradient("lg0")
+        .addToCanvas(canvas);
+    
+    new Polygon([261, 229, 245, 180, 292, 180, 261, 229])
+        .setStrokeWidth(0)
+        .setGradient("lg0")
+        .addToCanvas(canvas);
+    
+    new Polygon([228, 230, 243, 247, 266, 247, 287, 240, 292, 180, 261, 229])
+        .setStrokeWidth(0)
+        .setGradient("lg0")
+        .addToCanvas(canvas);
+    
+    new Polygon([292, 180, 287, 240, 326, 228])
+        .setStrokeWidth(0)
+        .setGradient("lg1")
+        .addToCanvas(canvas);
+    
+    new Polygon([326, 228, 408, 181, 292, 180])
+        .setStrokeWidth(0)
+        .setGradient("lg1")
+        .addToCanvas(canvas);
+    
+    new Polygon([292, 181, 392, 132, 408, 181])
+        .setStrokeWidth(0)
+        .setGradient("lg1")
+        .addToCanvas(canvas);
+    
+    new Polygon([326, 228, 392, 229, 408, 181])
+        .setStrokeWidth(0)
+        .setGradient("lg1")
+        .addToCanvas(canvas);
+    
+    new Polygon([356, 175, 387, 157, 389, 167])
+        .setStrokeWidth(0)
+        .setFillColor(Colors.brown)
+        .setFillOpacity(0.4)
+        .addToCanvas(canvas);
+
+    new Polygon([392, 132, 408, 114, 438, 132, 408, 181])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([408, 181, 392, 229, 409, 229, 438, 227, 471, 228])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([408, 181, 471, 228, 438, 132])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([392, 229, 409, 229, 409, 261])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([409, 229, 409, 312, 438, 227])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([438, 132, 471, 228, 464, 131, 571, 67, 487, 67, 428, 98, 408, 114])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+
+    canvas.save("examples/albatros.svg");
 }
 

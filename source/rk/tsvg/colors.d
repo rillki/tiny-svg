@@ -34,6 +34,7 @@ enum Colors : ColorRGBA
     purple  = ColorRGBA(128,   0, 128, 255),
     teal    = ColorRGBA(  0, 128, 128, 255),
     navy    = ColorRGBA(  0,   0, 128, 255),
+    brown   = ColorRGBA(150,  75,   0, 255),
     none    = ColorRGBA(  0,   0,   0,   0)
 }
 

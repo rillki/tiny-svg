@@ -1,0 +1,24 @@
+<svg width='1024 px' height='720 px' viewBox='0 0 1024 720' xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink'>
+<defs>
+<filter id='__none__'><feGaussianBlur stdDeviation='0'/></filter><linearGradient id='lg0' x1='0%' y1='0%' x2='100%' y2='0%'><stop offset='0%' style='stop-color:rgba(255, 99, 71, 255);stop-opacity:1'/><stop offset='100%' style='stop-color:rgba(255, 127, 80, 255);stop-opacity:0.9'/></linearGradient>
+<linearGradient id='lg1' x1='0%' y1='0%' x2='100%' y2='0%'><stop offset='0%' style='stop-color:rgba(255, 165, 0, 255);stop-opacity:1'/><stop offset='100%' style='stop-color:rgba(255, 215, 0, 255);stop-opacity:0.5'/></linearGradient>
+<linearGradient id='lg2' x1='0%' y1='0%' x2='100%' y2='0%'><stop offset='0%' style='stop-color:rgba(128, 128, 128, 255);stop-opacity:0.75'/><stop offset='100%' style='stop-color:rgba(128, 128, 128, 255);stop-opacity:0.15'/></linearGradient>
+</defs>
+<polygon points='213,262 197,230 228,230 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='213,262 228,230 243,247 230,246 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='197,230 228,199 228,230 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='228,230 228,199 245,180 261,229 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='261,229 245,180 292,180 261,229 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='228,230 243,247 266,247 287,240 292,180 261,229 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='292,180 287,240 326,228 ' style='fill:url(#lg1);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='326,228 408,181 292,180 ' style='fill:url(#lg1);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='292,181 392,132 408,181 ' style='fill:url(#lg1);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='326,228 392,229 408,181 ' style='fill:url(#lg1);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='356,175 387,157 389,167 ' style='fill:rgba(150, 75, 0, 255);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:0.4;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='392,132 408,114 438,132 408,181 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='408,181 392,229 409,229 438,227 471,228 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='408,181 471,228 438,132 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='392,229 409,229 409,261 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='409,229 409,312 438,227 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='438,132 471,228 464,131 571,67 487,67 428,98 408,114 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+</svg>
