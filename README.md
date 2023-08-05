@@ -2,11 +2,27 @@
 # Tiny SVG
 A tiny SVG library for drawing and quick experiments. No dependencies. 
 
-### Quick example
+### Library
+Add library to your project using DUB:
+```
+dub add tiny-svg
+```
+Or copy the following to your DUB configuration file:
+```
+// dub.json
+"tiny-svg": "~>1.0.0"
+
+// dub.sdl
+dependency "tiny-svg" version="~>1.0.0"
+``` 
+
+### Example
 ```d
+import rk.tsvg.canvas;
+
 SVGCanvas canvas = SVGCanvas(240, 240);
 
-// add gradient
+// create a radial gradient
 new RadialGradient("rg0", Colors.gold, Colors.orange)
     .setOpacityA(0.4)
     .setOpacityB(0.9)
@@ -16,6 +32,7 @@ new RadialGradient("rg0", Colors.gold, Colors.orange)
 new Rectangle(0, 0, canvas.width, canvas.height)
     .setStrokeColor(Colors.blue)
     .setStrokeWidth(0)
+    .setRadius(24)
     .setGradient("rg0")
     .addToCanvas(canvas);
 
@@ -39,9 +56,12 @@ Output:
 
 <img src="examples/example.svg" width="240">
 
-### Example (origami bird)
+### Advanced example (origami bird)
 
 <img src="examples/origami_bird.svg" width="720">
 
-
 Code can be found [here](source/app.d).
+
+### LICENSE
+All code is licensed under the BSL license. 
+

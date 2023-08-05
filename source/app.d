@@ -147,7 +147,7 @@ void test_example()
 {
     SVGCanvas canvas = SVGCanvas(240, 240);
 
-    // add gradient
+    // create a radial gradient
     new RadialGradient("rg0", Colors.gold, Colors.orange)
         .setOpacityA(0.4)
         .setOpacityB(0.9)
@@ -157,6 +157,7 @@ void test_example()
     new Rectangle(0, 0, canvas.width, canvas.height)
         .setStrokeColor(Colors.blue)
         .setStrokeWidth(0)
+        .setRadius(24)
         .setGradient("rg0")
         .addToCanvas(canvas);
     
