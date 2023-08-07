@@ -342,32 +342,127 @@ void create_albatros() {
         .setFillOpacity(0.4)
         .addToCanvas(canvas);
 
-    new Polygon([392, 132, 408, 114, 438, 132, 408, 181])
+    new Polygon([392, 132, 428, 98, 438, 132, 408, 181])
         .setStrokeWidth(0)
         .setGradient("lg2")
         .addToCanvas(canvas);
     
-    new Polygon([408, 181, 392, 229, 409, 229, 438, 227, 471, 228])
+    new Polygon([428, 98, 438, 132, 464, 131])
         .setStrokeWidth(0)
         .setGradient("lg2")
         .addToCanvas(canvas);
     
-    new Polygon([408, 181, 471, 228, 438, 132])
+    new Polygon([428, 98, 464, 131, 488, 66])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+
+    new Polygon([488, 66, 464, 131, 532, 66])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+
+    new Polygon([532, 66, 464, 131, 539, 131])
         .setStrokeWidth(0)
         .setGradient("lg2")
         .addToCanvas(canvas);
     
-    new Polygon([392, 229, 409, 229, 409, 261])
+    new Polygon([532, 66, 539, 131, 602, 99, 569, 67])
         .setStrokeWidth(0)
         .setGradient("lg2")
         .addToCanvas(canvas);
     
-    new Polygon([409, 229, 409, 312, 438, 227])
+    new Polygon([539, 131, 602, 99, 632, 129, 554, 146])
         .setStrokeWidth(0)
         .setGradient("lg2")
         .addToCanvas(canvas);
     
-    new Polygon([438, 132, 471, 228, 464, 131, 571, 67, 487, 67, 428, 98, 408, 114])
+    new Polygon([554, 146, 632, 129, 603, 209])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([603, 209, 632, 129, 650, 164, 650, 199])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([603, 209, 650, 199, 603, 244])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([603, 244, 650, 199, 650, 277])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([408, 181, 438, 132, 449, 152, 470, 228])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([438, 132, 464, 131, 449, 152])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+
+    new Polygon([408, 181, 392, 229, 408, 230, 440, 278, 470, 228])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([392, 229, 408, 230, 408, 260])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([408, 230, 408, 309, 440, 278])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([483, 159, 470, 228, 539, 131])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([470, 228, 539, 131, 537, 198])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([539, 131, 554, 146, 603, 209, 603, 244, 537, 198])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([470, 228, 537, 198, 507, 262])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([440, 278, 470, 228, 507, 262, 539, 294])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([507, 262, 537, 198, 539, 294])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([537, 198, 603, 244, 539, 294])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([539, 294, 603, 244, 650, 277])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([449, 152, 483, 159, 470, 228])
         .setStrokeWidth(0)
         .setGradient("lg2")
         .addToCanvas(canvas);

@@ -15,10 +15,29 @@
 <polygon points='292,181 392,132 408,181 ' style='fill:url(#lg1);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
 <polygon points='326,228 392,229 408,181 ' style='fill:url(#lg1);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
 <polygon points='356,175 387,157 389,167 ' style='fill:rgba(150, 75, 0, 255);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:0.4;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='392,132 408,114 438,132 408,181 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='408,181 392,229 409,229 438,227 471,228 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='408,181 471,228 438,132 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='392,229 409,229 409,261 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='409,229 409,312 438,227 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='438,132 471,228 464,131 571,67 487,67 428,98 408,114 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='392,132 428,98 438,132 408,181 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='428,98 438,132 464,131 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='428,98 464,131 488,66 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='488,66 464,131 532,66 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='532,66 464,131 539,131 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='532,66 539,131 602,99 569,67 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='539,131 602,99 632,129 554,146 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='554,146 632,129 603,209 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='603,209 632,129 650,164 650,199 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='603,209 650,199 603,244 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='603,244 650,199 650,277 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='408,181 438,132 449,152 470,228 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='438,132 464,131 449,152 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='408,181 392,229 408,230 440,278 470,228 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='392,229 408,230 408,260 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='408,230 408,309 440,278 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='483,159 470,228 539,131 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='470,228 539,131 537,198 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='539,131 554,146 603,209 603,244 537,198 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='470,228 537,198 507,262 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='440,278 470,228 507,262 539,294 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='507,262 537,198 539,294 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='537,198 603,244 539,294 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='539,294 603,244 650,277 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='449,152 483,159 470,228 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
 </svg>
