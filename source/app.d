@@ -284,6 +284,16 @@ void create_albatros() {
         .setOpacityB(0.15)
         .addToCanvas(canvas);
     
+    new LinearGradient("lg3", Colors.gray, Colors.black)
+        .setOpacityA(0.9)
+        .setOpacityB(0.8)
+        .addToCanvas(canvas);
+    
+    new RadialGradient("rg0", Colors.white, Colors.black)
+        .setOpacityA(0.3)
+        .setOpacityB(0.9)
+        .addToCanvas(canvas);
+    
     // DRAW
     
     new Polygon([213, 262, 197, 230, 228, 230])
@@ -465,6 +475,211 @@ void create_albatros() {
     new Polygon([449, 152, 483, 159, 470, 228])
         .setStrokeWidth(0)
         .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([408, 309, 440, 278, 539, 294, 442, 328])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([408, 309, 442, 328, 393, 376])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([393, 376, 440, 410, 362, 470])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([393, 376, 440, 410, 362, 470])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([362, 470, 440, 410, 523, 444, 457, 508])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([362, 470, 457, 508, 424, 527])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([457, 508, 523, 444, 603, 490, 569, 525])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([569, 525, 603, 490, 650, 440, 683, 540])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([523, 444, 650, 440, 603, 490])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([523, 444, 605, 406, 650, 440])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([605, 406, 650, 361, 650, 440])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([537, 360, 650, 361, 605, 406])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([537, 360, 605, 406, 523, 444])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([440, 410, 537, 360, 523, 444])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([442, 328, 539, 294, 537, 360])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([537, 360, 539, 294, 650, 361])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([539, 294, 650, 277, 650, 361])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([362, 470, 424, 527, 310, 589])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([310, 589, 424, 527, 439, 606])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([310, 589, 439, 606, 310, 654])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([439, 654, 439, 606, 503, 625])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([310, 654, 439, 654, 441, 720])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([310, 654, 441, 720, 341, 720])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([441, 720, 439, 654, 503, 625])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([439, 606, 439, 654, 503, 625])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([440, 720, 503, 625, 537, 689])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([441, 720, 537, 689, 551, 720])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([439, 606, 503, 591, 503, 625])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([424, 527, 457, 508, 503, 591, 439, 606])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([457, 508, 554, 557, 503, 591])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([503, 591, 554, 557, 600, 607, 537, 607])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([503, 591, 537, 607, 503, 625])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([457, 508, 569, 525, 554, 557])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([569, 525, 683, 540, 554, 557])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([554, 557, 683, 540, 698, 588])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([554, 557, 698, 588, 600, 607])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([393, 376, 442, 328, 537, 360, 440, 410])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([310, 654, 439, 606, 439, 654])
+        .setStrokeWidth(0)
+        .setGradient("lg2")
+        .addToCanvas(canvas);
+    
+    new Polygon([449, 152, 464, 131, 539, 131, 483, 159])
+        .setStrokeWidth(0)
+        .setGradient("lg3")
+        .addToCanvas(canvas);
+    
+    new Circle(479, 146, 10)
+        .setStrokeWidth(0)
+        .setGradient("rg0")
+        .addToCanvas(canvas);
+        
+    new Circle(479, 146, 5)
+        .setStrokeWidth(0)
+        .setFillColor(Colors.black)
         .addToCanvas(canvas);
 
     canvas.save("examples/albatros.svg");
