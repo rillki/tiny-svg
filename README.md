@@ -60,7 +60,7 @@ Output:
 #### Origami bird
 <img src="examples/origami_bird.svg" width="720">
 
-#### Origami bird
+#### Albatros
 <img src="examples/albatros.svg" width="720">
 
 Code can be found [here](source/app.d).
