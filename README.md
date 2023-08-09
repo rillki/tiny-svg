@@ -56,9 +56,12 @@ Output:
 
 <img src="examples/example.svg" width="240">
 
-### Advanced example (origami bird)
-
+### Examples
+#### Origami bird
 <img src="examples/origami_bird.svg" width="720">
+
+#### Origami bird
+<img src="examples/albatros.svg" width="720">
 
 Code can be found [here](source/app.d).
 
