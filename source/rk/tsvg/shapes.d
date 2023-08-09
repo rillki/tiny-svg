@@ -102,6 +102,12 @@ enum FillRule : string
     evenodd = "evenodd"
 }
 
+enum FontWeight : string 
+{
+    normal = "normal",
+    bold = "bold",
+}
+
 class Line : Shape
 {
     private Point startPoint, endPoint;
@@ -595,6 +601,7 @@ class Text : Shape
     private string text;
     
     private string fontFamily = "arial";
+    private string fontWeight = FontWeight.normal;
     private uint fontSize = 10;
     private uint rotation = 0;
 
@@ -637,10 +644,10 @@ class Text : Shape
     void render(ref string surface)
     {
         enum fmt = 
-            "<text x='%s' y='%s' font-family='%s' font-size='%s' stroke='%s' stroke-width = '%s' " ~ 
+            "<text x='%s' y='%s' font-family='%s' font-size='%s' font-weight='%s' stroke='%s' stroke-width = '%s' " ~ 
             "fill='%s' fill-opacity='%s' stroke-opacity='%s' transform='rotate(%s)' filter='url(#%s)'>%s</text>\n";
         surface ~= fmt.format(
-            xy.x, xy.y, fontFamily, fontSize, strokeColor.toStringRGBA, strokeWidth, 
+            xy.x, xy.y, fontFamily, fontSize, fontWeight, strokeColor.toStringRGBA, strokeWidth, 
             gradient is null ? fillColor.toStringRGBA : "url(#%s)".format(gradient), 
             fillOpacity, strokeOpacity, rotation, filter, text
         );
