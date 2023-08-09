@@ -8,6 +8,7 @@
 <linearGradient id='lg4' x1='0%' y1='0%' x2='100%' y2='0%'><stop offset='0%' style='stop-color:rgba(150, 75, 0, 255);stop-opacity:1'/><stop offset='100%' style='stop-color:rgba(89, 60, 30, 255);stop-opacity:1'/></linearGradient>
 <linearGradient id='lg5' x1='0%' y1='0%' x2='100%' y2='0%'><stop offset='0%' style='stop-color:rgba(113, 1, 255, 255);stop-opacity:1'/><stop offset='100%' style='stop-color:rgba(255, 1, 245, 255);stop-opacity:1'/></linearGradient>
 </defs>
+<rect x='0' y='0' width='1024' height='720' rx='0' ry='0' fill='rgba(251, 251, 253, 255)' stroke-width='0' stroke='rgba(0, 0, 0, 255)' fill-opacity='1' stroke-opacity='1' filter='url(#__none__)'/>
 <polygon points='213,262 197,230 228,230 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
 <polygon points='213,262 228,230 243,247 230,246 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
 <polygon points='197,230 228,199 228,230 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
