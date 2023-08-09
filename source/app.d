@@ -294,6 +294,14 @@ void create_albatros() {
         .setOpacityB(0.9)
         .addToCanvas(canvas);
     
+    new LinearGradient("lg4", Colors.brown, Colors.darkbrown)
+        .setOpacityA(1.0)
+        .setOpacityB(1.0)
+        .addToCanvas(canvas);
+    
+    new LinearGradient("lg5", ColorRGBA(113, 1, 255, 255), ColorRGBA(255, 1, 245, 255))
+        .addToCanvas(canvas);
+    
     // DRAW
     
     new Polygon([213, 262, 197, 230, 228, 230])
@@ -680,6 +688,148 @@ void create_albatros() {
     new Circle(479, 146, 5)
         .setStrokeWidth(0)
         .setFillColor(Colors.black)
+        .addToCanvas(canvas);
+
+    new Polygon([503, 625, 537, 607, 600, 607, 537, 689])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([537, 689, 600, 607, 650, 720])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([537, 689, 650, 720, 551, 720])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+        
+    new Polygon([600, 607, 698, 588, 650, 720])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([650, 720, 698, 588, 750, 656, 730, 720])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([730, 720, 750, 656, 788, 720])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([788, 720, 750, 656, 815, 669, 817, 720])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([817, 720, 815, 669, 893, 640, 841, 720])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([841, 720, 893, 640, 923, 720])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([923, 720, 893, 640, 961, 656])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([923, 720, 961, 656, 1024, 720])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([1024, 720, 961, 656, 990, 606, 1024, 667])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([1024, 667, 990, 606, 1024, 614])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([961, 656, 913, 572, 990, 606])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([961, 656, 893, 640, 913, 572])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([893, 640, 814, 606, 913, 572])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([814, 606, 858, 573, 913, 572])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([815, 669, 814, 606, 893, 640])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([750, 656, 814, 606, 815, 669])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([698, 588, 814, 606, 750, 656])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([683, 540, 750, 558, 698, 588])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([698, 588, 750, 558, 814, 558, 814, 606])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Polygon([814, 606, 814, 558, 858, 573])
+        .setStrokeWidth(0)
+        .setGradient("lg4")
+        .addToCanvas(canvas);
+    
+    new Text(80, 390, "LOW POLY")
+        .setFontSize(48)
+        .setStrokeColor(Colors.chambray)
+        .setFillColor(Colors.white)
+        .addToCanvas(canvas);
+    
+    new Text(80, 450, "ALBATROS")
+        .setFontSize(46)
+        .setStrokeColor(Colors.teal)
+        .setFillColor(Colors.teal)
+        .addToCanvas(canvas);
+    
+    new Text(70, 510, "made with")
+        .setFontSize(28)
+        .setStrokeColor(ColorRGBA(113, 1, 255, 255))
+        .setFillColor(ColorRGBA(113, 1, 255, 255))
+        .setFillOpacity(0.9)
+        .setStrokeOpacity(0.0)
+        .addToCanvas(canvas);
+    
+    new Text(205, 510, "Tiny SVG")
+        .setFontSize(28)
+        .setStrokeColor(Colors.none)
+        .setGradient("lg5")
+        .setFontWeight(FontWeight.bold)
         .addToCanvas(canvas);
 
     canvas.save("examples/albatros.svg");

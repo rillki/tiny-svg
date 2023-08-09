@@ -108,6 +108,21 @@ enum FontWeight : string
     bold = "bold",
 }
 
+enum FontStyle : string 
+{
+    normal = "normal",
+    italic = "italic",
+    oblique = "oblique"
+}
+
+enum TextDecoration : string
+{
+    underline = "underline",
+    overline = "overline",
+    lineThrough = "line-through",
+    none = ""
+}
+
 class Line : Shape
 {
     private Point startPoint, endPoint;
@@ -602,6 +617,8 @@ class Text : Shape
     
     private string fontFamily = "arial";
     private string fontWeight = FontWeight.normal;
+    private string fontStyle = FontStyle.normal;
+    private string textDecoration = TextDecoration.none;
     private uint fontSize = 10;
     private uint rotation = 0;
 
@@ -644,10 +661,12 @@ class Text : Shape
     void render(ref string surface)
     {
         enum fmt = 
-            "<text x='%s' y='%s' font-family='%s' font-size='%s' font-weight='%s' stroke='%s' stroke-width = '%s' " ~ 
+            "<text x='%s' y='%s' font-family='%s' font-size='%s' font-weight='%s' font-style='%s' " ~ 
+            "text-decoration = '%s' stroke='%s' stroke-width = '%s' " ~ 
             "fill='%s' fill-opacity='%s' stroke-opacity='%s' transform='rotate(%s)' filter='url(#%s)'>%s</text>\n";
         surface ~= fmt.format(
-            xy.x, xy.y, fontFamily, fontSize, fontWeight, strokeColor.toStringRGBA, strokeWidth, 
+            xy.x, xy.y, fontFamily, fontSize, fontWeight, fontStyle, textDecoration, 
+            strokeColor.toStringRGBA, strokeWidth, 
             gradient is null ? fillColor.toStringRGBA : "url(#%s)".format(gradient), 
             fillOpacity, strokeOpacity, rotation, filter, text
         );

@@ -15,5 +15,5 @@
 <polygon points='580,408 632,298 527,237 ' style='fill:url(#lg1);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
 <polygon points='548,461 548,575 482,587 ' style='fill:url(#lg1);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
 <ellipse cx='640' cy='670' rx='120' ry='5' stroke='rgba(0, 0, 0, 255)' stroke-width='1' fill='url(#rg1)' fill-opacity='1' stroke-opacity='0.05' filter='url(#__none__)'/>
-<text x='980' y='690' font-family='arial' font-size='29' stroke='rgba(255, 255, 255, 255)' stroke-width = '1' fill='rgba(255, 255, 255, 255)' fill-opacity='1' stroke-opacity='1' transform='rotate(0)' filter='url(#__none__)'>made with Tiny SVG</text>
+<text x='980' y='690' font-family='arial' font-size='29' font-weight='normal' font-style='normal' text-decoration = '' stroke='rgba(255, 255, 255, 255)' stroke-width = '1' fill='rgba(255, 255, 255, 255)' fill-opacity='1' stroke-opacity='1' transform='rotate(0)' filter='url(#__none__)'>made with Tiny SVG</text>
 </svg>

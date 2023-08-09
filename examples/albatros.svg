@@ -5,6 +5,8 @@
 <linearGradient id='lg2' x1='0%' y1='0%' x2='100%' y2='0%'><stop offset='0%' style='stop-color:rgba(128, 128, 128, 255);stop-opacity:0.75'/><stop offset='100%' style='stop-color:rgba(128, 128, 128, 255);stop-opacity:0.15'/></linearGradient>
 <linearGradient id='lg3' x1='0%' y1='0%' x2='100%' y2='0%'><stop offset='0%' style='stop-color:rgba(128, 128, 128, 255);stop-opacity:0.9'/><stop offset='100%' style='stop-color:rgba(0, 0, 0, 255);stop-opacity:0.8'/></linearGradient>
 <radialGradient id='rg0' cx='50%' cy='50%' r='50%' fx='50%' fy='50%'><stop offset='0%' style='stop-color:rgba(255, 255, 255, 255);stop-opacity:0.3'/><stop offset='100%' style='stop-color:rgba(0, 0, 0, 255);stop-opacity:0.9'/></radialGradient>
+<linearGradient id='lg4' x1='0%' y1='0%' x2='100%' y2='0%'><stop offset='0%' style='stop-color:rgba(150, 75, 0, 255);stop-opacity:1'/><stop offset='100%' style='stop-color:rgba(89, 60, 30, 255);stop-opacity:1'/></linearGradient>
+<linearGradient id='lg5' x1='0%' y1='0%' x2='100%' y2='0%'><stop offset='0%' style='stop-color:rgba(113, 1, 255, 255);stop-opacity:1'/><stop offset='100%' style='stop-color:rgba(255, 1, 245, 255);stop-opacity:1'/></linearGradient>
 </defs>
 <polygon points='213,262 197,230 228,230 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
 <polygon points='213,262 228,230 243,247 230,246 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
@@ -83,4 +85,31 @@
 <polygon points='449,152 464,131 539,131 483,159 ' style='fill:url(#lg3);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
 <circle cx='479' cy='146' r='10' stroke='rgba(0, 0, 0, 255)' stroke-width='0' fill='url(#rg0)' fill-opacity='1' stroke-opacity='1' filter='url(#__none__)'/>
 <circle cx='479' cy='146' r='5' stroke='rgba(0, 0, 0, 255)' stroke-width='0' fill='rgba(0, 0, 0, 255)' fill-opacity='1' stroke-opacity='1' filter='url(#__none__)'/>
+<polygon points='503,625 537,607 600,607 537,689 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='537,689 600,607 650,720 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='537,689 650,720 551,720 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='600,607 698,588 650,720 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='650,720 698,588 750,656 730,720 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='730,720 750,656 788,720 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='788,720 750,656 815,669 817,720 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='817,720 815,669 893,640 841,720 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='841,720 893,640 923,720 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='923,720 893,640 961,656 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='923,720 961,656 1024,720 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='1024,720 961,656 990,606 1024,667 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='1024,667 990,606 1024,614 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='961,656 913,572 990,606 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='961,656 893,640 913,572 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='893,640 814,606 913,572 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='814,606 858,573 913,572 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='815,669 814,606 893,640 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='750,656 814,606 815,669 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='698,588 814,606 750,656 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='683,540 750,558 698,588 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='698,588 750,558 814,558 814,606 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<polygon points='814,606 814,558 858,573 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
+<text x='80' y='390' font-family='arial' font-size='48' font-weight='normal' font-style='normal' text-decoration = '' stroke='rgba(71, 88, 119, 255)' stroke-width = '1' fill='rgba(255, 255, 255, 255)' fill-opacity='1' stroke-opacity='1' transform='rotate(0)' filter='url(#__none__)'>LOW POLY</text>
+<text x='80' y='450' font-family='arial' font-size='46' font-weight='normal' font-style='normal' text-decoration = '' stroke='rgba(0, 128, 128, 255)' stroke-width = '1' fill='rgba(0, 128, 128, 255)' fill-opacity='1' stroke-opacity='1' transform='rotate(0)' filter='url(#__none__)'>ALBATROS</text>
+<text x='70' y='510' font-family='arial' font-size='28' font-weight='normal' font-style='normal' text-decoration = '' stroke='rgba(113, 1, 255, 255)' stroke-width = '1' fill='rgba(113, 1, 255, 255)' fill-opacity='0.9' stroke-opacity='0' transform='rotate(0)' filter='url(#__none__)'>made with</text>
+<text x='205' y='510' font-family='arial' font-size='28' font-weight='bold' font-style='normal' text-decoration = '' stroke='rgba(0, 0, 0, 0)' stroke-width = '1' fill='url(#lg5)' fill-opacity='1' stroke-opacity='1' transform='rotate(0)' filter='url(#__none__)'>Tiny SVG</text>
 </svg>
