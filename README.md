@@ -7,14 +7,6 @@ Add library to your project using DUB:
 ```
 dub add tiny-svg
 ```
-Or copy the following to your DUB configuration file:
-```
-// dub.json
-"tiny-svg": "~>1.0.0"
-
-// dub.sdl
-dependency "tiny-svg" version="~>1.0.0"
-``` 
 
 ### Example
 ```d
