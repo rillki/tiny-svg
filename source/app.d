@@ -266,7 +266,7 @@ void create_origami_bird()
 
 void create_albatros() {
     auto canvas = SVGCanvas(1024, 720);
-    canvas.fill(Colors.palewhite);
+    canvas.fill(Colors.white);
 
     // GRADIENTS
 
