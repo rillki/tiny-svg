@@ -79,14 +79,9 @@ struct SVGCanvas
     void scale(in float factor)
     {
         import std.parallelism : parallel;
-        import std.stdio : writeln;
 
-        w.writeln;
-        h.writeln;
         w.scaleBy(factor);
         h.scaleBy(factor);
-        w.writeln;
-        h.writeln;
         foreach (ref shape; shapes.parallel)
         {
             shape.scale(factor);
