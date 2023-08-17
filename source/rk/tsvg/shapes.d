@@ -123,6 +123,26 @@ enum TextDecoration : string
     none = ""
 }
 
+enum FontFamily : string
+{
+    arial = "arial",
+    arialBlack = "arial black",
+    hevetica = "hevetica",
+    verdana = "verdana",
+    tahoma = "tahoma",
+    trebuchetMS = "trebuchet ms",
+    impact = "impact",
+    gillSans = "gill sans",
+    timesNewRoman = "times new roman",
+    georgia = "georgia",
+    palatino = "palatino",
+    baskerville = "baskerville",
+    courier = "courier",
+    monaco = "monaco",
+    luminari = "luminari",
+    comicSansMS = "comic sans ms"
+}
+
 class Line : Shape
 {
     private Point startPoint, endPoint;
@@ -615,7 +635,7 @@ class Text : Shape
     private Point xy;
     private string text;
     
-    private string fontFamily = "arial";
+    private string fontFamily = FontFamily.arial;
     private string fontWeight = FontWeight.normal;
     private string fontStyle = FontStyle.normal;
     private string textDecoration = TextDecoration.none;
