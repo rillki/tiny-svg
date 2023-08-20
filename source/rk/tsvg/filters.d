@@ -9,7 +9,8 @@ interface Filter
     string construct();
 }
 
-/// empty filter
+/// Empty filter
+/// NOTE: use with shape.setFilter("id")
 class DefaultFilter : Filter
 {
     static immutable id = "__none__";
@@ -19,7 +20,8 @@ class DefaultFilter : Filter
     }
 }
 
-/// gaussian blur
+/// Gaussian blur
+/// NOTE: use with shape.setFilter("id")
 class Blur : Filter
 {
     private immutable string id;
@@ -46,7 +48,8 @@ class Blur : Filter
     }
 }
 
-/// gaussian blur with hard edge
+/// Gaussian blur with hard edge
+/// NOTE: use with shape.setFilter("id")
 class BlurHardEdge : Filter
 {
     private immutable string id;
@@ -76,6 +79,8 @@ class BlurHardEdge : Filter
     }
 }
 
+/// Adds shadow 
+/// NOTE: use with shape.setFilter("id")
 class Shadow : Filter 
 {
     private immutable string id;
@@ -104,8 +109,8 @@ class Shadow : Filter
     }
 }
 
-/// linear gradient fill 
-/// NOTE: use with shape.setGradient("gradient_id")
+/// Linear gradient fill 
+/// NOTE: use with shape.setGradient("id")
 class LinearGradient : Filter
 {
     private immutable string id;
@@ -146,6 +151,8 @@ class LinearGradient : Filter
     }
 }
 
+/// Linear gradient fill 
+/// NOTE: use with shape.setGradient("id")
 class RadialGradient : Filter
 {
     private immutable string id;
