@@ -3,6 +3,7 @@ module rk.tsvg.shapes;
 import std.conv : to;
 import std.string : format;
 
+import rk.tsvg.common;
 import rk.tsvg.colors;
 import rk.tsvg.filters;
 

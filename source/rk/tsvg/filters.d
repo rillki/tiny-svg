@@ -1,6 +1,7 @@
 module rk.tsvg.filters;
 
 import std.format : format;
+import rk.tsvg.common;
 import rk.tsvg.colors;
 
 interface Filter
@@ -104,7 +105,7 @@ class Shadow : Filter
 }
 
 /// linear gradient fill 
-/// NOTE: shape 'fill=url(#id)'
+/// NOTE: use with shape.setGradient("gradient_id")
 class LinearGradient : Filter
 {
     private immutable string id;
@@ -173,26 +174,6 @@ class RadialGradient : Filter
             "<stop offset='%s%%' style='stop-color:%s;stop-opacity:%s'/>" ~ 
             "</radialGradient>\n";
         return fmt.format(id, offsetA, colorA.toStringRGBA, opacityA, offsetB, colorB.toStringRGBA, opacityB);
-    }
-}
-
-/// generate setters for all mutable fields
-mixin template GenerateSetters()
-{   
-    import std.string : format, toUpper;
-    import std.algorithm : canFind;
-    static foreach (idx, field; typeof(this).tupleof)
-    {
-        static if (__traits(getVisibility, field) == "private" && !typeof(field).stringof.canFind("immutable", "const"))
-        {
-            mixin(q{
-                auto set%s(typeof(this.tupleof[idx]) _)
-                {
-                    %s = _;
-                    return this;
-                }
-            }.format(toUpper(field.stringof[0..1]) ~ field.stringof[1..$], field.stringof));
-        }
     }
 }
 
