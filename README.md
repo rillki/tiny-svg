@@ -8,45 +8,97 @@ Add library to your project using DUB:
 dub add tiny-svg
 ```
 
-### Example
+### Showcase
+Here is an example of a quickly drawn Dice logo:
 ```d
 import rk.tsvg.canvas;
 
-SVGCanvas canvas = SVGCanvas(240, 240);
+auto canvas = SVGCanvas(384, 128);
 
-// create a radial gradient
-new RadialGradient("rg0", Colors.gold, Colors.orange)
-    .setOpacityA(0.4)
-    .setOpacityB(0.9)
+// create a color gradient
+new LinearGradient("lg0", ColorRGBA(245, 66, 233, 255), ColorRGBA(0, 208, 255, 255))
     .addToCanvas(canvas);
 
-// draw
-new Rectangle(0, 0, canvas.width, canvas.height)
-    .setStrokeColor(Colors.blue)
-    .setStrokeWidth(0)
+// dice
+new Rectangle(10, 10, 100, 100)
     .setRadius(24)
-    .setGradient("rg0")
+    .setStrokeWidth(0)
+    .setGradient("lg0")
     .addToCanvas(canvas);
 
-new Circle(canvas.width / 3, canvas.height / 3, 24)
+// line
+new Rectangle(10, canvas.height - 10, canvas.width - 20, 7)
+    .setRadius(3)
+    .setStrokeWidth(0)
+    .setGradient("lg0")
+    .addToCanvas(canvas);
+
+// outer circle
+new Circle(35, 35, 13)
+    .setStrokeWidth(0)
     .setFillColor(Colors.white)
     .addToCanvas(canvas);
 
-new Circle(canvas.width * 2 / 3, canvas.height / 3, 24)
+new Circle(85, 35, 13)
+    .setStrokeWidth(0)
     .setFillColor(Colors.white)
     .addToCanvas(canvas);
 
-new Curve(canvas.width / 3, canvas.height * 2 / 3, canvas.width * 2 / 3, canvas.height * 2 / 3)
+new Circle(35, 85, 13)
+    .setStrokeWidth(0)
     .setFillColor(Colors.white)
+    .addToCanvas(canvas);
+
+new Circle(85, 85, 13)
+    .setStrokeWidth(0)
+    .setFillColor(Colors.white)
+    .addToCanvas(canvas);
+
+// inner circle
+new Circle(35, 35, 5)
+    .setStrokeWidth(1)
+    .setGradient("lg0")
+    .addToCanvas(canvas);
+
+new Circle(85, 35, 5)
+    .setStrokeWidth(1)
+    .setGradient("lg0")
+    .addToCanvas(canvas);
+
+new Circle(35, 85, 5)
+    .setStrokeWidth(1)
+    .setGradient("lg0")
+    .addToCanvas(canvas);
+
+new Circle(85, 85, 5)
+    .setStrokeWidth(1)
+    .setGradient("lg0")
+    .addToCanvas(canvas);
+
+// text
+new Text(canvas.width/3 - 10, canvas.height/3, "made with")
+    .setGradient("lg0")
+    .setFontSize(24)
+    .setFontWeight(FontWeight.bold)
+    .setFontFamily(FontFamily.luminari)
+    .setStrokeWidth(0)
+    .addToCanvas(canvas);
+
+new Text(canvas.width/3 - 10, 90, "Tiny SVG")
+    .setGradient("lg0")
+    .setFontSize(56)
+    .setFontWeight(FontWeight.bold)
+    .setFontFamily(FontFamily.baskerville)
+    .setStrokeWidth(1)
     .addToCanvas(canvas);
 
 // save
-canvas.save("examples/example.svg");
+canvas.save("examples/dice.svg");
 ```
 
-Output:
+The result:
 
-<img src="examples/example.svg" width="240">
+<img src="examples/dice.svg" width="720">
 
 ### Examples
 #### Origami bird
