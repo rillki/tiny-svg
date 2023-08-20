@@ -7,6 +7,7 @@ void main()
 {
     test_shapes();
     test_example();
+    dice_example();
     create_origami_bird();
     create_albatros();
 }
@@ -176,13 +177,97 @@ void test_example()
     canvas.save("examples/example.svg");
 }
 
+void dice_example() 
+{
+    auto canvas = SVGCanvas(384, 128);
+
+    // color gradient
+    new LinearGradient("lg0", ColorRGBA(245, 66, 233, 255), ColorRGBA(0, 208, 255, 255))
+        .addToCanvas(canvas);
+
+    // dice
+    new Rectangle(10, 10, 100, 100)
+        .setRadius(24)
+        .setStrokeWidth(0)
+        .setGradient("lg0")
+        .addToCanvas(canvas);
+
+    // line
+    new Rectangle(10, canvas.height - 10, canvas.width - 20, 7)
+        .setRadius(3)
+        .setStrokeWidth(0)
+        .setGradient("lg0")
+        .addToCanvas(canvas);
+    
+    // outer circle
+    new Circle(35, 35, 13)
+        .setStrokeWidth(0)
+        .setFillColor(Colors.white)
+        .addToCanvas(canvas);
+    
+    new Circle(85, 35, 13)
+        .setStrokeWidth(0)
+        .setFillColor(Colors.white)
+        .addToCanvas(canvas);
+    
+    new Circle(35, 85, 13)
+        .setStrokeWidth(0)
+        .setFillColor(Colors.white)
+        .addToCanvas(canvas);
+    
+    new Circle(85, 85, 13)
+        .setStrokeWidth(0)
+        .setFillColor(Colors.white)
+        .addToCanvas(canvas);
+    
+    // inner circle
+    new Circle(35, 35, 5)
+        .setStrokeWidth(1)
+        .setGradient("lg0")
+        .addToCanvas(canvas);
+    
+    new Circle(85, 35, 5)
+        .setStrokeWidth(1)
+        .setGradient("lg0")
+        .addToCanvas(canvas);
+    
+    new Circle(35, 85, 5)
+        .setStrokeWidth(1)
+        .setGradient("lg0")
+        .addToCanvas(canvas);
+    
+    new Circle(85, 85, 5)
+        .setStrokeWidth(1)
+        .setGradient("lg0")
+        .addToCanvas(canvas);
+    
+    new Text(canvas.width/3 - 10, canvas.height/3, "made with")
+        .setGradient("lg0")
+        .setFontSize(24)
+        .setFontWeight(FontWeight.bold)
+        .setFontFamily(FontFamily.luminari)
+        .setStrokeWidth(0)
+        .addToCanvas(canvas);
+
+    new Text(canvas.width/3 - 10, 90, "Tiny SVG")
+        .setGradient("lg0")
+        .setFontSize(56)
+        .setFontWeight(FontWeight.bold)
+        .setFontFamily(FontFamily.baskerville)
+        .setStrokeWidth(1)
+        .addToCanvas(canvas);
+    
+    // save
+    canvas.save("examples/dice.svg");
+}
+
 void create_origami_bird()
 {
     auto lightBlue = ColorRGBA(129, 214, 235, 255);
 
     SVGCanvas canvas = SVGCanvas(1280, 720);
 
-    // --- FILTERS, GRADIENTS
+    // adding filters, gradients
     new RadialGradient("rg0", lightBlue, lightBlue)
         .setOpacityA(0.4)
         .setOpacityB(1.0)
@@ -199,8 +284,6 @@ void create_origami_bird()
         .addToCanvas(canvas);
     new Blur("b0")
         .addToCanvas(canvas);
-
-    // --- SHAPES
     
     // background
     new Rectangle(0, 0, canvas.width, canvas.height)
@@ -260,6 +343,7 @@ void create_origami_bird()
         .setFontSize(29)
         .addToCanvas(canvas);
 
+    // save
     canvas.save("examples/origami_bird.svg");
 }
 
@@ -267,13 +351,12 @@ void create_albatros() {
     auto canvas = SVGCanvas(1024, 720);
     canvas.fill(Colors.white);
 
-    // GRADIENTS
-
+    // adding filters, gradients
     new LinearGradient("lg0", Colors.tomato, Colors.coral)
         .setOpacityA(1)
         .setOpacityB(0.9)
         .addToCanvas(canvas);
-    
+
     new LinearGradient("lg1", Colors.orange, Colors.gold)
         .setOpacityA(1)
         .setOpacityB(0.5)
@@ -302,8 +385,7 @@ void create_albatros() {
     new LinearGradient("lg5", ColorRGBA(113, 1, 255, 255), ColorRGBA(255, 1, 245, 255))
         .addToCanvas(canvas);
     
-    // DRAW
-    
+    // draw
     new Polygon([213, 262, 197, 230, 228, 230])
         .setStrokeWidth(0)
         .setGradient("lg0")
@@ -832,6 +914,7 @@ void create_albatros() {
         .setFontWeight(FontWeight.bold)
         .addToCanvas(canvas);
 
+    // save
     canvas.save("examples/albatros.svg");
 }
 

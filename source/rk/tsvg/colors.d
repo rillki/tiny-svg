@@ -2,9 +2,10 @@ module rk.tsvg.colors;
 
 import std.format : format;
 
+/// Color RGBA
 struct ColorRGBA
 {
-    ubyte r, g, b, a;
+    ubyte r, g, b, a = 255;
     const toStringRGBA()
     {
         return "rgba(%s, %s, %s, %s)".format(r, g, b, a);

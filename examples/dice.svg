@@ -1,0 +1,17 @@
+<svg width='384 px' height='128 px' viewBox='0 0 384 128' xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink'>
+<defs>
+<filter id='__none__'><feGaussianBlur stdDeviation='0'/></filter><linearGradient id='lg0' x1='0%' y1='0%' x2='100%' y2='0%'><stop offset='0%' style='stop-color:rgba(245, 66, 233, 255);stop-opacity:1'/><stop offset='100%' style='stop-color:rgba(0, 208, 255, 255);stop-opacity:1'/></linearGradient>
+</defs>
+<rect x='10' y='10' width='100' height='100' rx='24' ry='24' fill='url(#lg0)' stroke-width='0' stroke='rgba(0, 0, 0, 255)' fill-opacity='1' stroke-opacity='1' filter='url(#__none__)'/>
+<rect x='10' y='118' width='364' height='7' rx='3' ry='3' fill='url(#lg0)' stroke-width='0' stroke='rgba(0, 0, 0, 255)' fill-opacity='1' stroke-opacity='1' filter='url(#__none__)'/>
+<circle cx='35' cy='35' r='13' stroke='rgba(0, 0, 0, 255)' stroke-width='0' fill='rgba(255, 255, 255, 255)' fill-opacity='1' stroke-opacity='1' filter='url(#__none__)'/>
+<circle cx='85' cy='35' r='13' stroke='rgba(0, 0, 0, 255)' stroke-width='0' fill='rgba(255, 255, 255, 255)' fill-opacity='1' stroke-opacity='1' filter='url(#__none__)'/>
+<circle cx='35' cy='85' r='13' stroke='rgba(0, 0, 0, 255)' stroke-width='0' fill='rgba(255, 255, 255, 255)' fill-opacity='1' stroke-opacity='1' filter='url(#__none__)'/>
+<circle cx='85' cy='85' r='13' stroke='rgba(0, 0, 0, 255)' stroke-width='0' fill='rgba(255, 255, 255, 255)' fill-opacity='1' stroke-opacity='1' filter='url(#__none__)'/>
+<circle cx='35' cy='35' r='5' stroke='rgba(0, 0, 0, 255)' stroke-width='1' fill='url(#lg0)' fill-opacity='1' stroke-opacity='1' filter='url(#__none__)'/>
+<circle cx='85' cy='35' r='5' stroke='rgba(0, 0, 0, 255)' stroke-width='1' fill='url(#lg0)' fill-opacity='1' stroke-opacity='1' filter='url(#__none__)'/>
+<circle cx='35' cy='85' r='5' stroke='rgba(0, 0, 0, 255)' stroke-width='1' fill='url(#lg0)' fill-opacity='1' stroke-opacity='1' filter='url(#__none__)'/>
+<circle cx='85' cy='85' r='5' stroke='rgba(0, 0, 0, 255)' stroke-width='1' fill='url(#lg0)' fill-opacity='1' stroke-opacity='1' filter='url(#__none__)'/>
+<text x='118' y='42' font-family='luminari' font-size='24' font-weight='bold' font-style='normal' text-decoration = '' stroke='rgba(0, 0, 0, 255)' stroke-width = '0' fill='url(#lg0)' fill-opacity='1' stroke-opacity='1' transform='rotate(0)' filter='url(#__none__)'>made with</text>
+<text x='118' y='90' font-family='baskerville' font-size='56' font-weight='bold' font-style='normal' text-decoration = '' stroke='rgba(0, 0, 0, 255)' stroke-width = '1' fill='url(#lg0)' fill-opacity='1' stroke-opacity='1' transform='rotate(0)' filter='url(#__none__)'>Tiny SVG</text>
+</svg>

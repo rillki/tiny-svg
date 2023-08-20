@@ -3,6 +3,7 @@ module rk.tsvg.shapes;
 import std.conv : to;
 import std.string : format;
 
+import rk.tsvg.common;
 import rk.tsvg.colors;
 import rk.tsvg.filters;
 
@@ -121,6 +122,26 @@ enum TextDecoration : string
     overline = "overline",
     lineThrough = "line-through",
     none = ""
+}
+
+enum FontFamily : string
+{
+    arial = "arial",
+    arialBlack = "arial black",
+    hevetica = "hevetica",
+    verdana = "verdana",
+    tahoma = "tahoma",
+    trebuchetMS = "trebuchet ms",
+    impact = "impact",
+    gillSans = "gill sans",
+    timesNewRoman = "times new roman",
+    georgia = "georgia",
+    palatino = "palatino",
+    baskerville = "baskerville",
+    courier = "courier",
+    monaco = "monaco",
+    luminari = "luminari",
+    comicSansMS = "comic sans ms"
 }
 
 class Line : Shape
@@ -615,7 +636,7 @@ class Text : Shape
     private Point xy;
     private string text;
     
-    private string fontFamily = "arial";
+    private string fontFamily = FontFamily.arial;
     private string fontWeight = FontWeight.normal;
     private string fontStyle = FontStyle.normal;
     private string textDecoration = TextDecoration.none;

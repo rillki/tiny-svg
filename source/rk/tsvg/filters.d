@@ -1,6 +1,7 @@
 module rk.tsvg.filters;
 
 import std.format : format;
+import rk.tsvg.common;
 import rk.tsvg.colors;
 
 interface Filter
@@ -8,7 +9,8 @@ interface Filter
     string construct();
 }
 
-/// empty filter
+/// Empty filter
+/// NOTE: use with shape.setFilter("id")
 class DefaultFilter : Filter
 {
     static immutable id = "__none__";
@@ -18,7 +20,8 @@ class DefaultFilter : Filter
     }
 }
 
-/// gaussian blur
+/// Gaussian blur
+/// NOTE: use with shape.setFilter("id")
 class Blur : Filter
 {
     private immutable string id;
@@ -45,7 +48,8 @@ class Blur : Filter
     }
 }
 
-/// gaussian blur with hard edge
+/// Gaussian blur with hard edge
+/// NOTE: use with shape.setFilter("id")
 class BlurHardEdge : Filter
 {
     private immutable string id;
@@ -75,6 +79,8 @@ class BlurHardEdge : Filter
     }
 }
 
+/// Adds shadow 
+/// NOTE: use with shape.setFilter("id")
 class Shadow : Filter 
 {
     private immutable string id;
@@ -103,8 +109,8 @@ class Shadow : Filter
     }
 }
 
-/// linear gradient fill 
-/// NOTE: shape 'fill=url(#id)'
+/// Linear gradient fill 
+/// NOTE: use with shape.setGradient("id")
 class LinearGradient : Filter
 {
     private immutable string id;
@@ -145,6 +151,8 @@ class LinearGradient : Filter
     }
 }
 
+/// Linear gradient fill 
+/// NOTE: use with shape.setGradient("id")
 class RadialGradient : Filter
 {
     private immutable string id;
@@ -173,26 +181,6 @@ class RadialGradient : Filter
             "<stop offset='%s%%' style='stop-color:%s;stop-opacity:%s'/>" ~ 
             "</radialGradient>\n";
         return fmt.format(id, offsetA, colorA.toStringRGBA, opacityA, offsetB, colorB.toStringRGBA, opacityB);
-    }
-}
-
-/// generate setters for all mutable fields
-mixin template GenerateSetters()
-{   
-    import std.string : format, toUpper;
-    import std.algorithm : canFind;
-    static foreach (idx, field; typeof(this).tupleof)
-    {
-        static if (__traits(getVisibility, field) == "private" && !typeof(field).stringof.canFind("immutable", "const"))
-        {
-            mixin(q{
-                auto set%s(typeof(this.tupleof[idx]) _)
-                {
-                    %s = _;
-                    return this;
-                }
-            }.format(toUpper(field.stringof[0..1]) ~ field.stringof[1..$], field.stringof));
-        }
     }
 }
 
