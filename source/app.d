@@ -93,7 +93,6 @@ void test_shapes()
     // polygon/polyline
     canvas.add(
         new Polygon([Point(250, 30), Point(250, 60), Point(300, 100), Point(320, 50), Point(320, 30)])
-        // new Polygon(250, 30, 250, 60, 300, 100, 320, 50, 320, 30)
             .setFillColor(Colors.lime)
             .setStrokeColor(Colors.magenta)
             .setStrokeWidth(2)
