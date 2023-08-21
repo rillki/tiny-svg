@@ -7,7 +7,7 @@ void main()
 {
     test_shapes();
     test_example();
-    dice_example();
+    create_dice_logo();
     create_origami_bird();
     create_albatros();
 }
@@ -178,7 +178,7 @@ void test_example()
     canvas.save("examples/example.svg");
 }
 
-void dice_example() 
+void create_dice_logo() 
 {
     auto canvas = SVGCanvas(384, 128);
 
