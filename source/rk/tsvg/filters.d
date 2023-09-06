@@ -111,6 +111,7 @@ class Shadow : Filter
 
 /// Linear gradient fill 
 /// NOTE: use with shape.setGradient("id")
+/// NOTE: to modify the angle of gradient, use `angle` and `offsetA`, `offsetB`
 class LinearGradient : Filter
 {
     private immutable string id;
@@ -134,20 +135,47 @@ class LinearGradient : Filter
 
     string construct()
     {
-        import std.conv: to;
-        import std.math: cos, sin, PI;
-        
-        // calculate x2, y2 given an angle
-        immutable radians = angle * PI / 180;
-        immutable x2 = (cos(radians) * 100).to!int;
-        immutable y2 = (sin(radians) * 100).to!int;
+        import std.conv : to;
+        import std.math : abs, cos, sin, PI;
+        import std.typecons : tuple;
 
+        auto rotate(in int angle)
+        {
+            immutable rads = angle * PI / 180;
+            immutable x1 = 0, y1 = 0, x2 = 100, y2 = 0;
+
+            // find center
+            immutable 
+                cx = abs(x2 - x1) / 2, 
+                cy = abs(y2 - y1) / 2;
+            
+            // translate coordinates (adjust by center)
+            immutable 
+                tx1 = x1 - cx, 
+                ty1 = y1 - cy;
+            immutable 
+                tx2 = x2 - cx, 
+                ty2 = y2 - cy;
+
+            // rotate
+            immutable 
+                nx1 = tx1 * cos(rads) + ty1 * sin(rads) + cx,
+                ny1 = -tx1 * sin(rads) + ty1 * cos(rads) + cy,
+                nx2 = tx2 * cos(rads) + ty2 * sin(rads) + cx,
+                ny2 = -tx2 * sin(rads) + ty2 * cos(rads) + cy;
+
+            return tuple(nx1.to!int, ny1.to!int, nx2.to!int, ny2.to!int);
+        }
+        
+        // rotate given an angle
+        auto retp = rotate(angle);
+        
         enum fmt = 
-            "<linearGradient id='%s' x1='0%%' y1='0%%' x2='%s%%' y2='%s%%'>" ~ 
+            "<linearGradient id='%s' x1='%s%%' y1='%s%%' x2='%s%%' y2='%s%%'>" ~ 
             "<stop offset='%s%%' style='stop-color:%s;stop-opacity:%s'/>" ~ 
             "<stop offset='%s%%' style='stop-color:%s;stop-opacity:%s'/>" ~ 
             "</linearGradient>\n";
-        return fmt.format(id, x2, y2, offsetA, colorA.toStringRGBA, opacityA, offsetB, colorB.toStringRGBA, opacityB);
+        return fmt.format(id, retp.expand, offsetA, colorA.toStringRGBA, opacityA, offsetB, colorB.toStringRGBA, opacityB);
     }
 }
 
