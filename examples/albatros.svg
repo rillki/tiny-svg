@@ -8,109 +8,109 @@
 <linearGradient id='lg4' x1='0%' y1='0%' x2='100%' y2='0%'><stop offset='0%' style='stop-color:rgba(150, 75, 0, 255);stop-opacity:1'/><stop offset='100%' style='stop-color:rgba(89, 60, 30, 255);stop-opacity:1'/></linearGradient>
 <linearGradient id='lg5' x1='0%' y1='0%' x2='100%' y2='0%'><stop offset='0%' style='stop-color:rgba(113, 1, 255, 255);stop-opacity:1'/><stop offset='100%' style='stop-color:rgba(255, 1, 245, 255);stop-opacity:1'/></linearGradient>
 </defs>
-<rect x='0' y='0' width='1024' height='720' rx='0' ry='0' fill='rgba(255, 255, 255, 255)' stroke-width='0' stroke='rgba(0, 0, 0, 255)' fill-opacity='1' stroke-opacity='1' filter='url(#__none__)'/>
-<polygon points='213,262 197,230 228,230 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='213,262 228,230 243,247 230,246 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='197,230 228,199 228,230 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='228,230 228,199 245,180 261,229 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='261,229 245,180 292,180 261,229 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='228,230 243,247 266,247 287,240 292,180 261,229 ' style='fill:url(#lg0);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='292,180 287,240 326,228 ' style='fill:url(#lg1);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='326,228 408,181 292,180 ' style='fill:url(#lg1);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='292,181 392,132 408,181 ' style='fill:url(#lg1);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='326,228 392,229 408,181 ' style='fill:url(#lg1);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='356,175 387,157 389,167 ' style='fill:rgba(150, 75, 0, 255);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:0.4;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='392,132 428,98 438,132 408,181 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='428,98 438,132 464,131 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='428,98 464,131 488,66 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='488,66 464,131 532,66 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='532,66 464,131 539,131 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='532,66 539,131 602,99 569,67 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='539,131 602,99 632,129 554,146 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='554,146 632,129 603,209 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='603,209 632,129 650,164 650,199 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='603,209 650,199 603,244 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='603,244 650,199 650,277 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='408,181 438,132 449,152 470,228 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='438,132 464,131 449,152 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='408,181 392,229 408,230 440,278 470,228 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='392,229 408,230 408,260 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='408,230 408,309 440,278 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='483,159 470,228 539,131 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='470,228 539,131 537,198 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='539,131 554,146 603,209 603,244 537,198 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='470,228 537,198 507,262 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='440,278 470,228 507,262 539,294 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='507,262 537,198 539,294 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='537,198 603,244 539,294 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='539,294 603,244 650,277 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='449,152 483,159 470,228 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='408,309 440,278 539,294 442,328 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='408,309 442,328 393,376 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='393,376 440,410 362,470 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='393,376 440,410 362,470 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='362,470 440,410 523,444 457,508 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='362,470 457,508 424,527 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='457,508 523,444 603,490 569,525 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='569,525 603,490 650,440 683,540 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='523,444 650,440 603,490 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='523,444 605,406 650,440 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='605,406 650,361 650,440 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='537,360 650,361 605,406 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='537,360 605,406 523,444 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='440,410 537,360 523,444 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='442,328 539,294 537,360 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='537,360 539,294 650,361 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='539,294 650,277 650,361 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='362,470 424,527 310,589 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='310,589 424,527 439,606 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='310,589 439,606 310,654 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='439,654 439,606 503,625 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='310,654 439,654 441,720 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='310,654 441,720 341,720 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='441,720 439,654 503,625 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='439,606 439,654 503,625 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='440,720 503,625 537,689 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='441,720 537,689 551,720 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='439,606 503,591 503,625 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='424,527 457,508 503,591 439,606 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='457,508 554,557 503,591 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='503,591 554,557 600,607 537,607 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='503,591 537,607 503,625 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='457,508 569,525 554,557 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='569,525 683,540 554,557 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='554,557 683,540 698,588 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='554,557 698,588 600,607 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='393,376 442,328 537,360 440,410 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='310,654 439,606 439,654 ' style='fill:url(#lg2);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='449,152 464,131 539,131 483,159 ' style='fill:url(#lg3);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<circle cx='479' cy='146' r='10' stroke='rgba(0, 0, 0, 255)' stroke-width='0' fill='url(#rg0)' fill-opacity='1' stroke-opacity='1' filter='url(#__none__)'/>
-<circle cx='479' cy='146' r='5' stroke='rgba(0, 0, 0, 255)' stroke-width='0' fill='rgba(0, 0, 0, 255)' fill-opacity='1' stroke-opacity='1' filter='url(#__none__)'/>
-<polygon points='503,625 537,607 600,607 537,689 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='537,689 600,607 650,720 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='537,689 650,720 551,720 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='600,607 698,588 650,720 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='650,720 698,588 750,656 730,720 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='730,720 750,656 788,720 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='788,720 750,656 815,669 817,720 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='817,720 815,669 893,640 841,720 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='841,720 893,640 923,720 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='923,720 893,640 961,656 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='923,720 961,656 1024,720 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='1024,720 961,656 990,606 1024,667 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='1024,667 990,606 1024,614 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='961,656 913,572 990,606 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='961,656 893,640 913,572 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='893,640 814,606 913,572 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='814,606 858,573 913,572 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='815,669 814,606 893,640 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='750,656 814,606 815,669 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='698,588 814,606 750,656 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='683,540 750,558 698,588 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='698,588 750,558 814,558 814,606 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<polygon points='814,606 814,558 858,573 ' style='fill:url(#lg4);stroke:rgba(0, 0, 0, 255);stroke-width:0;fill-rule:nonzero;fill-opacity:1;stroke-opacity:1;filter:url(#__none__)'/>
-<text x='80' y='390' font-family='arial' font-size='48' font-weight='normal' font-style='normal' text-decoration = '' stroke='rgba(71, 88, 119, 255)' stroke-width = '1' fill='rgba(255, 255, 255, 255)' fill-opacity='1' stroke-opacity='1' transform='rotate(0)' filter='url(#__none__)'>LOW POLY</text>
-<text x='80' y='450' font-family='arial' font-size='46' font-weight='normal' font-style='normal' text-decoration = '' stroke='rgba(0, 128, 128, 255)' stroke-width = '1' fill='rgba(0, 128, 128, 255)' fill-opacity='1' stroke-opacity='1' transform='rotate(0)' filter='url(#__none__)'>ALBATROS</text>
-<text x='70' y='510' font-family='arial' font-size='28' font-weight='normal' font-style='normal' text-decoration = '' stroke='rgba(113, 1, 255, 255)' stroke-width = '1' fill='rgba(113, 1, 255, 255)' fill-opacity='0.9' stroke-opacity='0' transform='rotate(0)' filter='url(#__none__)'>made with</text>
-<text x='205' y='510' font-family='arial' font-size='28' font-weight='bold' font-style='normal' text-decoration = '' stroke='rgba(0, 0, 0, 0)' stroke-width = '1' fill='url(#lg5)' fill-opacity='1' stroke-opacity='1' transform='rotate(0)' filter='url(#__none__)'>Tiny SVG</text>
+<rect x='0' y='0' width='1024' height='720' rx='0' ry='0' stroke='rgba(0, 0, 0, 255)' stroke-width='0' stroke-opacity='1' fill='rgba(255, 255, 255, 255)' fill-opacity='1' filter='url(#__none__)'/>
+<polygon points='213,262 197,230 228,230 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg0);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='213,262 228,230 243,247 230,246 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg0);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='197,230 228,199 228,230 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg0);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='228,230 228,199 245,180 261,229 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg0);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='261,229 245,180 292,180 261,229 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg0);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='228,230 243,247 266,247 287,240 292,180 261,229 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg0);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='292,180 287,240 326,228 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg1);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='326,228 408,181 292,180 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg1);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='292,181 392,132 408,181 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg1);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='326,228 392,229 408,181 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg1);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='356,175 387,157 389,167 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:rgba(150, 75, 0, 255);fill-rule:nonzero;fill-opacity:0.4;filter:url(#__none__)'/>
+<polygon points='392,132 428,98 438,132 408,181 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='428,98 438,132 464,131 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='428,98 464,131 488,66 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='488,66 464,131 532,66 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='532,66 464,131 539,131 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='532,66 539,131 602,99 569,67 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='539,131 602,99 632,129 554,146 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='554,146 632,129 603,209 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='603,209 632,129 650,164 650,199 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='603,209 650,199 603,244 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='603,244 650,199 650,277 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='408,181 438,132 449,152 470,228 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='438,132 464,131 449,152 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='408,181 392,229 408,230 440,278 470,228 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='392,229 408,230 408,260 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='408,230 408,309 440,278 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='483,159 470,228 539,131 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='470,228 539,131 537,198 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='539,131 554,146 603,209 603,244 537,198 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='470,228 537,198 507,262 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='440,278 470,228 507,262 539,294 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='507,262 537,198 539,294 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='537,198 603,244 539,294 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='539,294 603,244 650,277 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='449,152 483,159 470,228 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='408,309 440,278 539,294 442,328 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='408,309 442,328 393,376 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='393,376 440,410 362,470 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='393,376 440,410 362,470 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='362,470 440,410 523,444 457,508 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='362,470 457,508 424,527 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='457,508 523,444 603,490 569,525 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='569,525 603,490 650,440 683,540 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='523,444 650,440 603,490 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='523,444 605,406 650,440 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='605,406 650,361 650,440 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='537,360 650,361 605,406 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='537,360 605,406 523,444 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='440,410 537,360 523,444 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='442,328 539,294 537,360 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='537,360 539,294 650,361 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='539,294 650,277 650,361 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='362,470 424,527 310,589 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='310,589 424,527 439,606 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='310,589 439,606 310,654 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='439,654 439,606 503,625 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='310,654 439,654 441,720 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='310,654 441,720 341,720 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='441,720 439,654 503,625 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='439,606 439,654 503,625 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='440,720 503,625 537,689 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='441,720 537,689 551,720 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='439,606 503,591 503,625 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='424,527 457,508 503,591 439,606 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='457,508 554,557 503,591 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='503,591 554,557 600,607 537,607 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='503,591 537,607 503,625 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='457,508 569,525 554,557 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='569,525 683,540 554,557 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='554,557 683,540 698,588 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='554,557 698,588 600,607 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='393,376 442,328 537,360 440,410 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='310,654 439,606 439,654 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg2);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='449,152 464,131 539,131 483,159 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg3);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<circle cx='479' cy='146' r='10' stroke='rgba(0, 0, 0, 255)' stroke-width='0' stroke-opacity='1' fill='url(#rg0)' fill-opacity='1' filter='url(#__none__)'/>
+<circle cx='479' cy='146' r='5' stroke='rgba(0, 0, 0, 255)' stroke-width='0' stroke-opacity='1' fill='rgba(0, 0, 0, 255)' fill-opacity='1' filter='url(#__none__)'/>
+<polygon points='503,625 537,607 600,607 537,689 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='537,689 600,607 650,720 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='537,689 650,720 551,720 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='600,607 698,588 650,720 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='650,720 698,588 750,656 730,720 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='730,720 750,656 788,720 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='788,720 750,656 815,669 817,720 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='817,720 815,669 893,640 841,720 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='841,720 893,640 923,720 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='923,720 893,640 961,656 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='923,720 961,656 1024,720 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='1024,720 961,656 990,606 1024,667 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='1024,667 990,606 1024,614 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='961,656 913,572 990,606 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='961,656 893,640 913,572 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='893,640 814,606 913,572 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='814,606 858,573 913,572 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='815,669 814,606 893,640 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='750,656 814,606 815,669 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='698,588 814,606 750,656 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='683,540 750,558 698,588 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='698,588 750,558 814,558 814,606 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<polygon points='814,606 814,558 858,573 ' style='stroke:rgba(0, 0, 0, 255);stroke-width:0;stroke-opacity:1;fill:url(#lg4);fill-rule:nonzero;fill-opacity:1;filter:url(#__none__)'/>
+<text x='80' y='390' font-family='arial' font-size='48' font-weight='normal' font-style='normal' text-decoration='' stroke='rgba(71, 88, 119, 255)' stroke-width='1' stroke-opacity='1' fill='rgba(255, 255, 255, 255)' fill-opacity='1' transform='rotate(0)' filter='url(#__none__)'>LOW POLY</text>
+<text x='80' y='450' font-family='arial' font-size='46' font-weight='normal' font-style='normal' text-decoration='' stroke='rgba(0, 128, 128, 255)' stroke-width='1' stroke-opacity='1' fill='rgba(0, 128, 128, 255)' fill-opacity='1' transform='rotate(0)' filter='url(#__none__)'>ALBATROS</text>
+<text x='70' y='510' font-family='arial' font-size='28' font-weight='normal' font-style='normal' text-decoration='' stroke='rgba(113, 1, 255, 255)' stroke-width='1' stroke-opacity='0' fill='rgba(113, 1, 255, 255)' fill-opacity='0.9' transform='rotate(0)' filter='url(#__none__)'>made with</text>
+<text x='205' y='510' font-family='arial' font-size='28' font-weight='bold' font-style='normal' text-decoration='' stroke='url(#lg5)' stroke-width='1' stroke-opacity='1' fill='url(#lg5)' fill-opacity='1' transform='rotate(0)' filter='url(#__none__)'>Tiny SVG</text>
 </svg>

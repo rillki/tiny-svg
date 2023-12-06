@@ -2,6 +2,7 @@ module rk.tsvg.shapes;
 
 import std.conv : to;
 import std.string : format;
+import std.traits : isNumeric;
 
 import rk.tsvg.common;
 import rk.tsvg.colors;
@@ -238,12 +239,11 @@ class Circle : Shape
     {
         enum fmt = 
             "<circle cx='%s' cy='%s' r='%s' " ~ 
-            "stroke='%s' stroke-width='%s' fill='%s' fill-opacity='%s' stroke-opacity='%s' filter='url(#%s)'/>\n";
+            "stroke='%s' stroke-width='%s' stroke-opacity='%s' fill='%s' fill-opacity='%s' filter='url(#%s)'/>\n";
         surface ~= fmt.format(
             origin.x, origin.y, radius, 
-            strokeColor.toStringRGBA, strokeWidth, 
-            gradient is null ? fillColor.toStringRGBA : "url(#%s)".format(gradient), 
-            fillOpacity, strokeOpacity, filter
+            ifColorGradient(strokeColor, gradient), strokeWidth, strokeOpacity,
+            ifColorGradient(fillColor, gradient), fillOpacity, filter
         );
     }
 }
@@ -293,12 +293,11 @@ class Ellipse : Shape
     {
         enum fmt = 
             "<ellipse cx='%s' cy='%s' rx='%s' ry='%s' " ~
-            "stroke='%s' stroke-width='%s' fill='%s' fill-opacity='%s' stroke-opacity='%s' filter='url(#%s)'/>\n";
+            "stroke='%s' stroke-width='%s' stroke-opacity='%s' fill='%s' fill-opacity='%s' filter='url(#%s)'/>\n";
         surface ~= fmt.format(
             origin.x, origin.y, radius.x, radius.y, 
-            strokeColor.toStringRGBA, strokeWidth, 
-            gradient is null ? fillColor.toStringRGBA : "url(#%s)".format(gradient), 
-            fillOpacity, strokeOpacity, filter
+            ifColorGradient(strokeColor, gradient), strokeWidth, strokeOpacity,
+            ifColorGradient(fillColor, gradient), fillOpacity, filter
         );
     }
 }
@@ -350,11 +349,11 @@ class Rectangle : Shape
     {
         enum fmt = 
             "<rect x='%s' y='%s' width='%s' height='%s' rx='%s' ry='%s' " ~ 
-            "fill='%s' stroke-width='%s' stroke='%s' fill-opacity='%s' stroke-opacity='%s' filter='url(#%s)'/>\n";
+            "stroke='%s' stroke-width='%s' stroke-opacity='%s' fill='%s' fill-opacity='%s' filter='url(#%s)'/>\n";
         surface ~= fmt.format(
             position.x, position.y, size.x, size.y, radius, radius, 
-            gradient is null ? fillColor.toStringRGBA : "url(#%s)".format(gradient), 
-            strokeWidth, strokeColor.toStringRGBA, fillOpacity, strokeOpacity, filter
+            ifColorGradient(strokeColor, gradient), strokeWidth, strokeOpacity,
+            ifColorGradient(fillColor, gradient), fillOpacity, filter
         );
     }
 }
@@ -416,11 +415,12 @@ class Polygon : Shape
     {
         enum fmt = 
             "<polygon points='%s' " ~ 
-            "style='fill:%s;stroke:%s;stroke-width:%s;fill-rule:%s;fill-opacity:%s;stroke-opacity:%s;filter:url(#%s)'/>\n";
+            "style='stroke:%s;stroke-width:%s;stroke-opacity:%s;" ~
+            "fill:%s;fill-rule:%s;fill-opacity:%s;filter:url(#%s)'/>\n";
         surface ~= fmt.format(
             points.pointsToString, 
-            gradient is null ? fillColor.toStringRGBA : "url(#%s)".format(gradient), 
-            strokeColor.toStringRGBA, strokeWidth, fillRule, fillOpacity, strokeOpacity, filter
+            ifColorGradient(strokeColor, gradient), strokeWidth, strokeOpacity,
+            ifColorGradient(fillColor, gradient), fillRule, fillOpacity, filter
         );
     }
 }
@@ -481,11 +481,12 @@ class Polyline : Shape
     {
         enum fmt = 
             "<polyline points='%s' " ~ 
-            "style='fill:%s;stroke:%s;stroke-width:%s;fill-opacity:%s;stroke-opacity:%s;filter:url(#%s)'/>\n";
+            "style='stroke:%s;stroke-width:%s;stroke-opacity:%s;" ~
+            "fill:%s;fill-opacity:%s;filter:url(#%s)'/>\n";
         surface ~= fmt.format(
             points.pointsToString, 
-            gradient is null ? fillColor.toStringRGBA : "url(#%s)".format(gradient), 
-            strokeColor.toStringRGBA, strokeWidth, fillOpacity, strokeOpacity, filter
+            ifColorGradient(strokeColor, gradient), strokeWidth, strokeOpacity,
+            ifColorGradient(fillColor, gradient), fillOpacity, filter
         );
     }
 }
@@ -545,9 +546,8 @@ class Curve : Shape
             "stroke='%s' stroke-width='%s' stroke-opacity='%s' fill='%s' fill-opacity='%s' filter='url(#%s)'/>\n";
         surface ~= fmt.format(
             start.x, start.y, curveHeight, curvature, end.x, end.y,
-            strokeColor.toStringRGBA, strokeWidth, strokeOpacity,
-            gradient is null ? fillColor.toStringRGBA : "url(#%s)".format(gradient), 
-            fillOpacity, filter
+            ifColorGradient(strokeColor, gradient), strokeWidth, strokeOpacity,
+            ifColorGradient(fillColor, gradient), fillOpacity, filter
         );
     }
 }
@@ -608,11 +608,11 @@ class Path : Shape
     {
         enum fmt = 
             "<polyline points='%s' " ~ 
-            "style='fill:%s;stroke:%s;stroke-width:%s;fill-opacity:%s;stroke-opacity:%s;filter:url(#%s)'/>\n";
+            "style='stroke:%s;stroke-width:%s;stroke-opacity:%s;fill:%s;fill-opacity:%s;filter:url(#%s)'/>\n";
         surface ~= fmt.format(
             points.pointsToString, 
-            gradient is null ? fillColor.toStringRGBA : "url(#%s)".format(gradient), 
-            strokeColor.toStringRGBA, strokeWidth, fillOpacity, strokeOpacity, filter
+            ifColorGradient(strokeColor, gradient), strokeWidth, strokeOpacity,
+            ifColorGradient(fillColor, gradient), fillOpacity, filter
         );
     }
 
@@ -683,19 +683,27 @@ class Text : Shape
     {
         enum fmt = 
             "<text x='%s' y='%s' font-family='%s' font-size='%s' font-weight='%s' font-style='%s' " ~ 
-            "text-decoration = '%s' stroke='%s' stroke-width = '%s' " ~ 
-            "fill='%s' fill-opacity='%s' stroke-opacity='%s' transform='rotate(%s)' filter='url(#%s)'>%s</text>\n";
+            "text-decoration='%s' stroke='%s' stroke-width='%s' stroke-opacity='%s' " ~ 
+            "fill='%s' fill-opacity='%s' transform='rotate(%s)' filter='url(#%s)'>%s</text>\n";
         surface ~= fmt.format(
             xy.x, xy.y, fontFamily, fontSize, fontWeight, fontStyle, textDecoration, 
-            strokeColor.toStringRGBA, strokeWidth, 
-            gradient is null ? fillColor.toStringRGBA : "url(#%s)".format(gradient), 
-            fillOpacity, strokeOpacity, rotation, filter, text
+            ifColorGradient(strokeColor, gradient), strokeWidth, strokeOpacity,
+            ifColorGradient(fillColor, gradient), fillOpacity, rotation, filter, text
         );
     }
 }
 
-void scaleBy(T)(ref T t, in float factor)
+/// scales the value and casts it back to its type
+void scaleBy(T)(ref T t, in float factor) if (isNumeric!T)
 {
     t = (t * factor).to!T;
+}
+
+/// returns color if gradient is null, otherwise the formatted gradient
+string ifColorGradient(in ColorRGBA color, in string gradient)
+{
+    return gradient !is null && color == Colors.none
+        ? "url(#%s)".format(gradient)
+        : color.toStringRGBA;
 }
 
