@@ -15,7 +15,7 @@ import rk.tsvg.canvas;
 
 auto canvas = SVGCanvas(384, 128);
 
-// create a color gradient
+// color gradient
 new LinearGradient("lg0", ColorRGBA(245, 66, 233, 255), ColorRGBA(0, 208, 255, 255))
     .addToCanvas(canvas);
 
@@ -34,46 +34,23 @@ new Rectangle(10, canvas.height - 10, canvas.width - 20, 7)
     .addToCanvas(canvas);
 
 // outer circle
-new Circle(35, 35, 13)
-    .setStrokeWidth(0)
-    .setFillColor(Colors.white)
-    .addToCanvas(canvas);
-
-new Circle(85, 35, 13)
-    .setStrokeWidth(0)
-    .setFillColor(Colors.white)
-    .addToCanvas(canvas);
-
-new Circle(35, 85, 13)
-    .setStrokeWidth(0)
-    .setFillColor(Colors.white)
-    .addToCanvas(canvas);
-
-new Circle(85, 85, 13)
-    .setStrokeWidth(0)
-    .setFillColor(Colors.white)
-    .addToCanvas(canvas);
+auto circlePos = [[35, 35], [85, 35], [35, 85], [85, 85]];
+foreach (pos; circlePos)
+{
+    new Circle(pos[0], pos[1], 13)
+        .setStrokeWidth(0)
+        .setFillColor(Colors.white)
+        .addToCanvas(canvas);
+}
 
 // inner circle
-new Circle(35, 35, 5)
-    .setStrokeWidth(1)
-    .setGradient("lg0")
-    .addToCanvas(canvas);
-
-new Circle(85, 35, 5)
-    .setStrokeWidth(1)
-    .setGradient("lg0")
-    .addToCanvas(canvas);
-
-new Circle(35, 85, 5)
-    .setStrokeWidth(1)
-    .setGradient("lg0")
-    .addToCanvas(canvas);
-
-new Circle(85, 85, 5)
-    .setStrokeWidth(1)
-    .setGradient("lg0")
-    .addToCanvas(canvas);
+foreach (pos; circlePos)
+{
+    new Circle(pos[0], pos[1], 5)
+        .setStrokeWidth(1)
+        .setGradient("lg0")
+        .addToCanvas(canvas);
+}
 
 // text
 new Text(canvas.width/3 - 10, canvas.height/3, "made with")
