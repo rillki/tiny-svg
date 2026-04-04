@@ -31,7 +31,7 @@ struct Point
     {
         static if(op == "+") return Point(x + lhs.x, y + lhs.y);
         else static if(op == "-") return Point(x - lhs.x, y - lhs.y);
-        else static if(op == "*") return Point(x * lhsp.x, y * lhs.y);
+        else static if(op == "*") return Point(x * lhs.x, y * lhs.y);
         else static if(op == "/") return Point(x / lhs.x, y / lhs.y);
         else static assert(0, "Operator '" ~ op ~ "' not supported!");
     }
@@ -129,7 +129,7 @@ enum FontFamily : string
 {
     arial = "arial",
     arialBlack = "arial black",
-    hevetica = "hevetica",
+    helvetica = "helvetica",
     verdana = "verdana",
     tahoma = "tahoma",
     trebuchetMS = "trebuchet ms",
@@ -606,11 +606,19 @@ class Path : Shape
 
     void render(ref string surface)
     {
-        enum fmt = 
-            "<polyline points='%s' " ~ 
-            "style='stroke:%s;stroke-width:%s;stroke-opacity:%s;fill:%s;fill-opacity:%s;filter:url(#%s)'/>\n";
+        if (points.length == 0) return;
+
+        string d = "M %s %s".format(points[0].x, points[0].y);
+        foreach (point; points[1..$])
+        {
+            d ~= " L %s %s".format(point.x, point.y);
+        }
+
+        enum fmt =
+            "<path d='%s' " ~
+            "stroke='%s' stroke-width='%s' stroke-opacity='%s' fill='%s' fill-opacity='%s' filter='url(#%s)'/>\n";
         surface ~= fmt.format(
-            points.pointsToString, 
+            d,
             ifColorGradient(strokeColor, gradient), strokeWidth, strokeOpacity,
             ifColorGradient(fillColor, gradient), fillOpacity, filter
         );
@@ -684,11 +692,11 @@ class Text : Shape
         enum fmt = 
             "<text x='%s' y='%s' font-family='%s' font-size='%s' font-weight='%s' font-style='%s' " ~ 
             "text-decoration='%s' stroke='%s' stroke-width='%s' stroke-opacity='%s' " ~ 
-            "fill='%s' fill-opacity='%s' transform='rotate(%s)' filter='url(#%s)'>%s</text>\n";
+            "fill='%s' fill-opacity='%s' transform='rotate(%s, %s, %s)' filter='url(#%s)'>%s</text>\n";
         surface ~= fmt.format(
-            xy.x, xy.y, fontFamily, fontSize, fontWeight, fontStyle, textDecoration, 
+            xy.x, xy.y, fontFamily, fontSize, fontWeight, fontStyle, textDecoration,
             ifColorGradient(strokeColor, gradient), strokeWidth, strokeOpacity,
-            ifColorGradient(fillColor, gradient), fillOpacity, rotation, filter, text
+            ifColorGradient(fillColor, gradient), fillOpacity, rotation, xy.x, xy.y, filter, text
         );
     }
 }
